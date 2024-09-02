@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"apifeatures\/advertiser[1:21]","start":1724743656191,"end":1724743660180,"title":"apifeatures\/advertiser[1:21] 12:57:36.191-12:57:40.180 Create Advertiser"},{"id":2,"group":1,"content":"apifeatures\/advertiser[2:39]","start":1724743660192,"end":1724743660228,"title":"apifeatures\/advertiser[2:39] 12:57:40.192-12:57:40.228 Edit Advertiser","className":"failed"},{"id":3,"group":1,"content":"apifeatures\/advertiser[3.1:65]","start":1724743660271,"end":1724743662064,"title":"apifeatures\/advertiser[3.1:65] 12:57:40.271-12:57:42.064 Verify the Advertiser list"},{"id":4,"group":1,"content":"apifeatures\/advertiser[3.2:65]","start":1724743662071,"end":1724743663104,"title":"apifeatures\/advertiser[3.2:65] 12:57:42.071-12:57:43.104 Verify the status"},{"id":5,"group":1,"content":"apifeatures\/advertiser[3.3:65]","start":1724743663110,"end":1724743664064,"title":"apifeatures\/advertiser[3.3:65] 12:57:43.110-12:57:44.064 Verify the Advertiser list sort by ascending order"},{"id":6,"group":1,"content":"apifeatures\/advertiser[3.4:65]","start":1724743664070,"end":1724743664564,"title":"apifeatures\/advertiser[3.4:65] 12:57:44.070-12:57:44.564 Verify the Advertiser list sort by descending order"},{"id":7,"group":1,"content":"apifeatures\/advertiser[3.5:65]","start":1724743664569,"end":1724743665703,"title":"apifeatures\/advertiser[3.5:65] 12:57:44.569-12:57:45.703 Verify the active Advertiser list sort by ascending order"},{"id":8,"group":1,"content":"apifeatures\/advertiser[3.6:65]","start":1724743665711,"end":1724743666332,"title":"apifeatures\/advertiser[3.6:65] 12:57:45.711-12:57:46.332 Verify the active Advertiser list sort by descending order"},{"id":9,"group":1,"content":"apifeatures\/advertiser[3.7:65]","start":1724743666338,"end":1724743667323,"title":"apifeatures\/advertiser[3.7:65] 12:57:46.338-12:57:47.323 Verify the inactive Advertiser list sort by ascending order"},{"id":10,"group":1,"content":"apifeatures\/advertiser[3.8:65]","start":1724743667330,"end":1724743667996,"title":"apifeatures\/advertiser[3.8:65] 12:57:47.330-12:57:47.996 Verify the inactive Advertiser list sort by descending order"},{"id":11,"group":1,"content":"apifeatures\/advertiser[3.9:65]","start":1724743668002,"end":1724743669088,"title":"apifeatures\/advertiser[3.9:65] 12:57:48.002-12:57:49.088 Verify the Advertiser search in Advertiser list"},{"id":12,"group":1,"content":"apifeatures\/advertiser[3.10:65]","start":1724743669093,"end":1724743669642,"title":"apifeatures\/advertiser[3.10:65] 12:57:49.093-12:57:49.642 Verify the Advertiser detail"},{"id":13,"group":1,"content":"apifeatures\/advertiser[3.11:65]","start":1724743669646,"end":1724743670212,"title":"apifeatures\/advertiser[3.11:65] 12:57:49.646-12:57:50.212 Verify the updated data of Advertiser"},{"id":14,"group":1,"content":"apifeatures\/advertiser[3.12:65]","start":1724743670220,"end":1724743670910,"title":"apifeatures\/advertiser[3.12:65] 12:57:50.220-12:57:50.910 Verify whether able to activate and deactivate the advertisers"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

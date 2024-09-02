@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"apifeatures\/advertiser[1.1:24]","start":1723966504307,"end":1723966504875,"title":"apifeatures\/advertiser[1.1:24] 13:05:04.307-13:05:04.875 Status","className":"failed"},{"id":2,"group":1,"content":"apifeatures\/advertiser[1.2:24]","start":1723966504890,"end":1723966505123,"title":"apifeatures\/advertiser[1.2:24] 13:05:04.890-13:05:05.123 Get Advertiser","className":"failed"},{"id":3,"group":1,"content":"apifeatures\/advertiser[1.3:24]","start":1723966505133,"end":1723966505461,"title":"apifeatures\/advertiser[1.3:24] 13:05:05.133-13:05:05.461 Activate\/Deactivate Advertiser","className":"failed"},{"id":4,"group":1,"content":"apifeatures\/advertiser[2:26]","start":1723966505467,"end":1723966505765,"title":"apifeatures\/advertiser[2:26] 13:05:05.467-13:05:05.765 Create Advertiser","className":"failed"},{"id":5,"group":1,"content":"apifeatures\/advertiser[3:41]","start":1723966505771,"end":1723966506174,"title":"apifeatures\/advertiser[3:41] 13:05:05.771-13:05:06.174 Edit Advertiser"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"apifeatures\/advertiser[1.1:30]","start":1724262965272,"end":1724262966101,"title":"apifeatures\/advertiser[1.1:30] 23:26:05.272-23:26:06.101 Verify the Advertiser list"},{"id":2,"group":1,"content":"apifeatures\/advertiser[1.2:30]","start":1724262966111,"end":1724262966423,"title":"apifeatures\/advertiser[1.2:30] 23:26:06.111-23:26:06.423 Verify the status"},{"id":3,"group":1,"content":"apifeatures\/advertiser[1.3:30]","start":1724262966435,"end":1724262966744,"title":"apifeatures\/advertiser[1.3:30] 23:26:06.435-23:26:06.744 Verify the Advertiser list sort by ascending order"},{"id":4,"group":1,"content":"apifeatures\/advertiser[1.4:30]","start":1724262966753,"end":1724262967057,"title":"apifeatures\/advertiser[1.4:30] 23:26:06.753-23:26:07.057 Verify the Advertiser list sort by descending order"},{"id":5,"group":1,"content":"apifeatures\/advertiser[1.5:30]","start":1724262967071,"end":1724262967389,"title":"apifeatures\/advertiser[1.5:30] 23:26:07.071-23:26:07.389 Verify the active Advertiser list sort by ascending order"},{"id":6,"group":1,"content":"apifeatures\/advertiser[1.6:30]","start":1724262967408,"end":1724262967766,"title":"apifeatures\/advertiser[1.6:30] 23:26:07.408-23:26:07.766 Verify the active Advertiser list sort by descending order"},{"id":7,"group":1,"content":"apifeatures\/advertiser[1.7:30]","start":1724262967773,"end":1724262968188,"title":"apifeatures\/advertiser[1.7:30] 23:26:07.773-23:26:08.188 Verify the inactive Advertiser list sort by ascending order"},{"id":8,"group":1,"content":"apifeatures\/advertiser[1.8:30]","start":1724262968201,"end":1724262968541,"title":"apifeatures\/advertiser[1.8:30] 23:26:08.201-23:26:08.541 Verify the inactive Advertiser list sort by descending order"},{"id":9,"group":1,"content":"apifeatures\/advertiser[1.9:30]","start":1724262968557,"end":1724262969082,"title":"apifeatures\/advertiser[1.9:30] 23:26:08.557-23:26:09.082 Verify the Advertiser search in Advertiser list"},{"id":10,"group":1,"content":"apifeatures\/advertiser[1.10:30]","start":1724262969087,"end":1724262969509,"title":"apifeatures\/advertiser[1.10:30] 23:26:09.087-23:26:09.509 Verify the Advertiser detail"},{"id":11,"group":1,"content":"apifeatures\/advertiser[1.11:30]","start":1724262969520,"end":1724262969948,"title":"apifeatures\/advertiser[1.11:30] 23:26:09.520-23:26:09.948 Verify the updated data of Advertiser"},{"id":12,"group":1,"content":"apifeatures\/advertiser[1.12:30]","start":1724262969960,"end":1724262970399,"title":"apifeatures\/advertiser[1.12:30] 23:26:09.960-23:26:10.399 Verify whether able to activate and deactivate the advertisers"},{"id":13,"group":1,"content":"apifeatures\/advertiser[2:32]","start":1724262970407,"end":1724262970865,"title":"apifeatures\/advertiser[2:32] 23:26:10.407-23:26:10.865 Create Advertiser"},{"id":14,"group":1,"content":"apifeatures\/advertiser[3:49]","start":1724262970876,"end":1724262971554,"title":"apifeatures\/advertiser[3:49] 23:26:10.876-23:26:11.554 Edit Advertiser"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

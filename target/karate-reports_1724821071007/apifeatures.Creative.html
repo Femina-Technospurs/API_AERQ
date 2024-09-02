@@ -1,0 +1,2736 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.identify("f8e6903c-ae24-447b-8dc5-d0f028ed59e7",{name:"Admin"});
+    posthog.capture("report_feature",{karate_version:"1.2.0",karate_meta:null});
+  }
+});
+</script>
+  
+    <title>apifeatures.Creative</title>  
+  </head>
+  <body>   
+    <div id="root-container">
+      <div id="leftnav">
+                
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">4</div>
+      <div id="nav-fail" class="bg-danger">3</div>
+    </div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>         
+  <div id="nav-date">
+    <div>2024-08-28 10:25:56 am</div>
+  </div>        
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1.1:30]"><span>[1.1:30]</span> <span>Verify the creative list</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[1.2:30]"><span>[1.2:30]</span> <span>Verify the status</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[1.3:30]"><span>[1.3:30]</span> <span>Verify the creative list sort by ascending order</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[1.4:30]"><span>[1.4:30]</span> <span>Verify the creative list sort by descending order</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[1.5:30]"><span>[1.5:30]</span> <span>Verify the active creative list sort by ascending order</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[1.6:30]"><span>[1.6:30]</span> <span>Verify the active creative list sort by descending order</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[1.7:30]"><span>[1.7:30]</span> <span>Verify the inactive creative list sort by descending order</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">apifeatures/Creative.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">AERQ Target API</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1.1:30]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1.1:30]</span>
+                <span class="scenario-name">Verify the creative list</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>697</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1.1:30]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1.1:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.5">10:25:53.711 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.1:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.1:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.1:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">27</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="1.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.1:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">24</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.1:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.19">10:25:53.817 [print] NEKMYWNAXF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.22">
+      <div class="step-ref passed">22</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/creative/list?orderBy=DESC&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.22">10:25:53.882 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.23">
+      <div class="step-ref passed">23</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">611</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.23">10:25:54.217 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/creative/list?orderBy=DESC
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+10:25:54.488 response time in milliseconds: 268
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Wed, 28 Aug 2024 04:55:53 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:198,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:333,&quot;name&quot;:&quot;Automation Ad Creative 20240827110321&quot;,&quot;description&quot;:&quot;Ad Creative&quot;,&quot;advertiserId&quot;:116,&quot;creativeType&quot;:&quot;THIRD_PARTY&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-08-27 05:34:35&quot;,&quot;active&quot;:true},{&quot;id&quot;:332,&quot;name&quot;:&quot;Automation Ad Creative 20240827110150&quot;,&quot;description&quot;:&quot;Ad Creative&quot;,&quot;advertiserId&quot;:116,&quot;creativeType&quot;:&quot;THIRD_PARTY&quot;,&quot;adType&quot;:&quot;IMAGE&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-08-27 05:33:05&quot;,&quot;active&quot;:true},{&quot;id&quot;:331,&quot;name&quot;:&quot;Automation Ad Creative 20240827110008&quot;,&quot;description&quot;:&quot;Ad Creative&quot;,&quot;advertiserId&quot;:116,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-08-27 05:31:35&quot;,&quot;active&quot;:true},{&quot;id&quot;:330,&quot;name&quot;:&quot;Automation Ad Creative 20240827105843&quot;,&quot;description&quot;:&quot;Ad Creative&quot;,&quot;advertiserId&quot;:116,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;HTML5&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-08-27 05:29:52&quot;,&quot;active&quot;:true},{&quot;id&quot;:329,&quot;name&quot;:&quot;Automation Ad Creative 20240827105640&quot;,&quot;description&quot;:&quot;Ad Creative&quot;,&quot;advertiserId&quot;:116,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-08-27 05:28:27&quot;,&quot;active&quot;:true},{&quot;id&quot;:328,&quot;name&quot;:&quot;Automation Ad Creative 20240827105451&quot;,&quot;description&quot;:&quot;Ad Creative&quot;,&quot;advertiserId&quot;:116,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;IMAGE&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-08-27 05:26:24&quot;,&quot;active&quot;:true},{&quot;id&quot;:327,&quot;name&quot;:&quot;Automation Ad Creative 20240827105329&quot;,&quot;description&quot;:&quot;Ad Creative&quot;,&quot;advertiserId&quot;:116,&quot;creativeType&quot;:&quot;AD_SOURCE&quot;,&quot;adSourceId&quot;:27,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-08-27 05:24:36&quot;,&quot;active&quot;:true},{&quot;id&quot;:326,&quot;name&quot;:&quot;Automation Ad Creative 20240827104654&quot;,&quot;description&quot;:&quot;Ad Creative&quot;,&quot;advertiserId&quot;:116,&quot;creativeType&quot;:&quot;AD_SOURCE&quot;,&quot;adSourceId&quot;:27,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-08-27 05:18:01&quot;,&quot;active&quot;:true},{&quot;id&quot;:325,&quot;name&quot;:&quot;Automation Ad Creative 20240826202719&quot;,&quot;description&quot;:&quot;Ad Creative&quot;,&quot;advertiserId&quot;:116,&quot;creativeType&quot;:&quot;THIRD_PARTY&quot;,&quot;adType&quot;:&quot;VAST&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-08-26 14:58:24&quot;,&quot;active&quot;:true},{&quot;id&quot;:324,&quot;name&quot;:&quot;Automation Ad Creative 20240826202549&quot;,&quot;description&quot;:&quot;Ad Creative&quot;,&quot;advertiserId&quot;:116,&quot;creativeType&quot;:&quot;THIRD_PARTY&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-08-26 14:57:04&quot;,&quot;active&quot;:true}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;advertiserId&quot;: &#39;#number&#39;,&quot;creativeType&quot;: &#39;#string&#39;,&quot;adType&quot;: &#39;#string&#39;,&quot;isCreativeReplaced&quot;: &#39;#boolean&#39;,&quot;isDestinationUrlUpdated&quot;: &#39;#boolean&#39;,&quot;createdOn&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">20</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;advertiserId&quot;: &#39;#number&#39;,&quot;creativeType&quot;: &#39;#string&#39;,&quot;adType&quot;: &#39;#string&#39;,&quot;isCreativeReplaced&quot;: &#39;#boolean&#39;,&quot;isDestinationUrlUpdated&quot;: &#39;#boolean&#39;,&quot;createdOn&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">9</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1.2:30]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1.2:30]</span>
+                <span class="scenario-name">Verify the status</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>378</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1.2:30]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1.2:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.5">10:25:53.711 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">27</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="2.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">24</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.19">10:25:53.817 [print] NEKMYWNAXF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.22">
+      <div class="step-ref passed">22</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/creative/status&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.22">10:25:54.542 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.23">
+      <div class="step-ref passed">23</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">320</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.23">10:25:54.547 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/creative/status
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+10:25:54.865 response time in milliseconds: 318
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Wed, 28 Aug 2024 04:55:54 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;entity&quot;:{&quot;active&quot;:197,&quot;inActive&quot;:1},&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:1,&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = &quot;OK&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.httpStatus contains &quot;OK&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1.3:30]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1.3:30]</span>
+                <span class="scenario-name">Verify the creative list sort by ascending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>316</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1.3:30]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1.3:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.5">10:25:53.711 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.3:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.3:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.3:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">27</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="3.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.3:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">24</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.3:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.19">10:25:53.817 [print] NEKMYWNAXF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.22">
+      <div class="step-ref passed">22</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/creative/list?orderBy=ASC&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.22">10:25:54.877 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.23">
+      <div class="step-ref passed">23</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">258</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.23">10:25:54.880 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/creative/list?orderBy=ASC&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+10:25:55.134 response time in milliseconds: 254
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Wed, 28 Aug 2024 04:55:54 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:198,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:55,&quot;name&quot;:&quot;00test&quot;,&quot;advertiserId&quot;:61,&quot;creativeType&quot;:&quot;THIRD_PARTY&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-24 09:15:03&quot;,&quot;active&quot;:true},{&quot;id&quot;:126,&quot;name&quot;:&quot;111ee&quot;,&quot;advertiserId&quot;:79,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;IMAGE&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-06-21 18:52:57&quot;,&quot;active&quot;:true},{&quot;id&quot;:146,&quot;name&quot;:&quot;123&quot;,&quot;advertiserId&quot;:116,&quot;creativeType&quot;:&quot;AD_SOURCE&quot;,&quot;adSourceId&quot;:29,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-18 04:53:15&quot;,&quot;active&quot;:true},{&quot;id&quot;:177,&quot;name&quot;:&quot;2131&quot;,&quot;advertiserId&quot;:123,&quot;creativeType&quot;:&quot;AD_SOURCE&quot;,&quot;adSourceId&quot;:27,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-23 12:58:55&quot;,&quot;active&quot;:true},{&quot;id&quot;:186,&quot;name&quot;:&quot;2407CreatZip&quot;,&quot;advertiserId&quot;:125,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-24 05:21:19&quot;,&quot;active&quot;:true},{&quot;id&quot;:160,&quot;name&quot;:&quot;4553&quot;,&quot;advertiserId&quot;:122,&quot;creativeType&quot;:&quot;AD_SOURCE&quot;,&quot;adSourceId&quot;:23,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-23 08:13:24&quot;,&quot;active&quot;:true},{&quot;id&quot;:167,&quot;name&quot;:&quot;Ac html&quot;,&quot;advertiserId&quot;:121,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;HTML5&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-23 12:01:01&quot;,&quot;active&quot;:true},{&quot;id&quot;:168,&quot;name&quot;:&quot;Ac html 2&quot;,&quot;advertiserId&quot;:121,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;HTML5&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-23 12:01:50&quot;,&quot;active&quot;:true},{&quot;id&quot;:165,&quot;name&quot;:&quot;AC img&quot;,&quot;advertiserId&quot;:121,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;IMAGE&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-23 11:56:36&quot;,&quot;active&quot;:true},{&quot;id&quot;:166,&quot;name&quot;:&quot;Ac video&quot;,&quot;advertiserId&quot;:121,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-23 11:58:16&quot;,&quot;active&quot;:true}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;advertiserId&quot;: &#39;#number&#39;,&quot;creativeType&quot;: &#39;#string&#39;,&quot;adSourceId&quot;: &#39;#number&#39;,&quot;isCreativeReplaced&quot;: &#39;#boolean&#39;,&quot;isDestinationUrlUpdated&quot;: &#39;#boolean&#39;,&quot;createdOn&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;advertiserId&quot;: &#39;#number&#39;,&quot;creativeType&quot;: &#39;#string&#39;,&quot;adSourceId&quot;: &#39;#number&#39;,&quot;isCreativeReplaced&quot;: &#39;#boolean&#39;,&quot;isDestinationUrlUpdated&quot;: &#39;#boolean&#39;,&quot;createdOn&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1.4:30]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1.4:30]</span>
+                <span class="scenario-name">Verify the creative list sort by descending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>318</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1.4:30]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1.4:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.5">10:25:53.711 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.4:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.4:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.4:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">27</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="4.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.4:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">24</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.4:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.19">10:25:53.817 [print] NEKMYWNAXF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.22">
+      <div class="step-ref passed">22</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/creative/list?orderBy=DESC&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.22">10:25:55.149 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.23">
+      <div class="step-ref passed">23</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">258</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.23">10:25:55.153 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/creative/list?orderBy=DESC&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+10:25:55.408 response time in milliseconds: 255
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Wed, 28 Aug 2024 04:55:54 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:198,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:65,&quot;name&quot;:&quot;zip file invalid check&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 07:36:56&quot;,&quot;active&quot;:true},{&quot;id&quot;:112,&quot;name&quot;:&quot;zipfile creative&quot;,&quot;advertiserId&quot;:82,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-06-18 05:43:10&quot;,&quot;active&quot;:true},{&quot;id&quot;:63,&quot;name&quot;:&quot;zip file check 29&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 07:35:15&quot;,&quot;active&quot;:true},{&quot;id&quot;:83,&quot;name&quot;:&quot;zip file 29&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 16:26:43&quot;,&quot;active&quot;:true},{&quot;id&quot;:90,&quot;name&quot;:&quot;zipfile&quot;,&quot;advertiserId&quot;:73,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 17:44:52&quot;,&quot;active&quot;:true},{&quot;id&quot;:93,&quot;name&quot;:&quot;video creative  30 case &quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-30 11:13:52&quot;,&quot;active&quot;:true},{&quot;id&quot;:107,&quot;name&quot;:&quot;video creative &quot;,&quot;advertiserId&quot;:82,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-06-11 12:06:25&quot;,&quot;active&quot;:true},{&quot;id&quot;:81,&quot;name&quot;:&quot;video 29&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 16:23:29&quot;,&quot;active&quot;:true},{&quot;id&quot;:56,&quot;name&quot;:&quot;video 27&quot;,&quot;advertiserId&quot;:60,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-27 07:26:39&quot;,&quot;active&quot;:true},{&quot;id&quot;:99,&quot;name&quot;:&quot;Vast url 31&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;THIRD_PARTY&quot;,&quot;adType&quot;:&quot;VAST&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-31 08:33:05&quot;,&quot;active&quot;:true}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,advertiserId&quot;:&#39;#number&#39;,&quot;adType&quot;: &#39;#string&#39;,&quot;creativeType&quot;: &#39;#string&#39;,&quot;isCreativeReplaced&quot;: &#39;#boolean&#39;,&quot;isDestinationUrlUpdated&quot;: &#39;#boolean&#39;,&quot;createdOn&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.26">
+      <div class="step-ref failed">26</div>
+      
+      <div class="step-cell failed">
+        <span>And</span>&nbsp;<span>match response.coll contains { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,advertiserId&quot;:&#39;#number&#39;,&quot;adType&quot;: &#39;#string&#39;,&quot;creativeType&quot;: &#39;#string&#39;,&quot;isCreativeReplaced&quot;: &#39;#boolean&#39;,&quot;isDestinationUrlUpdated&quot;: &#39;#boolean&#39;,&quot;createdOn&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell failed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.26">10:25:55.413 classpath:apifeatures/Creative.feature:26
+And match response.coll contains { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,advertiserId&quot;:&#39;#number&#39;,&quot;adType&quot;: &#39;#string&#39;,&quot;creativeType&quot;: &#39;#string&#39;,&quot;isCreativeReplaced&quot;: &#39;#boolean&#39;,&quot;isDestinationUrlUpdated&quot;: &#39;#boolean&#39;,&quot;createdOn&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+match failed: CONTAINS
+  $ | actual does not contain expected | actual array does not contain expected item - {&quot;id&quot;:&quot;#number&quot;,&quot;name&quot;:&quot;#string&quot;,&quot;advertiserId\&quot;&quot;:&quot;#number&quot;,&quot;adType&quot;:&quot;#string&quot;,&quot;creativeType&quot;:&quot;#string&quot;,&quot;isCreativeReplaced&quot;:&quot;#boolean&quot;,&quot;isDestinationUrlUpdated&quot;:&quot;#boolean&quot;,&quot;createdOn&quot;:&quot;#string&quot;,&quot;active&quot;:&quot;#boolean&quot;} (LIST:MAP)
+  [{&quot;id&quot;:65,&quot;name&quot;:&quot;zip file invalid check&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 07:36:56&quot;,&quot;active&quot;:true},{&quot;id&quot;:112,&quot;name&quot;:&quot;zipfile creative&quot;,&quot;advertiserId&quot;:82,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-06-18 05:43:10&quot;,&quot;active&quot;:true},{&quot;id&quot;:63,&quot;name&quot;:&quot;zip file check 29&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 07:35:15&quot;,&quot;active&quot;:true},{&quot;id&quot;:83,&quot;name&quot;:&quot;zip file 29&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 16:26:43&quot;,&quot;active&quot;:true},{&quot;id&quot;:90,&quot;name&quot;:&quot;zipfile&quot;,&quot;advertiserId&quot;:73,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 17:44:52&quot;,&quot;active&quot;:true},{&quot;id&quot;:93,&quot;name&quot;:&quot;video creative  30 case &quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-30 11:13:52&quot;,&quot;active&quot;:true},{&quot;id&quot;:107,&quot;name&quot;:&quot;video creative &quot;,&quot;advertiserId&quot;:82,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-06-11 12:06:25&quot;,&quot;active&quot;:true},{&quot;id&quot;:81,&quot;name&quot;:&quot;video 29&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 16:23:29&quot;,&quot;active&quot;:true},{&quot;id&quot;:56,&quot;name&quot;:&quot;video 27&quot;,&quot;advertiserId&quot;:60,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-27 07:26:39&quot;,&quot;active&quot;:true},{&quot;id&quot;:99,&quot;name&quot;:&quot;Vast url 31&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;THIRD_PARTY&quot;,&quot;adType&quot;:&quot;VAST&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-31 08:33:05&quot;,&quot;active&quot;:true}]
+  {&quot;id&quot;:&quot;#number&quot;,&quot;name&quot;:&quot;#string&quot;,&quot;advertiserId\&quot;&quot;:&quot;#number&quot;,&quot;adType&quot;:&quot;#string&quot;,&quot;creativeType&quot;:&quot;#string&quot;,&quot;isCreativeReplaced&quot;:&quot;#boolean&quot;,&quot;isDestinationUrlUpdated&quot;:&quot;#boolean&quot;,&quot;createdOn&quot;:&quot;#string&quot;,&quot;active&quot;:&quot;#boolean&quot;}
+
+    $[9] | not equal | actual does not contain key - &#39;advertiserId&quot;&#39; (MAP:MAP)
+    {&quot;id&quot;:99,&quot;name&quot;:&quot;Vast url 31&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;THIRD_PARTY&quot;,&quot;adType&quot;:&quot;VAST&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-31 08:33:05&quot;,&quot;active&quot;:true}
+    {&quot;id&quot;:&quot;#number&quot;,&quot;name&quot;:&quot;#string&quot;,&quot;creativeType&quot;:&quot;#string&quot;,&quot;adType&quot;:&quot;#string&quot;,&quot;isCreativeReplaced&quot;:&quot;#boolean&quot;,&quot;isDestinationUrlUpdated&quot;:&quot;#boolean&quot;,&quot;createdOn&quot;:&quot;#string&quot;,&quot;active&quot;:&quot;#boolean&quot;,&quot;advertiserId\&quot;&quot;:&quot;#number&quot;}
+
+    $[8] | not equal | actual does not contain key - &#39;advertiserId&quot;&#39; (MAP:MAP)
+    {&quot;id&quot;:56,&quot;name&quot;:&quot;video 27&quot;,&quot;advertiserId&quot;:60,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-27 07:26:39&quot;,&quot;active&quot;:true}
+    {&quot;id&quot;:&quot;#number&quot;,&quot;name&quot;:&quot;#string&quot;,&quot;creativeType&quot;:&quot;#string&quot;,&quot;adType&quot;:&quot;#string&quot;,&quot;isCreativeReplaced&quot;:&quot;#boolean&quot;,&quot;isDestinationUrlUpdated&quot;:&quot;#boolean&quot;,&quot;createdOn&quot;:&quot;#string&quot;,&quot;active&quot;:&quot;#boolean&quot;,&quot;advertiserId\&quot;&quot;:&quot;#number&quot;}
+
+    $[7] | not equal | actual does not contain key - &#39;advertiserId&quot;&#39; (MAP:MAP)
+    {&quot;id&quot;:81,&quot;name&quot;:&quot;video 29&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 16:23:29&quot;,&quot;active&quot;:true}
+    {&quot;id&quot;:&quot;#number&quot;,&quot;name&quot;:&quot;#string&quot;,&quot;creativeType&quot;:&quot;#string&quot;,&quot;adType&quot;:&quot;#string&quot;,&quot;isCreativeReplaced&quot;:&quot;#boolean&quot;,&quot;isDestinationUrlUpdated&quot;:&quot;#boolean&quot;,&quot;createdOn&quot;:&quot;#string&quot;,&quot;active&quot;:&quot;#boolean&quot;,&quot;advertiserId\&quot;&quot;:&quot;#number&quot;}
+
+    $[6] | not equal | actual does not contain key - &#39;advertiserId&quot;&#39; (MAP:MAP)
+    {&quot;id&quot;:107,&quot;name&quot;:&quot;video creative &quot;,&quot;advertiserId&quot;:82,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-06-11 12:06:25&quot;,&quot;active&quot;:true}
+    {&quot;id&quot;:&quot;#number&quot;,&quot;name&quot;:&quot;#string&quot;,&quot;creativeType&quot;:&quot;#string&quot;,&quot;adType&quot;:&quot;#string&quot;,&quot;isCreativeReplaced&quot;:&quot;#boolean&quot;,&quot;isDestinationUrlUpdated&quot;:&quot;#boolean&quot;,&quot;createdOn&quot;:&quot;#string&quot;,&quot;active&quot;:&quot;#boolean&quot;,&quot;advertiserId\&quot;&quot;:&quot;#number&quot;}
+
+    $[5] | not equal | actual does not contain key - &#39;advertiserId&quot;&#39; (MAP:MAP)
+    {&quot;id&quot;:93,&quot;name&quot;:&quot;video creative  30 case &quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-30 11:13:52&quot;,&quot;active&quot;:true}
+    {&quot;id&quot;:&quot;#number&quot;,&quot;name&quot;:&quot;#string&quot;,&quot;creativeType&quot;:&quot;#string&quot;,&quot;adType&quot;:&quot;#string&quot;,&quot;isCreativeReplaced&quot;:&quot;#boolean&quot;,&quot;isDestinationUrlUpdated&quot;:&quot;#boolean&quot;,&quot;createdOn&quot;:&quot;#string&quot;,&quot;active&quot;:&quot;#boolean&quot;,&quot;advertiserId\&quot;&quot;:&quot;#number&quot;}
+
+    $[4] | not equal | actual does not contain key - &#39;advertiserId&quot;&#39; (MAP:MAP)
+    {&quot;id&quot;:90,&quot;name&quot;:&quot;zipfile&quot;,&quot;advertiserId&quot;:73,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 17:44:52&quot;,&quot;active&quot;:true}
+    {&quot;id&quot;:&quot;#number&quot;,&quot;name&quot;:&quot;#string&quot;,&quot;creativeType&quot;:&quot;#string&quot;,&quot;adType&quot;:&quot;#string&quot;,&quot;isCreativeReplaced&quot;:&quot;#boolean&quot;,&quot;isDestinationUrlUpdated&quot;:&quot;#boolean&quot;,&quot;createdOn&quot;:&quot;#string&quot;,&quot;active&quot;:&quot;#boolean&quot;,&quot;advertiserId\&quot;&quot;:&quot;#number&quot;}
+
+    $[3] | not equal | actual does not contain key - &#39;advertiserId&quot;&#39; (MAP:MAP)
+    {&quot;id&quot;:83,&quot;name&quot;:&quot;zip file 29&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 16:26:43&quot;,&quot;active&quot;:true}
+    {&quot;id&quot;:&quot;#number&quot;,&quot;name&quot;:&quot;#string&quot;,&quot;creativeType&quot;:&quot;#string&quot;,&quot;adType&quot;:&quot;#string&quot;,&quot;isCreativeReplaced&quot;:&quot;#boolean&quot;,&quot;isDestinationUrlUpdated&quot;:&quot;#boolean&quot;,&quot;createdOn&quot;:&quot;#string&quot;,&quot;active&quot;:&quot;#boolean&quot;,&quot;advertiserId\&quot;&quot;:&quot;#number&quot;}
+
+    $[2] | not equal | actual does not contain key - &#39;advertiserId&quot;&#39; (MAP:MAP)
+    {&quot;id&quot;:63,&quot;name&quot;:&quot;zip file check 29&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 07:35:15&quot;,&quot;active&quot;:true}
+    {&quot;id&quot;:&quot;#number&quot;,&quot;name&quot;:&quot;#string&quot;,&quot;creativeType&quot;:&quot;#string&quot;,&quot;adType&quot;:&quot;#string&quot;,&quot;isCreativeReplaced&quot;:&quot;#boolean&quot;,&quot;isDestinationUrlUpdated&quot;:&quot;#boolean&quot;,&quot;createdOn&quot;:&quot;#string&quot;,&quot;active&quot;:&quot;#boolean&quot;,&quot;advertiserId\&quot;&quot;:&quot;#number&quot;}
+
+    $[1] | not equal | actual does not contain key - &#39;advertiserId&quot;&#39; (MAP:MAP)
+    {&quot;id&quot;:112,&quot;name&quot;:&quot;zipfile creative&quot;,&quot;advertiserId&quot;:82,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-06-18 05:43:10&quot;,&quot;active&quot;:true}
+    {&quot;id&quot;:&quot;#number&quot;,&quot;name&quot;:&quot;#string&quot;,&quot;creativeType&quot;:&quot;#string&quot;,&quot;adType&quot;:&quot;#string&quot;,&quot;isCreativeReplaced&quot;:&quot;#boolean&quot;,&quot;isDestinationUrlUpdated&quot;:&quot;#boolean&quot;,&quot;createdOn&quot;:&quot;#string&quot;,&quot;active&quot;:&quot;#boolean&quot;,&quot;advertiserId\&quot;&quot;:&quot;#number&quot;}
+
+    $[0] | not equal | actual does not contain key - &#39;advertiserId&quot;&#39; (MAP:MAP)
+    {&quot;id&quot;:65,&quot;name&quot;:&quot;zip file invalid check&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 07:36:56&quot;,&quot;active&quot;:true}
+    {&quot;id&quot;:&quot;#number&quot;,&quot;name&quot;:&quot;#string&quot;,&quot;creativeType&quot;:&quot;#string&quot;,&quot;adType&quot;:&quot;#string&quot;,&quot;isCreativeReplaced&quot;:&quot;#boolean&quot;,&quot;isDestinationUrlUpdated&quot;:&quot;#boolean&quot;,&quot;createdOn&quot;:&quot;#string&quot;,&quot;active&quot;:&quot;#boolean&quot;,&quot;advertiserId\&quot;&quot;:&quot;#number&quot;}
+
+
+classpath:apifeatures/Creative.feature:26
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1.5:30]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1.5:30]</span>
+                <span class="scenario-name">Verify the active creative list sort by ascending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>307</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1.5:30]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1.5:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="5.5">10:25:53.711 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.5:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.5:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.5:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">27</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="5.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.5:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">24</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.5:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="5.19">10:25:53.817 [print] NEKMYWNAXF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.22">
+      <div class="step-ref passed">22</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/creative/list?statusFilter=active&amp;orderBy=ASC&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="5.22">10:25:55.422 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.23">
+      <div class="step-ref passed">23</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">250</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="5.23">10:25:55.425 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/creative/list?statusFilter=active&amp;orderBy=ASC&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+10:25:55.672 response time in milliseconds: 247
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Wed, 28 Aug 2024 04:55:54 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:197,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:55,&quot;name&quot;:&quot;00test&quot;,&quot;advertiserId&quot;:61,&quot;creativeType&quot;:&quot;THIRD_PARTY&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-24 09:15:03&quot;,&quot;active&quot;:true},{&quot;id&quot;:126,&quot;name&quot;:&quot;111ee&quot;,&quot;advertiserId&quot;:79,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;IMAGE&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-06-21 18:52:57&quot;,&quot;active&quot;:true},{&quot;id&quot;:146,&quot;name&quot;:&quot;123&quot;,&quot;advertiserId&quot;:116,&quot;creativeType&quot;:&quot;AD_SOURCE&quot;,&quot;adSourceId&quot;:29,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-18 04:53:15&quot;,&quot;active&quot;:true},{&quot;id&quot;:177,&quot;name&quot;:&quot;2131&quot;,&quot;advertiserId&quot;:123,&quot;creativeType&quot;:&quot;AD_SOURCE&quot;,&quot;adSourceId&quot;:27,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-23 12:58:55&quot;,&quot;active&quot;:true},{&quot;id&quot;:186,&quot;name&quot;:&quot;2407CreatZip&quot;,&quot;advertiserId&quot;:125,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-24 05:21:19&quot;,&quot;active&quot;:true},{&quot;id&quot;:160,&quot;name&quot;:&quot;4553&quot;,&quot;advertiserId&quot;:122,&quot;creativeType&quot;:&quot;AD_SOURCE&quot;,&quot;adSourceId&quot;:23,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-23 08:13:24&quot;,&quot;active&quot;:true},{&quot;id&quot;:167,&quot;name&quot;:&quot;Ac html&quot;,&quot;advertiserId&quot;:121,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;HTML5&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-23 12:01:01&quot;,&quot;active&quot;:true},{&quot;id&quot;:168,&quot;name&quot;:&quot;Ac html 2&quot;,&quot;advertiserId&quot;:121,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;HTML5&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-23 12:01:50&quot;,&quot;active&quot;:true},{&quot;id&quot;:165,&quot;name&quot;:&quot;AC img&quot;,&quot;advertiserId&quot;:121,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;IMAGE&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-23 11:56:36&quot;,&quot;active&quot;:true},{&quot;id&quot;:166,&quot;name&quot;:&quot;Ac video&quot;,&quot;advertiserId&quot;:121,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-07-23 11:58:16&quot;,&quot;active&quot;:true}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;advertiserId&quot;: &#39;#number&#39;,&quot;creativeType&quot;: &#39;#string&#39;,&quot;adSourceId&quot;: &#39;#number&#39;,&quot;isCreativeReplaced&quot;: &#39;#boolean&#39;,&quot;isDestinationUrlUpdated&quot;: &#39;#boolean&#39;,&quot;createdOn&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;advertiserId&quot;: &#39;#number&#39;,&quot;creativeType&quot;: &#39;#string&#39;,&quot;adSourceId&quot;: &#39;#number&#39;,&quot;isCreativeReplaced&quot;: &#39;#boolean&#39;,&quot;isDestinationUrlUpdated&quot;: &#39;#boolean&#39;,&quot;createdOn&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1.6:30]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1.6:30]</span>
+                <span class="scenario-name">Verify the active creative list sort by descending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>311</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1.6:30]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1.6:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="6.5">10:25:53.711 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.6:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.6:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.6:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">27</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="6.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.6:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">24</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.6:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="6.19">10:25:53.817 [print] NEKMYWNAXF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.22">
+      <div class="step-ref passed">22</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/creative/list?statusFilter=active&amp;orderBy=DESC&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="6.22">10:25:55.680 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.23">
+      <div class="step-ref passed">23</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">254</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="6.23">10:25:55.682 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/creative/list?statusFilter=active&amp;orderBy=DESC&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+10:25:55.933 response time in milliseconds: 251
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Wed, 28 Aug 2024 04:55:55 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:197,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:65,&quot;name&quot;:&quot;zip file invalid check&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 07:36:56&quot;,&quot;active&quot;:true},{&quot;id&quot;:112,&quot;name&quot;:&quot;zipfile creative&quot;,&quot;advertiserId&quot;:82,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-06-18 05:43:10&quot;,&quot;active&quot;:true},{&quot;id&quot;:63,&quot;name&quot;:&quot;zip file check 29&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 07:35:15&quot;,&quot;active&quot;:true},{&quot;id&quot;:83,&quot;name&quot;:&quot;zip file 29&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 16:26:43&quot;,&quot;active&quot;:true},{&quot;id&quot;:90,&quot;name&quot;:&quot;zipfile&quot;,&quot;advertiserId&quot;:73,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;ZIP&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 17:44:52&quot;,&quot;active&quot;:true},{&quot;id&quot;:93,&quot;name&quot;:&quot;video creative  30 case &quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-30 11:13:52&quot;,&quot;active&quot;:true},{&quot;id&quot;:107,&quot;name&quot;:&quot;video creative &quot;,&quot;advertiserId&quot;:82,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-06-11 12:06:25&quot;,&quot;active&quot;:true},{&quot;id&quot;:81,&quot;name&quot;:&quot;video 29&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-29 16:23:29&quot;,&quot;active&quot;:true},{&quot;id&quot;:56,&quot;name&quot;:&quot;video 27&quot;,&quot;advertiserId&quot;:60,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;VIDEO&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-27 07:26:39&quot;,&quot;active&quot;:true},{&quot;id&quot;:99,&quot;name&quot;:&quot;Vast url 31&quot;,&quot;advertiserId&quot;:54,&quot;creativeType&quot;:&quot;THIRD_PARTY&quot;,&quot;adType&quot;:&quot;VAST&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-31 08:33:05&quot;,&quot;active&quot;:true}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.25">
+      <div class="step-ref failed">25</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;advertiserId:&#39;#number&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="6.25">10:25:55.936 classpath:apifeatures/Creative.feature:25
+* def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;advertiserId:&#39;#number&#39;
+net.minidev.json.parser.ParseException: Unexpected End Of File position 59: null
+classpath:apifeatures/Creative.feature:25
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.26">
+      <div class="step-ref skipped">26</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.coll contains { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;advertiserId:&#39;#number&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1.7:30]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1.7:30]</span>
+                <span class="scenario-name">Verify the inactive creative list sort by descending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>300</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1.7:30]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1.7:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="7.5">10:25:53.711 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.7:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.7:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.7:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">27</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="7.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.7:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">24</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.7:30]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="7.19">10:25:53.817 [print] NEKMYWNAXF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.22">
+      <div class="step-ref passed">22</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/creative/list?statusFilter=inactive&amp;orderBy=DESC&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="7.22">10:25:55.940 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.23">
+      <div class="step-ref passed">23</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">244</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="7.23">10:25:55.943 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/creative/list?statusFilter=inactive&amp;orderBy=DESC&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+10:25:56.184 response time in milliseconds: 241
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Wed, 28 Aug 2024 04:55:55 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:1,&quot;items&quot;:1,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:36,&quot;name&quot;:&quot;as&quot;,&quot;description&quot;:&quot;sdsd&quot;,&quot;advertiserId&quot;:49,&quot;creativeType&quot;:&quot;HOSTED&quot;,&quot;adType&quot;:&quot;IMAGE&quot;,&quot;isCreativeReplaced&quot;:false,&quot;isDestinationUrlUpdated&quot;:false,&quot;createdOn&quot;:&quot;2024-05-14 17:13:56&quot;,&quot;active&quot;:false}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.25">
+      <div class="step-ref failed">25</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;advertiserId:&#39;#number&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="7.25">10:25:56.186 classpath:apifeatures/Creative.feature:25
+* def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;advertiserId:&#39;#number&#39;
+net.minidev.json.parser.ParseException: Unexpected End Of File position 84: null
+classpath:apifeatures/Creative.feature:25
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.26">
+      <div class="step-ref skipped">26</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.coll contains { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;advertiserId:&#39;#number&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

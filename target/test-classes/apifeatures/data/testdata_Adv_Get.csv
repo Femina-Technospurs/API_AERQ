@@ -1,0 +1,21 @@
+S.NO,Modules,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY,VALUE
+1,Advertiser,Verify the Advertiser list,"""/api/v1/advertiser/list?statusFilter=active&orderBy=DESC&pageNo=0""",Open Advertiser page,GET,200,Advertiser list should be shown,"""coll""",coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
+"
+2,Advertiser,Verify the status,"""/api/v1/advertiser/status""",Open Advertiser page,GET,200,Status should appear,"""httpStatus"": ""OK""",httpStatus,"""OK"""
+3,Advertiser,Verify the Advertiser list sort by ascending order,"""/api/v1/advertiser/list?orderBy=ASC&pageNo=0&sortBy=name""",Open Advertiser page,GET,200,Advertiser list sort should be in ascending order,"""coll""",coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
+"
+4,Advertiser,Verify the Advertiser list sort by descending order,"""/api/v1/advertiser/list?orderBy=DESC&pageNo=0&sortBy=name""",Open Advertiser page,GET,200,Advertiser list sort should be in descending order,"""coll""",coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
+"
+5,Advertiser,Verify the active Advertiser list sort by ascending order,"""/api/v1/advertiser/list?statusFilter=active&orderBy=ASC&pageNo=0&sortBy=name""",Open Advertiser page,GET,200,Active Advertiser should be shown in ascending list,"""coll""",coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
+"
+6,Advertiser,Verify the active Advertiser list sort by descending order,"""/api/v1/advertiser/list?statusFilter=active&orderBy=DESC&pageNo=0&sortBy=name""",Open Advertiser page,GET,200,Active Advertiser should be shown in descending list,"""coll""",coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
+"
+7,Advertiser,Verify the inactive Advertiser list sort by ascending order,"""/api/v1/advertiser/list?statusFilter=inactive&orderBy=ASC&pageNo=0&sortBy=name""",Open Advertiser page,GET,200,Inactive Advertiser should be shown in ascending list,"""coll""",coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
+"
+8,Advertiser,Verify the inactive Advertiser list sort by descending order,"""/api/v1/advertiser/list?statusFilter=inactive&orderBy=DESC&pageNo=0&sortBy=name""",Open Advertiser page,GET,200,Inactive Advertiser should be shown in descending list,"""coll""",coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
+"
+9,Advertiser,Verify the Advertiser search in Advertiser list,"""/api/v1/advertiser/list?orderBy=DESC&search=test&pageNo=0&sortBy=name""",Open Advertiser page,GET,200,Searched Advertiser should be shown in list,"""coll""",coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
+"
+10,Advertiser,Verify the Advertiser detail,"""/api/v1/advertiser/125""",Open view Advertiser page,GET,200,Users should be able to view the Advertiser,"""id"":125",entity,"{""id"": 125}"
+11,Advertiser,Verify the updated data of Advertiser,"""/api/v1/advertiser/125""",Open view updated Advertiser page,GET,200,Updated Advertiser should be displayed,"""id"":125",entity,"{""id"": 125}"
+12,Advertiser,Verify whether able to activate and deactivate the advertisers,"""/api/v1/advertiser/128/toggle-activate""",Open Advertiser page,GET,200,Users should be able to active or deactivate the advertiser,"""httpStatus"": ""OK""",httpStatus,"""OK"""

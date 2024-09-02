@@ -1,0 +1,5326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.identify("f8e6903c-ae24-447b-8dc5-d0f028ed59e7",{name:"Admin"});
+    posthog.capture("report_feature",{karate_version:"1.2.0",karate_meta:null});
+  }
+});
+</script>
+  
+    <title>apifeatures.advertiser</title>  
+  </head>
+  <body>   
+    <div id="root-container">
+      <div id="leftnav">
+                
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">12</div>
+      <div id="nav-fail" class="bg-danger">1</div>
+    </div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>         
+  <div id="nav-date">
+    <div>2024-08-29 01:59:03 pm</div>
+  </div>        
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item failed">
+            <a href="#[1:21]"><span>[1:21]</span> <span>Create Advertiser and Edit Advertiser</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.1:63]"><span>[2.1:63]</span> <span>Verify the Advertiser list</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.2:63]"><span>[2.2:63]</span> <span>Verify the status</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.3:63]"><span>[2.3:63]</span> <span>Verify the Advertiser list sort by ascending order</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.4:63]"><span>[2.4:63]</span> <span>Verify the Advertiser list sort by descending order</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.5:63]"><span>[2.5:63]</span> <span>Verify the active Advertiser list sort by ascending order</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.6:63]"><span>[2.6:63]</span> <span>Verify the active Advertiser list sort by descending order</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.7:63]"><span>[2.7:63]</span> <span>Verify the inactive Advertiser list sort by ascending order</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.8:63]"><span>[2.8:63]</span> <span>Verify the inactive Advertiser list sort by descending order</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.9:63]"><span>[2.9:63]</span> <span>Verify the Advertiser search in Advertiser list</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.10:63]"><span>[2.10:63]</span> <span>Verify the Advertiser detail</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.11:63]"><span>[2.11:63]</span> <span>Verify the updated data of Advertiser</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.12:63]"><span>[2.12:63]</span> <span>Verify whether able to activate and deactivate the advertisers</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">apifeatures/advertiser.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">AERQ Advertiser</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:21]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:21]</span>
+                <span class="scenario-name">Create Advertiser and Edit Advertiser</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>1657</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:21]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:21]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.5">13:58:58.124 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:21]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:21]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:21]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">19</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:21]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">19</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:21]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.19">13:58:58.209 [print] TKPJVPEZVC 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.22">
+      <div class="step-ref passed">22</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def user =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">34</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.22">{
+    &quot;name&quot;: &quot;Automation Adv 1234 &quot;,
+    &quot;description&quot;:&quot;desc&quot;,
+    &quot;email&quot;:&quot;test@gc.om&quot;,
+    &quot;phoneNumber&quot;:&quot;9897656215&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>user.name= user.name+randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.32">
+      <div class="step-ref passed">32</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print user</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.32">13:58:58.252 [print] {
+  &quot;name&quot;: &quot;Automation Adv 1234 TKPJVPEZVC&quot;,
+  &quot;description&quot;: &quot;desc&quot;,
+  &quot;email&quot;: &quot;test@gc.om&quot;,
+  &quot;phoneNumber&quot;: &quot;9897656215&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.33">
+      <div class="step-ref passed">33</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/v1/advertiser&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.34">
+      <div class="step-ref passed">34</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request user</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.35">
+      <div class="step-ref passed">35</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">687</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.35">13:58:58.557 request:
+1 &gt; POST http://122.165.121.195:8080/api/v1/advertiser
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 110
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;name&quot;:&quot;Automation Adv 1234 TKPJVPEZVC&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;email&quot;:&quot;test@gc.om&quot;,&quot;phoneNumber&quot;:&quot;9897656215&quot;}
+
+13:58:58.930 response time in milliseconds: 371
+1 &lt; 201
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Thu, 29 Aug 2024 08:29:00 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;id&quot;:147,&quot;name&quot;:&quot;Automation Adv 1234 TKPJVPEZVC&quot;,&quot;email&quot;:&quot;test@gc.om&quot;,&quot;phoneNumber&quot;:&quot;9897656215&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;active&quot;:false}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.36">
+      <div class="step-ref passed">36</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.37">
+      <div class="step-ref passed">37</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def jsonFromCsv =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.37">{
+  &quot;name&quot;: &quot;Automation Adv 1234 &quot;,
+  &quot;phoneNumber&quot;: &quot;3242343242&quot;,
+  &quot;email&quot;: &quot;test@gmail.com&quot;,
+  &quot;description&quot;: &quot;&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.45">
+      <div class="step-ref passed">45</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>jsonFromCsv.name= jsonFromCsv.name+randomstring+ &quot; Updated&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.46">
+      <div class="step-ref passed">46</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/v1/advertiser/&#39;+ response.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.47">
+      <div class="step-ref passed">47</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request jsonFromCsv</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.48">
+      <div class="step-ref passed">48</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method PUT</span>
+      </div>
+    </div>
+    <div class="time-cell passed">382</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.48">13:58:58.944 request:
+2 &gt; PUT http://122.165.121.195:8080/api/v1/advertiser/147
+2 &gt; Content-Type: application/json; charset=UTF-8
+2 &gt; Content-Length: 118
+2 &gt; Host: 122.165.121.195:8080
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+2 &gt; Accept-Encoding: gzip,deflate
+{&quot;name&quot;:&quot;Automation Adv 1234 TKPJVPEZVC Updated&quot;,&quot;phoneNumber&quot;:&quot;3242343242&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;description&quot;:&quot;&quot;}
+
+13:58:59.323 response time in milliseconds: 378
+2 &lt; 202
+2 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+2 &lt; Access-Control-Max-Age: 3600
+2 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+2 &lt; Vary: Origin
+2 &lt; Vary: Access-Control-Request-Method
+2 &lt; Vary: Access-Control-Request-Headers
+2 &lt; X-Content-Type-Options: nosniff
+2 &lt; X-XSS-Protection: 1; mode=block
+2 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+2 &lt; Pragma: no-cache
+2 &lt; Expires: 0
+2 &lt; X-Frame-Options: DENY
+2 &lt; Content-Type: application/json
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Date: Thu, 29 Aug 2024 08:29:00 GMT
+2 &lt; Keep-Alive: timeout=60
+2 &lt; Connection: keep-alive
+{&quot;id&quot;:147,&quot;name&quot;:&quot;Automation Adv 1234 TKPJVPEZVC Updated&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;3242343242&quot;,&quot;active&quot;:false}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/v1/advertiser/&#39;+ response.id +&#39;/delete&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request &quot;&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method PUT</span>
+      </div>
+    </div>
+    <div class="time-cell passed">499</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.51">13:58:59.327 request:
+3 &gt; PUT http://122.165.121.195:8080/api/v1/advertiser/147/delete
+3 &gt; Content-Type: text/plain; charset=UTF-8
+3 &gt; Content-Length: 0
+3 &gt; Host: 122.165.121.195:8080
+3 &gt; Connection: Keep-Alive
+3 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+3 &gt; Accept-Encoding: gzip,deflate
+
+
+13:58:59.824 response time in milliseconds: 497
+3 &lt; 200
+3 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+3 &lt; Access-Control-Max-Age: 3600
+3 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+3 &lt; Vary: Origin
+3 &lt; Vary: Access-Control-Request-Method
+3 &lt; Vary: Access-Control-Request-Headers
+3 &lt; X-Content-Type-Options: nosniff
+3 &lt; X-XSS-Protection: 1; mode=block
+3 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+3 &lt; Pragma: no-cache
+3 &lt; Expires: 0
+3 &lt; X-Frame-Options: DENY
+3 &lt; Content-Type: application/json
+3 &lt; Transfer-Encoding: chunked
+3 &lt; Date: Thu, 29 Aug 2024 08:29:00 GMT
+3 &lt; Keep-Alive: timeout=60
+3 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;successMessage&quot;:&quot;Deleted successfully &quot;,&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.52">
+      <div class="step-ref failed">52</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 202</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.52">13:58:59.825 classpath:apifeatures/advertiser.feature:52
+Then status 202
+status code was: 200, expected: 202, response time in milliseconds: 497, url: http://122.165.121.195:8080/api/v1/advertiser/147/delete, response: 
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;successMessage&quot;:&quot;Deleted successfully &quot;,&quot;valid&quot;:true}
+classpath:apifeatures/advertiser.feature:52
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.1:63]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.1:63]</span>
+                <span class="scenario-name">Verify the Advertiser list</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>342</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.1:63]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.1:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.5">13:58:59.833 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="1.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.19">13:58:59.842 [print] CIXKYSOBMV 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/advertiser/list?statusFilter=active&amp;orderBy=DESC&amp;pageNo=0&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.55">13:58:59.867 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">321</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.56">13:58:59.870 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/advertiser/list?statusFilter=active&amp;orderBy=DESC&amp;pageNo=0
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+13:59:00.185 response time in milliseconds: 313
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Thu, 29 Aug 2024 08:29:01 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:31,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:129,&quot;name&quot;:&quot;Response Adv upd&quot;,&quot;email&quot;:&quot;responseadv@email.com&quot;,&quot;phoneNumber&quot;:&quot;9876543214&quot;,&quot;description&quot;:&quot;Desc&quot;,&quot;active&quot;:true},{&quot;id&quot;:125,&quot;name&quot;:&quot;Aksh Adv&quot;,&quot;email&quot;:&quot;qa@email.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;active&quot;:true},{&quot;id&quot;:123,&quot;name&quot;:&quot;linkat&quot;,&quot;email&quot;:&quot;ln@email.com&quot;,&quot;phoneNumber&quot;:&quot;9876534560&quot;,&quot;active&quot;:true},{&quot;id&quot;:122,&quot;name&quot;:&quot;linkadv&quot;,&quot;email&quot;:&quot;link@email.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;active&quot;:true},{&quot;id&quot;:121,&quot;name&quot;:&quot;Advertiser Rename adserving&quot;,&quot;email&quot;:&quot;test12@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;1234455698&quot;,&quot;active&quot;:true},{&quot;id&quot;:116,&quot;name&quot;:&quot;Automation Advertiser20240712152547 Updated&quot;,&quot;email&quot;:&quot;abc@mail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;description&quot;:&quot;Automation Testing-Selenium Cucumber&quot;,&quot;active&quot;:true},{&quot;id&quot;:99,&quot;name&quot;:&quot;Automation Advertiser20240710110835&quot;,&quot;email&quot;:&quot;abc@mail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;description&quot;:&quot;Automation Testing-Selenium Cucumber&quot;,&quot;active&quot;:true},{&quot;id&quot;:93,&quot;name&quot;:&quot;cache advertiser &quot;,&quot;email&quot;:&quot;suganthi.jayabalan@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;9500088687&quot;,&quot;active&quot;:true},{&quot;id&quot;:88,&quot;name&quot;:&quot;test api &quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567908&quot;,&quot;active&quot;:true},{&quot;id&quot;:82,&quot;name&quot;:&quot;Adservering 2 DONOT EDIT OR DELETE&quot;,&quot;email&quot;:&quot;est@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;7686542451&quot;,&quot;active&quot;:true}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">14</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.2:63]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.2:63]</span>
+                <span class="scenario-name">Verify the status</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>327</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.2:63]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.2:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.5">13:58:59.833 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.2:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.2:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.2:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="2.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.2:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.2:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.19">13:58:59.842 [print] CIXKYSOBMV 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/advertiser/status&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.55">13:59:00.214 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">317</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.56">13:59:00.217 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/advertiser/status
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+13:59:00.528 response time in milliseconds: 310
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Thu, 29 Aug 2024 08:29:01 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;entity&quot;:{&quot;active&quot;:31,&quot;inActive&quot;:63},&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:1,&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = &quot;OK&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.httpStatus contains &quot;OK&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.3:63]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.3:63]</span>
+                <span class="scenario-name">Verify the Advertiser list sort by ascending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>309</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.3:63]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.3:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.5">13:58:59.833 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.3:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.3:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.3:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="3.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.3:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.3:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.19">13:58:59.842 [print] CIXKYSOBMV 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/advertiser/list?orderBy=ASC&amp;pageNo=0&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.55">13:59:00.550 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">302</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.56">13:59:00.554 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/advertiser/list?orderBy=ASC&amp;pageNo=0&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+13:59:00.853 response time in milliseconds: 299
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Thu, 29 Aug 2024 08:29:01 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:94,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:53,&quot;name&quot;:&quot;1111111111111111111111111111111111111111111111111&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;8056684835&quot;,&quot;active&quot;:true},{&quot;id&quot;:42,&quot;name&quot;:&quot;Ad &quot;,&quot;email&quot;:&quot;qa123@emailcom78-1&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;description&quot;:&quot;Desc&quot;,&quot;active&quot;:false},{&quot;id&quot;:82,&quot;name&quot;:&quot;Adservering 2 DONOT EDIT OR DELETE&quot;,&quot;email&quot;:&quot;est@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;7686542451&quot;,&quot;active&quot;:true},{&quot;id&quot;:54,&quot;name&quot;:&quot;Adserving-New advertiser&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;9710187297&quot;,&quot;description&quot;:&quot;This is for adserving &quot;,&quot;active&quot;:true},{&quot;id&quot;:49,&quot;name&quot;:&quot;Adv1.0&quot;,&quot;email&quot;:&quot;adv1@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;description&quot;:&quot;Desc&quot;,&quot;active&quot;:true},{&quot;id&quot;:70,&quot;name&quot;:&quot;Advertiser 0099021&quot;,&quot;email&quot;:&quot;test@gc.om&quot;,&quot;description&quot;:&quot;desc1&quot;,&quot;active&quot;:false},{&quot;id&quot;:44,&quot;name&quot;:&quot;Advertiser1234567890123456789012345678901234567899&quot;,&quot;email&quot;:&quot;ad@email.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;description&quot;:&quot;dsvfsdv&quot;,&quot;active&quot;:false},{&quot;id&quot;:98,&quot;name&quot;:&quot;Advertiser A20240710110110&quot;,&quot;email&quot;:&quot;abc@mail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;description&quot;:&quot;Automation Testing-Selenium Cucumber&quot;,&quot;active&quot;:false},{&quot;id&quot;:22,&quot;name&quot;:&quot;Advertiser Data&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;8056684835&quot;,&quot;active&quot;:true},{&quot;id&quot;:127,&quot;name&quot;:&quot;Advertiser Dim validation &quot;,&quot;email&quot;:&quot;suganthi@technospurs1.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;description&quot;:&quot;testing the environment in system&quot;,&quot;active&quot;:false}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.4:63]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.4:63]</span>
+                <span class="scenario-name">Verify the Advertiser list sort by descending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>316</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.4:63]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.4:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.5">13:58:59.833 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.4:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.4:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.4:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="4.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.4:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.4:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.19">13:58:59.842 [print] CIXKYSOBMV 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/advertiser/list?orderBy=DESC&amp;pageNo=0&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.55">13:59:00.861 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">308</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.56">13:59:00.865 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/advertiser/list?orderBy=DESC&amp;pageNo=0&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+13:59:01.170 response time in milliseconds: 305
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Thu, 29 Aug 2024 08:29:01 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:94,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:7,&quot;name&quot;:&quot;Volkswagen&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;9897656215&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;active&quot;:true},{&quot;id&quot;:30,&quot;name&quot;:&quot;test test test&quot;,&quot;email&quot;:&quot;testmail@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;active&quot;:true},{&quot;id&quot;:29,&quot;name&quot;:&quot;test dfsfs&quot;,&quot;phoneNumber&quot;:&quot;12334&quot;,&quot;active&quot;:false},{&quot;id&quot;:88,&quot;name&quot;:&quot;test api &quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567908&quot;,&quot;active&quot;:true},{&quot;id&quot;:128,&quot;name&quot;:&quot;TestAd&quot;,&quot;email&quot;:&quot;k@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;active&quot;:false},{&quot;id&quot;:48,&quot;name&quot;:&quot;test&quot;,&quot;email&quot;:&quot;suganthi@technospurs.com&quot;,&quot;phoneNumber&quot;:&quot;12333444&quot;,&quot;description&quot;:&quot;tsting the qa&quot;,&quot;active&quot;:false},{&quot;id&quot;:62,&quot;name&quot;:&quot;seveneleven advertisers&quot;,&quot;email&quot;:&quot;seveneleven@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;8056684833&quot;,&quot;active&quot;:false},{&quot;id&quot;:90,&quot;name&quot;:&quot;sdfsdupdate&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;3242343242&quot;,&quot;active&quot;:false},{&quot;id&quot;:97,&quot;name&quot;:&quot;sada&quot;,&quot;email&quot;:&quot;213@fm.com&quot;,&quot;phoneNumber&quot;:&quot;2334324324&quot;,&quot;description&quot;:&quot;asd&quot;,&quot;active&quot;:false},{&quot;id&quot;:129,&quot;name&quot;:&quot;Response Adv upd&quot;,&quot;email&quot;:&quot;responseadv@email.com&quot;,&quot;phoneNumber&quot;:&quot;9876543214&quot;,&quot;description&quot;:&quot;Desc&quot;,&quot;active&quot;:true}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.5:63]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.5:63]</span>
+                <span class="scenario-name">Verify the active Advertiser list sort by ascending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>326</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.5:63]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.5:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="5.5">13:58:59.833 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.5:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.5:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.5:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="5.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.5:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.5:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="5.19">13:58:59.842 [print] CIXKYSOBMV 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/advertiser/list?statusFilter=active&amp;orderBy=ASC&amp;pageNo=0&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="5.55">13:59:01.177 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">318</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="5.56">13:59:01.180 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/advertiser/list?statusFilter=active&amp;orderBy=ASC&amp;pageNo=0&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+13:59:01.496 response time in milliseconds: 316
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Thu, 29 Aug 2024 08:29:03 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:31,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:53,&quot;name&quot;:&quot;1111111111111111111111111111111111111111111111111&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;8056684835&quot;,&quot;active&quot;:true},{&quot;id&quot;:82,&quot;name&quot;:&quot;Adservering 2 DONOT EDIT OR DELETE&quot;,&quot;email&quot;:&quot;est@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;7686542451&quot;,&quot;active&quot;:true},{&quot;id&quot;:54,&quot;name&quot;:&quot;Adserving-New advertiser&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;9710187297&quot;,&quot;description&quot;:&quot;This is for adserving &quot;,&quot;active&quot;:true},{&quot;id&quot;:49,&quot;name&quot;:&quot;Adv1.0&quot;,&quot;email&quot;:&quot;adv1@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;description&quot;:&quot;Desc&quot;,&quot;active&quot;:true},{&quot;id&quot;:22,&quot;name&quot;:&quot;Advertiser Data&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;8056684835&quot;,&quot;active&quot;:true},{&quot;id&quot;:78,&quot;name&quot;:&quot;advertiser name 31&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;8765432111&quot;,&quot;description&quot;:&quot;test2334344&quot;,&quot;active&quot;:true},{&quot;id&quot;:52,&quot;name&quot;:&quot;Advertiser Name with fifty limit character to test&quot;,&quot;email&quot;:&quot;qa1-.1-@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;9845678956&quot;,&quot;description&quot;:&quot;Desc&quot;,&quot;active&quot;:true},{&quot;id&quot;:121,&quot;name&quot;:&quot;Advertiser Rename adserving&quot;,&quot;email&quot;:&quot;test12@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;1234455698&quot;,&quot;active&quot;:true},{&quot;id&quot;:77,&quot;name&quot;:&quot;Advertiser Test345465765&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;8056684835&quot;,&quot;active&quot;:true},{&quot;id&quot;:39,&quot;name&quot;:&quot;Advertiser testdfsfdsf 08 may&quot;,&quot;email&quot;:&quot;ffdf@gmail.comxc&quot;,&quot;phoneNumber&quot;:&quot;1234567891&quot;,&quot;description&quot;:&quot;test Qaxc&quot;,&quot;active&quot;:true}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.6:63]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.6:63]</span>
+                <span class="scenario-name">Verify the active Advertiser list sort by descending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>317</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.6:63]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.6:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="6.5">13:58:59.833 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.6:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.6:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.6:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="6.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.6:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.6:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="6.19">13:58:59.842 [print] CIXKYSOBMV 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/advertiser/list?statusFilter=active&amp;orderBy=DESC&amp;pageNo=0&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="6.55">13:59:01.504 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">310</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="6.56">13:59:01.508 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/advertiser/list?statusFilter=active&amp;orderBy=DESC&amp;pageNo=0&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+13:59:01.815 response time in milliseconds: 307
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Thu, 29 Aug 2024 08:29:03 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:31,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:7,&quot;name&quot;:&quot;Volkswagen&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;9897656215&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;active&quot;:true},{&quot;id&quot;:30,&quot;name&quot;:&quot;test test test&quot;,&quot;email&quot;:&quot;testmail@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;active&quot;:true},{&quot;id&quot;:88,&quot;name&quot;:&quot;test api &quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567908&quot;,&quot;active&quot;:true},{&quot;id&quot;:129,&quot;name&quot;:&quot;Response Adv upd&quot;,&quot;email&quot;:&quot;responseadv@email.com&quot;,&quot;phoneNumber&quot;:&quot;9876543214&quot;,&quot;description&quot;:&quot;Desc&quot;,&quot;active&quot;:true},{&quot;id&quot;:71,&quot;name&quot;:&quot;QC Adv 1&quot;,&quot;email&quot;:&quot;qcadv@email.com&quot;,&quot;phoneNumber&quot;:&quot;9876543211&quot;,&quot;active&quot;:true},{&quot;id&quot;:2,&quot;name&quot;:&quot;Oreo&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;9897656215&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;active&quot;:true},{&quot;id&quot;:60,&quot;name&quot;:&quot;Nike Advertisers&quot;,&quot;email&quot;:&quot;nikeadvertiser@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;8056684835&quot;,&quot;description&quot;:&quot;nike description&quot;,&quot;active&quot;:true},{&quot;id&quot;:57,&quot;name&quot;:&quot;New testing advertiser&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;8056684835&quot;,&quot;active&quot;:true},{&quot;id&quot;:123,&quot;name&quot;:&quot;linkat&quot;,&quot;email&quot;:&quot;ln@email.com&quot;,&quot;phoneNumber&quot;:&quot;9876534560&quot;,&quot;active&quot;:true},{&quot;id&quot;:122,&quot;name&quot;:&quot;linkadv&quot;,&quot;email&quot;:&quot;link@email.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;active&quot;:true}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.7:63]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.7:63]</span>
+                <span class="scenario-name">Verify the inactive Advertiser list sort by ascending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>307</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.7:63]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.7:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="7.5">13:58:59.833 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.7:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.7:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.7:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="7.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.7:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.7:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="7.19">13:58:59.842 [print] CIXKYSOBMV 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/advertiser/list?statusFilter=inactive&amp;orderBy=ASC&amp;pageNo=0&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="7.55">13:59:01.823 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">300</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="7.56">13:59:01.826 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/advertiser/list?statusFilter=inactive&amp;orderBy=ASC&amp;pageNo=0&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+13:59:02.123 response time in milliseconds: 297
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Thu, 29 Aug 2024 08:29:03 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:63,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:42,&quot;name&quot;:&quot;Ad &quot;,&quot;email&quot;:&quot;qa123@emailcom78-1&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;description&quot;:&quot;Desc&quot;,&quot;active&quot;:false},{&quot;id&quot;:70,&quot;name&quot;:&quot;Advertiser 0099021&quot;,&quot;email&quot;:&quot;test@gc.om&quot;,&quot;description&quot;:&quot;desc1&quot;,&quot;active&quot;:false},{&quot;id&quot;:44,&quot;name&quot;:&quot;Advertiser1234567890123456789012345678901234567899&quot;,&quot;email&quot;:&quot;ad@email.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;description&quot;:&quot;dsvfsdv&quot;,&quot;active&quot;:false},{&quot;id&quot;:98,&quot;name&quot;:&quot;Advertiser A20240710110110&quot;,&quot;email&quot;:&quot;abc@mail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;description&quot;:&quot;Automation Testing-Selenium Cucumber&quot;,&quot;active&quot;:false},{&quot;id&quot;:127,&quot;name&quot;:&quot;Advertiser Dim validation &quot;,&quot;email&quot;:&quot;suganthi@technospurs1.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;description&quot;:&quot;testing the environment in system&quot;,&quot;active&quot;:false},{&quot;id&quot;:68,&quot;name&quot;:&quot;Advertiser Test&quot;,&quot;email&quot;:&quot;test@gc.om&quot;,&quot;phoneNumber&quot;:&quot;9897656215&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;active&quot;:false},{&quot;id&quot;:69,&quot;name&quot;:&quot;Advertiser Test-001&quot;,&quot;email&quot;:&quot;test@gc.om&quot;,&quot;phoneNumber&quot;:&quot;9897656215&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;active&quot;:false},{&quot;id&quot;:75,&quot;name&quot;:&quot;Advertiser Test-0099021&quot;,&quot;email&quot;:&quot;test@gc.om&quot;,&quot;phoneNumber&quot;:&quot;9897656215&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;active&quot;:false},{&quot;id&quot;:66,&quot;name&quot;:&quot;Advertiser Test1&quot;,&quot;email&quot;:&quot;test@gc.om&quot;,&quot;phoneNumber&quot;:&quot;9897656215&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;active&quot;:false},{&quot;id&quot;:91,&quot;name&quot;:&quot;Advertiser Test124klskfsfs&quot;,&quot;email&quot;:&quot;test@gc.om&quot;,&quot;phoneNumber&quot;:&quot;9897656215&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;active&quot;:false}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.8:63]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.8:63]</span>
+                <span class="scenario-name">Verify the inactive Advertiser list sort by descending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>305</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.8:63]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.8:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="8.5">13:58:59.833 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.8:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.8:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.8:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="8.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.8:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.8:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="8.19">13:58:59.842 [print] CIXKYSOBMV 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/advertiser/list?statusFilter=inactive&amp;orderBy=DESC&amp;pageNo=0&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="8.55">13:59:02.130 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">298</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="8.56">13:59:02.133 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/advertiser/list?statusFilter=inactive&amp;orderBy=DESC&amp;pageNo=0&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+13:59:02.428 response time in milliseconds: 295
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Thu, 29 Aug 2024 08:29:03 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:63,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:29,&quot;name&quot;:&quot;test dfsfs&quot;,&quot;phoneNumber&quot;:&quot;12334&quot;,&quot;active&quot;:false},{&quot;id&quot;:128,&quot;name&quot;:&quot;TestAd&quot;,&quot;email&quot;:&quot;k@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;active&quot;:false},{&quot;id&quot;:48,&quot;name&quot;:&quot;test&quot;,&quot;email&quot;:&quot;suganthi@technospurs.com&quot;,&quot;phoneNumber&quot;:&quot;12333444&quot;,&quot;description&quot;:&quot;tsting the qa&quot;,&quot;active&quot;:false},{&quot;id&quot;:62,&quot;name&quot;:&quot;seveneleven advertisers&quot;,&quot;email&quot;:&quot;seveneleven@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;8056684833&quot;,&quot;active&quot;:false},{&quot;id&quot;:90,&quot;name&quot;:&quot;sdfsdupdate&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;3242343242&quot;,&quot;active&quot;:false},{&quot;id&quot;:97,&quot;name&quot;:&quot;sada&quot;,&quot;email&quot;:&quot;213@fm.com&quot;,&quot;phoneNumber&quot;:&quot;2334324324&quot;,&quot;description&quot;:&quot;asd&quot;,&quot;active&quot;:false},{&quot;id&quot;:36,&quot;name&quot;:&quot;QA AD 1&quot;,&quot;active&quot;:false},{&quot;id&quot;:8,&quot;name&quot;:&quot;Old Spice&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;9897656215&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;active&quot;:false},{&quot;id&quot;:5,&quot;name&quot;:&quot;Nivea&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;9897656215&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;active&quot;:false},{&quot;id&quot;:10,&quot;name&quot;:&quot;Nike&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;9897656215&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;active&quot;:false}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.9:63]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.9:63]</span>
+                <span class="scenario-name">Verify the Advertiser search in Advertiser list</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>305</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.9:63]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.9:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="9.5">13:58:59.833 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.9:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.9:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.9:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="9.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.9:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.9:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="9.19">13:58:59.842 [print] CIXKYSOBMV 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/advertiser/list?orderBy=DESC&amp;search=test&amp;pageNo=0&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="9.55">13:59:02.435 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">298</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="9.56">13:59:02.438 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/advertiser/list?orderBy=DESC&amp;search=test&amp;pageNo=0&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+13:59:02.733 response time in milliseconds: 295
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Thu, 29 Aug 2024 08:29:04 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:17,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:30,&quot;name&quot;:&quot;test test test&quot;,&quot;email&quot;:&quot;testmail@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;active&quot;:true},{&quot;id&quot;:29,&quot;name&quot;:&quot;test dfsfs&quot;,&quot;phoneNumber&quot;:&quot;12334&quot;,&quot;active&quot;:false},{&quot;id&quot;:88,&quot;name&quot;:&quot;test api &quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567908&quot;,&quot;active&quot;:true},{&quot;id&quot;:128,&quot;name&quot;:&quot;TestAd&quot;,&quot;email&quot;:&quot;k@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;active&quot;:false},{&quot;id&quot;:48,&quot;name&quot;:&quot;test&quot;,&quot;email&quot;:&quot;suganthi@technospurs.com&quot;,&quot;phoneNumber&quot;:&quot;12333444&quot;,&quot;description&quot;:&quot;tsting the qa&quot;,&quot;active&quot;:false},{&quot;id&quot;:57,&quot;name&quot;:&quot;New testing advertiser&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;8056684835&quot;,&quot;active&quot;:true},{&quot;id&quot;:39,&quot;name&quot;:&quot;Advertiser testdfsfdsf 08 may&quot;,&quot;email&quot;:&quot;ffdf@gmail.comxc&quot;,&quot;phoneNumber&quot;:&quot;1234567891&quot;,&quot;description&quot;:&quot;test Qaxc&quot;,&quot;active&quot;:true},{&quot;id&quot;:80,&quot;name&quot;:&quot;Advertiser Test-345465765213234&quot;,&quot;email&quot;:&quot;test@gc.om&quot;,&quot;phoneNumber&quot;:&quot;9897656215&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;active&quot;:false},{&quot;id&quot;:77,&quot;name&quot;:&quot;Advertiser Test345465765&quot;,&quot;email&quot;:&quot;test@gmail.com&quot;,&quot;phoneNumber&quot;:&quot;8056684835&quot;,&quot;active&quot;:true},{&quot;id&quot;:76,&quot;name&quot;:&quot;Advertiser Test-345465765&quot;,&quot;email&quot;:&quot;test@gc.om&quot;,&quot;phoneNumber&quot;:&quot;9897656215&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;active&quot;:false}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;email&quot;: &#39;#string&#39; ,&quot;phoneNumber&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;active&quot;: &#39;#boolean&#39;}
+</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.10:63]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.10:63]</span>
+                <span class="scenario-name">Verify the Advertiser detail</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>258</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.10:63]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.10:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="10.5">13:58:59.833 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.10:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.10:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.10:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="10.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.10:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.10:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="10.19">13:58:59.842 [print] CIXKYSOBMV 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/advertiser/125&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="10.55">13:59:02.740 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">250</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="10.56">13:59:02.743 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/advertiser/125
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+13:59:02.991 response time in milliseconds: 248
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Thu, 29 Aug 2024 08:29:04 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;entity&quot;:{&quot;id&quot;:125,&quot;name&quot;:&quot;Aksh Adv&quot;,&quot;email&quot;:&quot;qa@email.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;active&quot;:true},&quot;httpStatus&quot;:&quot;OK&quot;,&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = {&quot;id&quot;: 125}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.entity contains {&quot;id&quot;: 125}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.11:63]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.11:63]</span>
+                <span class="scenario-name">Verify the updated data of Advertiser</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>246</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.11:63]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.11:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="11.5">13:58:59.833 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.11:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.11:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.11:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="11.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.11:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.11:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="11.19">13:58:59.842 [print] CIXKYSOBMV 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/advertiser/125&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="11.55">13:59:02.998 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">240</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="11.56">13:59:03.001 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/advertiser/125
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+13:59:03.240 response time in milliseconds: 238
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Thu, 29 Aug 2024 08:29:04 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;entity&quot;:{&quot;id&quot;:125,&quot;name&quot;:&quot;Aksh Adv&quot;,&quot;email&quot;:&quot;qa@email.com&quot;,&quot;phoneNumber&quot;:&quot;1234567890&quot;,&quot;active&quot;:true},&quot;httpStatus&quot;:&quot;OK&quot;,&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = {&quot;id&quot;: 125}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.entity contains {&quot;id&quot;: 125}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.12:63]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.12:63]</span>
+                <span class="scenario-name">Verify whether able to activate and deactivate the advertisers</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>340</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.12:63]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.12:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="12.5">13:58:59.833 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.12:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.12:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.12:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="12.8">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.12:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.12:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.19">
+      <div class="step-ref bg-step">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="12.19">13:58:59.842 [print] CIXKYSOBMV 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/advertiser/128/toggle-activate&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="12.55">13:59:03.244 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">333</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="12.56">13:59:03.247 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/advertiser/128/toggle-activate
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+13:59:03.577 response time in milliseconds: 329
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Thu, 29 Aug 2024 08:29:04 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;successMessage&quot;:&quot;Activated/Deactivated successfully &quot;,&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def projectSchema = &quot;OK&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.httpStatus contains &quot;OK&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

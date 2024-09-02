@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"apifeatures\/Target[1.1:43]","start":1725250879831,"end":1725250881330,"title":"apifeatures\/Target[1.1:43] 09:51:19.831-09:51:21.330 Create ,Edit and Delete Advertiser","className":"failed"},{"id":2,"group":1,"content":"apifeatures\/Target[2.1:63]","start":1725250881379,"end":1725250881410,"title":"apifeatures\/Target[2.1:63] 09:51:21.379-09:51:21.410 Verify the Target list","className":"failed"},{"id":3,"group":1,"content":"apifeatures\/Target[2.2:63]","start":1725250881425,"end":1725250881429,"title":"apifeatures\/Target[2.2:63] 09:51:21.425-09:51:21.429 Verify the status","className":"failed"},{"id":4,"group":1,"content":"apifeatures\/Target[2.3:63]","start":1725250881446,"end":1725250881453,"title":"apifeatures\/Target[2.3:63] 09:51:21.446-09:51:21.453 Verify the active target list sort by ascending order","className":"failed"},{"id":5,"group":1,"content":"apifeatures\/Target[2.4:63]","start":1725250881467,"end":1725250881473,"title":"apifeatures\/Target[2.4:63] 09:51:21.467-09:51:21.473 Verify the active target list sort by descending order","className":"failed"},{"id":6,"group":1,"content":"apifeatures\/Target[2.5:63]","start":1725250881487,"end":1725250881492,"title":"apifeatures\/Target[2.5:63] 09:51:21.487-09:51:21.492 Verify the target search in target list","className":"failed"},{"id":7,"group":1,"content":"apifeatures\/Target[2.6:63]","start":1725250881504,"end":1725250881509,"title":"apifeatures\/Target[2.6:63] 09:51:21.504-09:51:21.509 Verify the target detail","className":"failed"},{"id":8,"group":1,"content":"apifeatures\/Target[2.7:63]","start":1725250881525,"end":1725250881529,"title":"apifeatures\/Target[2.7:63] 09:51:21.525-09:51:21.529 Verify the advertiser linked to the target","className":"failed"},{"id":9,"group":1,"content":"apifeatures\/Target[2.8:63]","start":1725250881542,"end":1725250881546,"title":"apifeatures\/Target[2.8:63] 09:51:21.542-09:51:21.546 Verify the updated data of target","className":"failed"},{"id":10,"group":1,"content":"apifeatures\/Target[2.9:63]","start":1725250881558,"end":1725250881581,"title":"apifeatures\/Target[2.9:63] 09:51:21.558-09:51:21.581","className":"failed"},{"id":11,"group":1,"content":"apifeatures\/Target[2.10:63]","start":1725250881590,"end":1725250881594,"title":"apifeatures\/Target[2.10:63] 09:51:21.590-09:51:21.594","className":"failed"},{"id":12,"group":1,"content":"apifeatures\/Target[2.11:63]","start":1725250881604,"end":1725250881608,"title":"apifeatures\/Target[2.11:63] 09:51:21.604-09:51:21.608","className":"failed"},{"id":13,"group":1,"content":"apifeatures\/Target[2.12:63]","start":1725250881619,"end":1725250881624,"title":"apifeatures\/Target[2.12:63] 09:51:21.619-09:51:21.624","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

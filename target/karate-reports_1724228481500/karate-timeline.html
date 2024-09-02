@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"apifeatures\/advertiser[1.1:31]","start":1724227833533,"end":1724227834132,"title":"apifeatures\/advertiser[1.1:31] 13:40:33.533-13:40:34.132 Verify the Advertiser list","className":"failed"},{"id":2,"group":1,"content":"apifeatures\/advertiser[1.2:31]","start":1724227834138,"end":1724227834439,"title":"apifeatures\/advertiser[1.2:31] 13:40:34.138-13:40:34.439 Verify the status","className":"failed"},{"id":3,"group":1,"content":"apifeatures\/advertiser[1.3:31]","start":1724227834444,"end":1724227834765,"title":"apifeatures\/advertiser[1.3:31] 13:40:34.444-13:40:34.765 Verify the Advertiser list sort by ascending order","className":"failed"},{"id":4,"group":1,"content":"apifeatures\/advertiser[1.4:31]","start":1724227834773,"end":1724227835093,"title":"apifeatures\/advertiser[1.4:31] 13:40:34.773-13:40:35.093 Verify the Advertiser list sort by descending order","className":"failed"},{"id":5,"group":1,"content":"apifeatures\/advertiser[1.5:31]","start":1724227835100,"end":1724227835458,"title":"apifeatures\/advertiser[1.5:31] 13:40:35.100-13:40:35.458 Verify the active Advertiser list sort by ascending order","className":"failed"},{"id":6,"group":1,"content":"apifeatures\/advertiser[1.6:31]","start":1724227835470,"end":1724227835806,"title":"apifeatures\/advertiser[1.6:31] 13:40:35.470-13:40:35.806 Verify the active Advertiser list sort by descending order","className":"failed"},{"id":7,"group":1,"content":"apifeatures\/advertiser[1.7:31]","start":1724227835810,"end":1724227836116,"title":"apifeatures\/advertiser[1.7:31] 13:40:35.810-13:40:36.116 Verify the inactive Advertiser list sort by ascending order","className":"failed"},{"id":8,"group":1,"content":"apifeatures\/advertiser[1.8:31]","start":1724227836120,"end":1724227836484,"title":"apifeatures\/advertiser[1.8:31] 13:40:36.120-13:40:36.484 Verify the inactive Advertiser list sort by descending order","className":"failed"},{"id":9,"group":1,"content":"apifeatures\/advertiser[1.9:31]","start":1724227836488,"end":1724227836818,"title":"apifeatures\/advertiser[1.9:31] 13:40:36.488-13:40:36.818 Verify the Advertiser search in Advertiser list","className":"failed"},{"id":10,"group":1,"content":"apifeatures\/advertiser[1.10:31]","start":1724227836822,"end":1724227837065,"title":"apifeatures\/advertiser[1.10:31] 13:40:36.822-13:40:37.065 Verify the Advertiser detail","className":"failed"},{"id":11,"group":1,"content":"apifeatures\/advertiser[1.11:31]","start":1724227837070,"end":1724227837331,"title":"apifeatures\/advertiser[1.11:31] 13:40:37.070-13:40:37.331 Verify the updated data of Advertiser","className":"failed"},{"id":12,"group":1,"content":"apifeatures\/advertiser[1.12:31]","start":1724227837345,"end":1724227837672,"title":"apifeatures\/advertiser[1.12:31] 13:40:37.345-13:40:37.672 Verify whether able to activate and deactivate the advertisers","className":"failed"},{"id":13,"group":1,"content":"apifeatures\/advertiser[2:33]","start":1724227837675,"end":1724227837922,"title":"apifeatures\/advertiser[2:33] 13:40:37.675-13:40:37.922 Create Advertiser","className":"failed"},{"id":14,"group":1,"content":"apifeatures\/advertiser[3:48]","start":1724227837927,"end":1724227838348,"title":"apifeatures\/advertiser[3:48] 13:40:37.927-13:40:38.348 Edit Advertiser"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

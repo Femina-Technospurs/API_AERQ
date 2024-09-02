@@ -1,0 +1,2 @@
+S.NO,Module,SCENARIO,URL,DESC,METHOD,POST_DATA,"STATUS_CODE 	",VALIDATION,EXPECTED_RESULT,KEY,VALUE
+1,Creative,Verify user can able to create the creative with Adsource adtype,"""/api/v1/creative""",Create creative with all field,POST,"{""creativeType"": ""AD_SOURCE"", ""adSourceId"": ""29"", ""advertiserId"": ""125"", ""name"": ""Aut AC123"", ""trackers"": []}",201,User should be able to create the creative by filling all the details,"""id""",response,"{ ""id"": '#number'}"

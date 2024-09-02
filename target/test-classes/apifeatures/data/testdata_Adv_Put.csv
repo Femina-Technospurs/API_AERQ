@@ -1,0 +1,3 @@
+S.NO,SCENARIO,URL,DESC,METHOD,POST_DATA,STATUS_CODE,VALIDATION
+9,Edit Advertiser,"""/api/v1/advertiser/70""",Edit Advertiser,PUT,"""{""id"":70,""name"":""Advertiser 0099021"",""email"":""test@gc.om"",""description"":""desc1""}""",202,name:Advertiser 0099021
+5,Create Advertiser,"""/api/v1/advertiser""",create advertiser with all field,POST,"""{""name"":""Advertiser Test-345465765"",""description"":""desc"",""email"":""test@gc.om"",""phoneNumber"":""9897656215""}""",201,advertiserID:{$ID}
