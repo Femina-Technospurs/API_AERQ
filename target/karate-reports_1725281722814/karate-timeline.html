@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"apifeatures\/Campaign[1.1:44]","start":1725281466741,"end":1725281467740,"title":"apifeatures\/Campaign[1.1:44] 18:21:06.741-18:21:07.740 Create ,Edit and Delete Advertiser","className":"failed"},{"id":2,"group":1,"content":"apifeatures\/Campaign[2.1:56]","start":1725281467770,"end":1725281468085,"title":"apifeatures\/Campaign[2.1:56] 18:21:07.770-18:21:08.085 Verify the Campaign list","className":"failed"},{"id":3,"group":1,"content":"apifeatures\/Campaign[2.2:56]","start":1725281468091,"end":1725281468444,"title":"apifeatures\/Campaign[2.2:56] 18:21:08.091-18:21:08.444 Verify the status","className":"failed"},{"id":4,"group":1,"content":"apifeatures\/Campaign[2.3:56]","start":1725281468452,"end":1725281468784,"title":"apifeatures\/Campaign[2.3:56] 18:21:08.452-18:21:08.784 Verify the Campaign list sort by ascending order","className":"failed"},{"id":5,"group":1,"content":"apifeatures\/Campaign[2.4:56]","start":1725281468789,"end":1725281469142,"title":"apifeatures\/Campaign[2.4:56] 18:21:08.789-18:21:09.142 Verify the Campaign list sort by descending order","className":"failed"},{"id":6,"group":1,"content":"apifeatures\/Campaign[2.5:56]","start":1725281469150,"end":1725281469472,"title":"apifeatures\/Campaign[2.5:56] 18:21:09.150-18:21:09.472 Verify the active Campaign list sort by ascending order","className":"failed"},{"id":7,"group":1,"content":"apifeatures\/Campaign[2.6:56]","start":1725281469477,"end":1725281469804,"title":"apifeatures\/Campaign[2.6:56] 18:21:09.477-18:21:09.804 Verify the active Campaign list sort by descending order","className":"failed"},{"id":8,"group":1,"content":"apifeatures\/Campaign[2.7:56]","start":1725281469813,"end":1725281470136,"title":"apifeatures\/Campaign[2.7:56] 18:21:09.813-18:21:10.136 Verify the Inactive Campaign list sort by ascending order","className":"failed"},{"id":9,"group":1,"content":"apifeatures\/Campaign[2.8:56]","start":1725281470140,"end":1725281470486,"title":"apifeatures\/Campaign[2.8:56] 18:21:10.140-18:21:10.486 Verify the Inactive Campaign list sort by descending order","className":"failed"},{"id":10,"group":1,"content":"apifeatures\/Campaign[2.9:56]","start":1725281470490,"end":1725281470817,"title":"apifeatures\/Campaign[2.9:56] 18:21:10.490-18:21:10.817 Verify the Campaign search in campaign list","className":"failed"},{"id":11,"group":1,"content":"apifeatures\/Campaign[2.10:56]","start":1725281470821,"end":1725281471151,"title":"apifeatures\/Campaign[2.10:56] 18:21:10.821-18:21:11.151 Verify the Campaign detail (Direct Buy & Programmatic)"},{"id":12,"group":1,"content":"apifeatures\/Campaign[2.11:56]","start":1725281471158,"end":1725281471175,"title":"apifeatures\/Campaign[2.11:56] 18:21:11.158-18:21:11.175 Verify the Placement status in campaign detail page (Direct Buy & Programmatic)","className":"failed"},{"id":13,"group":1,"content":"apifeatures\/Campaign[2.12:56]","start":1725281471178,"end":1725281471566,"title":"apifeatures\/Campaign[2.12:56] 18:21:11.178-18:21:11.566 Verify the Placement list (Direct Buy & Programmatic)","className":"failed"},{"id":14,"group":1,"content":"apifeatures\/Campaign[2.13:56]","start":1725281471570,"end":1725281471885,"title":"apifeatures\/Campaign[2.13:56] 18:21:11.570-18:21:11.885 Verify the updated data of Campaign (Direct Buy & Programmatic)"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

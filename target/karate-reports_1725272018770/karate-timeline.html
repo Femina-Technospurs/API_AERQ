@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"apifeatures\/Target[1.1:43]","start":1725271747731,"end":1725271749342,"title":"apifeatures\/Target[1.1:43] 15:39:07.731-15:39:09.342 Create ,Edit and Delete Advertiser"},{"id":2,"group":1,"content":"apifeatures\/Target[2.1:54]","start":1725271749368,"end":1725271749688,"title":"apifeatures\/Target[2.1:54] 15:39:09.368-15:39:09.688 Verify the Target list","className":"failed"},{"id":3,"group":1,"content":"apifeatures\/Target[2.2:54]","start":1725271749695,"end":1725271749995,"title":"apifeatures\/Target[2.2:54] 15:39:09.695-15:39:09.995 Verify the status"},{"id":4,"group":1,"content":"apifeatures\/Target[2.3:54]","start":1725271750005,"end":1725271750319,"title":"apifeatures\/Target[2.3:54] 15:39:10.005-15:39:10.319 Verify the active target list sort by ascending order","className":"failed"},{"id":5,"group":1,"content":"apifeatures\/Target[2.4:54]","start":1725271750324,"end":1725271750639,"title":"apifeatures\/Target[2.4:54] 15:39:10.324-15:39:10.639 Verify the active target list sort by descending order","className":"failed"},{"id":6,"group":1,"content":"apifeatures\/Target[2.5:54]","start":1725271750643,"end":1725271750919,"title":"apifeatures\/Target[2.5:54] 15:39:10.643-15:39:10.919 Verify the target search in target list","className":"failed"},{"id":7,"group":1,"content":"apifeatures\/Target[2.6:54]","start":1725271750928,"end":1725271751180,"title":"apifeatures\/Target[2.6:54] 15:39:10.928-15:39:11.180 Verify the target detail"},{"id":8,"group":1,"content":"apifeatures\/Target[2.7:54]","start":1725271751184,"end":1725271751441,"title":"apifeatures\/Target[2.7:54] 15:39:11.184-15:39:11.441 Verify the advertiser linked to the target"},{"id":9,"group":1,"content":"apifeatures\/Target[2.8:54]","start":1725271751450,"end":1725271751712,"title":"apifeatures\/Target[2.8:54] 15:39:11.450-15:39:11.712 Verify the updated data of target"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

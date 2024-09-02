@@ -1,57 +1,9 @@
 S.NO,Modules,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY,VALUE
-1,Target,Verify the Target list,/api/v1/target/list?orderBy=DESC,Open target page,GET,200,Target list should be shown,"""coll"": [
-{
-""id"": 136,
-""name"": ""Prog Ad Target"",
-""advertiserId"": 125,
-""airlineTargetRule"": {
-""airlineIds"": [
-93
-]
-}",coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
-"
-2,Target,Verify the status,/api/v1/target/status,Open target page,GET,200,Status should be correct,"{""entity"":{""active"":101,""inActive"":0},""httpStatus"":""OK"",""total"":1,""valid"":true}",httpStatus,"""OK"""
-3,Target,Verify the active target list sort by ascending order,/api/v1/target/list?orderBy=ASC&sortBy=name,Open target page,GET,200,Active target should be shown in ascending list,"""coll"": [
-{
-""id"": 106,
-""name"": ""111"",
-""advertiserId"": 79,
-""airlineTargetRule"": {
-""airlineIds"": [
-42
-]
-}",coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
-"
-4,Target,Verify the active target list sort by descending order,/api/v1/target/list?orderBy=DESC&sortBy=name,Open target page,GET,200,Active target should be shown in descending list,"""coll"": [
-{
-""id"": 96,
-""name"": ""video "",
-""advertiserId"": 82,
-""airlineTargetRule"": {
-""airlineIds"": [
-57
-]
-}",coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
-"
-5,Target,Verify the target search in target list,/api/v1/target/list?orderBy=ASC&search=111&sortBy=name,Open target page,GET,200,Searched target should be shown in list,"""coll"": [
-{
-""id"": 106,
-""name"": ""111"",
-""advertiserId"": 79,
-""airlineTargetRule"": {
-""airlineIds"": [
-42
-]
-}",coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
-"
-6,Target,Verify the target detail,/api/v1/target/134,Open view target,GET,200,Users should be able to view the target,"""id"": 134",coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
-"
-7,Target,Verify the advertiser linked to the target,/api/v1/advertiser/125,Open view target,GET,200,Linked advertiser should be dispayed,"""id"": 125",coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
-"
-8,Target,Verify the updated data of target,/api/v1/target/134,Open view updated target,GET,200,Updated target should be displayed,"""id"": 134",coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
-"
-,,,,,,,,,coll,"{ ""id"": '#number',""name"": '#string',""email"": '#string' ,""phoneNumber"": '#string',""description"": '#string',""active"": '#boolean'}
-"
-,,,,,,,,,entity,"{""id"": 125}"
-,,,,,,,,,entity,"{""id"": 125}"
-,,,,,,,,,httpStatus,"""OK"""
+1,Target,Verify the Target list,"""/api/v1/target/list?orderBy=DESC""",Open target page,GET,200,Target list should be shown,"""coll""",response.coll,"{ ""id"": '#number',""name"": '#string',""advertiserId"":'#number'}"
+2,Target,Verify the status,"""/api/v1/target/status""",Open target page,GET,200,Status should be correct,"""entity""",response,"{""httpStatus"":""OK""}"
+3,Target,Verify the active target list sort by ascending order,"""/api/v1/target/list?orderBy=ASC&sortBy=name""",Open target page,GET,200,Active target should be shown in ascending list,"""coll""",response.coll,"{ ""id"": '#number',""name"": '#string',""advertiserId"":'#number'}"
+4,Target,Verify the active target list sort by descending order,"""/api/v1/target/list?orderBy=DESC&sortBy=name""",Open target page,GET,200,Active target should be shown in descending list,"""coll""",response.coll,"{ ""id"": '#number',""name"": '#string',""advertiserId"":'#number'}"
+5,Target,Verify the target search in target list,"""/api/v1/target/list?orderBy=ASC&search=111&sortBy=name""",Open target page,GET,200,Searched target should be shown in list,"""coll""",response.coll,"{ ""id"": '#number',""name"": '#string',""advertiserId"":'#number'}"
+6,Target,Verify the target detail,"""/api/v1/target/134""",Open view target,GET,200,Users should be able to view the target,"""id"": 134",response.entity,"{""id"": 134}"
+7,Target,Verify the advertiser linked to the target,"""/api/v1/advertiser/125""",Open view target,GET,200,Linked advertiser should be dispayed,"""id"": 125",response.entity,"{""id"": 125}"
+8,Target,Verify the updated data of target,"""/api/v1/target/134""",Open view updated target,GET,200,Updated target should be displayed,"""id"": 134",response.entity,"{""id"": 134}"

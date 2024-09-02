@@ -1,0 +1,5521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.identify("f8e6903c-ae24-447b-8dc5-d0f028ed59e7",{name:"Admin"});
+    posthog.capture("report_feature",{karate_version:"1.2.0",karate_meta:null});
+  }
+});
+</script>
+  
+    <title>apifeatures.Campaign</title>  
+  </head>
+  <body>   
+    <div id="root-container">
+      <div id="leftnav">
+                
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">13</div>
+      <div id="nav-fail" class="bg-danger">1</div>
+    </div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>         
+  <div id="nav-date">
+    <div>2024-09-02 06:45:41 pm</div>
+  </div>        
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item failed">
+            <a href="#[1.1:44]"><span>[1.1:44]</span> <span>Create ,Edit and Delete Advertiser</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.1:56]"><span>[2.1:56]</span> <span>Verify the Campaign list</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.2:56]"><span>[2.2:56]</span> <span>Verify the status</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.3:56]"><span>[2.3:56]</span> <span>Verify the Campaign list sort by ascending order</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.4:56]"><span>[2.4:56]</span> <span>Verify the Campaign list sort by descending order</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.5:56]"><span>[2.5:56]</span> <span>Verify the active Campaign list sort by ascending order</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.6:56]"><span>[2.6:56]</span> <span>Verify the active Campaign list sort by descending order</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.7:56]"><span>[2.7:56]</span> <span>Verify the Inactive Campaign list sort by ascending order</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.8:56]"><span>[2.8:56]</span> <span>Verify the Inactive Campaign list sort by descending order</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.9:56]"><span>[2.9:56]</span> <span>Verify the Campaign search in campaign list</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.10:56]"><span>[2.10:56]</span> <span>Verify the Campaign detail (Direct Buy &amp; Programmatic)</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.11:56]"><span>[2.11:56]</span> <span>Verify the Placement status in campaign detail page (Direct Buy &amp; Programmatic)</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.12:56]"><span>[2.12:56]</span> <span>Verify the Placement list (Direct Buy &amp; Programmatic)</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2.13:56]"><span>[2.13:56]</span> <span>Verify the updated data of Campaign (Direct Buy &amp; Programmatic)</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">apifeatures/Campaign.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">AERQ Campaign API</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1.1:44]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1.1:44]</span>
+                <span class="scenario-name">Create ,Edit and Delete Advertiser</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>1082</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1.1:44]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1.1:44]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.4">18:45:36.145 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.1:44]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.1:44]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.1:44]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">24</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="1.7">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.1:44]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">19</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.1:44]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.18">18:45:36.236 [print] SHRLGHIQCV 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.21">
+      <div class="step-ref passed">21</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def create = {&quot;advertiserId&quot;: &quot;125&quot;,&quot;airlineTargetRule&quot;:{&quot;airlineIds&quot;:[93]},&quot;audienceTargetRule&quot;:{&quot;age&quot;:[1, 2],&quot;gender&quot;:[1, 2],&quot;travelGroup&quot;:[3, 4],&quot;language&quot;:[2],&quot;nationality&quot;:[5]},&quot;description&quot;:&quot;upd&quot;,&quot;flightClassTargetRule&quot;:{&quot;classTypes&quot;:[2, 4]},&quot;flightRouteTargetRule&quot;:{&quot;routes&quot;: [1, 2]},&quot;genreTargetRule&quot;:{&quot;genre&quot;:[5, 7]},&quot;name&quot;:&quot;Aut Ad Target upd&quot;,&quot;slotTypeTargetRule&quot;:{&quot;slotTypes&quot;: [4, 1]}}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">26</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.21">18:45:36.285 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.22">
+      <div class="step-ref passed">22</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>create.name= create.name+randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.23">
+      <div class="step-ref passed">23</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print create</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.23">18:45:36.320 [print] {
+  &quot;advertiserId&quot;: &quot;125&quot;,
+  &quot;airlineTargetRule&quot;: {
+    &quot;airlineIds&quot;: [
+      93
+    ]
+  },
+  &quot;audienceTargetRule&quot;: {
+    &quot;age&quot;: [
+      1,
+      2
+    ],
+    &quot;gender&quot;: [
+      1,
+      2
+    ],
+    &quot;travelGroup&quot;: [
+      3,
+      4
+    ],
+    &quot;language&quot;: [
+      2
+    ],
+    &quot;nationality&quot;: [
+      5
+    ]
+  },
+  &quot;description&quot;: &quot;upd&quot;,
+  &quot;flightClassTargetRule&quot;: {
+    &quot;classTypes&quot;: [
+      2,
+      4
+    ]
+  },
+  &quot;flightRouteTargetRule&quot;: {
+    &quot;routes&quot;: [
+      1,
+      2
+    ]
+  },
+  &quot;genreTargetRule&quot;: {
+    &quot;genre&quot;: [
+      5,
+      7
+    ]
+  },
+  &quot;name&quot;: &quot;Aut Ad Target updSHRLGHIQCV&quot;,
+  &quot;slotTypeTargetRule&quot;: {
+    &quot;slotTypes&quot;: [
+      4,
+      1
+    ]
+  }
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/target&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request create</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">663</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.26">18:45:36.601 request:
+1 &gt; POST http://122.165.121.195:8080/api/v1/target
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 383
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;advertiserId&quot;:&quot;125&quot;,&quot;airlineTargetRule&quot;:{&quot;airlineIds&quot;:[93]},&quot;audienceTargetRule&quot;:{&quot;age&quot;:[1,2],&quot;gender&quot;:[1,2],&quot;travelGroup&quot;:[3,4],&quot;language&quot;:[2],&quot;nationality&quot;:[5]},&quot;description&quot;:&quot;upd&quot;,&quot;flightClassTargetRule&quot;:{&quot;classTypes&quot;:[2,4]},&quot;flightRouteTargetRule&quot;:{&quot;routes&quot;:[1,2]},&quot;genreTargetRule&quot;:{&quot;genre&quot;:[5,7]},&quot;name&quot;:&quot;Aut Ad Target updSHRLGHIQCV&quot;,&quot;slotTypeTargetRule&quot;:{&quot;slotTypes&quot;:[4,1]}}
+
+18:45:36.976 response time in milliseconds: 373
+1 &lt; 201
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Mon, 02 Sep 2024 13:15:36 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;id&quot;:172,&quot;name&quot;:&quot;Aut Ad Target updSHRLGHIQCV&quot;,&quot;description&quot;:&quot;upd&quot;,&quot;advertiserId&quot;:125,&quot;airlineTargetRule&quot;:{&quot;airlineIds&quot;:[93]},&quot;slotTypeTargetRule&quot;:{&quot;slotTypes&quot;:[4,1]},&quot;flightClassTargetRule&quot;:{&quot;classTypes&quot;:[2,4]},&quot;audienceTargetRule&quot;:{&quot;age&quot;:[1,2],&quot;gender&quot;:[1,2],&quot;travelGroup&quot;:[3,4],&quot;language&quot;:[2],&quot;nationality&quot;:[5]},&quot;flightRouteTargetRule&quot;:{&quot;routes&quot;:[1,2]},&quot;genreTargetRule&quot;:{&quot;genre&quot;:[5,7]},&quot;createdOn&quot;:&quot;2024-09-02 13:15:36&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.27">
+      <div class="step-ref passed">27</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.28">
+      <div class="step-ref passed">28</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response contains {&quot;id&quot;: &#39;#number&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">9</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.29">
+      <div class="step-ref passed">29</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/campaign/&quot;+response.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.30">
+      <div class="step-ref passed">30</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def update =  {&quot;advertiserId&quot;: &quot;125&quot;,&quot;airlineTargetRule&quot;:{&quot;airlineIds&quot;:[93]},&quot;audienceTargetRule&quot;:{&quot;age&quot;:[1, 2],&quot;gender&quot;:[1, 2],&quot;travelGroup&quot;:[3, 4],&quot;language&quot;:[2],&quot;nationality&quot;:[5]},&quot;description&quot;:&quot;upd&quot;,&quot;flightClassTargetRule&quot;:{&quot;classTypes&quot;:[2, 4]},&quot;flightRouteTargetRule&quot;:{&quot;routes&quot;: [1, 2]},&quot;genreTargetRule&quot;:{&quot;genre&quot;:[5, 7]},&quot;name&quot;:&quot;Aut Ad Target upd&quot;,&quot;slotTypeTargetRule&quot;:{&quot;slotTypes&quot;: [4, 1]}}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>update.name= update.name+randomstring+ &quot; Updated&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.32">
+      <div class="step-ref passed">32</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>update.description = &quot;Automation Updated&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.33">
+      <div class="step-ref passed">33</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print update</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.33">18:45:37.000 [print] {
+  &quot;advertiserId&quot;: &quot;125&quot;,
+  &quot;airlineTargetRule&quot;: {
+    &quot;airlineIds&quot;: [
+      93
+    ]
+  },
+  &quot;audienceTargetRule&quot;: {
+    &quot;age&quot;: [
+      1,
+      2
+    ],
+    &quot;gender&quot;: [
+      1,
+      2
+    ],
+    &quot;travelGroup&quot;: [
+      3,
+      4
+    ],
+    &quot;language&quot;: [
+      2
+    ],
+    &quot;nationality&quot;: [
+      5
+    ]
+  },
+  &quot;description&quot;: &quot;Automation Updated&quot;,
+  &quot;flightClassTargetRule&quot;: {
+    &quot;classTypes&quot;: [
+      2,
+      4
+    ]
+  },
+  &quot;flightRouteTargetRule&quot;: {
+    &quot;routes&quot;: [
+      1,
+      2
+    ]
+  },
+  &quot;genreTargetRule&quot;: {
+    &quot;genre&quot;: [
+      5,
+      7
+    ]
+  },
+  &quot;name&quot;: &quot;Aut Ad Target updSHRLGHIQCV Updated&quot;,
+  &quot;slotTypeTargetRule&quot;: {
+    &quot;slotTypes&quot;: [
+      4,
+      1
+    ]
+  }
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.34">
+      <div class="step-ref passed">34</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request update</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.35">
+      <div class="step-ref passed">35</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method PUT</span>
+      </div>
+    </div>
+    <div class="time-cell passed">325</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.35">18:45:37.001 request:
+2 &gt; PUT http://122.165.121.195:8080/api/v1/campaign/172
+2 &gt; Content-Type: application/json; charset=UTF-8
+2 &gt; Content-Length: 406
+2 &gt; Host: 122.165.121.195:8080
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+2 &gt; Accept-Encoding: gzip,deflate
+{&quot;advertiserId&quot;:&quot;125&quot;,&quot;airlineTargetRule&quot;:{&quot;airlineIds&quot;:[93]},&quot;audienceTargetRule&quot;:{&quot;age&quot;:[1,2],&quot;gender&quot;:[1,2],&quot;travelGroup&quot;:[3,4],&quot;language&quot;:[2],&quot;nationality&quot;:[5]},&quot;description&quot;:&quot;Automation Updated&quot;,&quot;flightClassTargetRule&quot;:{&quot;classTypes&quot;:[2,4]},&quot;flightRouteTargetRule&quot;:{&quot;routes&quot;:[1,2]},&quot;genreTargetRule&quot;:{&quot;genre&quot;:[5,7]},&quot;name&quot;:&quot;Aut Ad Target updSHRLGHIQCV Updated&quot;,&quot;slotTypeTargetRule&quot;:{&quot;slotTypes&quot;:[4,1]}}
+
+18:45:37.324 response time in milliseconds: 323
+2 &lt; 404
+2 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+2 &lt; Access-Control-Max-Age: 3600
+2 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+2 &lt; Vary: Origin
+2 &lt; Vary: Access-Control-Request-Method
+2 &lt; Vary: Access-Control-Request-Headers
+2 &lt; X-Content-Type-Options: nosniff
+2 &lt; X-XSS-Protection: 1; mode=block
+2 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+2 &lt; Pragma: no-cache
+2 &lt; Expires: 0
+2 &lt; X-Frame-Options: DENY
+2 &lt; Content-Length: 0
+2 &lt; Date: Mon, 02 Sep 2024 13:15:36 GMT
+2 &lt; Keep-Alive: timeout=60
+2 &lt; Connection: keep-alive
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.36">
+      <div class="step-ref failed">36</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 202</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.36">18:45:37.326 classpath:apifeatures/Campaign.feature:36
+Then status 202
+status code was: 404, expected: 202, response time in milliseconds: 323, url: http://122.165.121.195:8080/api/v1/campaign/172, response: 
+
+classpath:apifeatures/Campaign.feature:36
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.37">
+      <div class="step-ref skipped">37</div>
+      
+      <div class="step-cell skipped">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/campaign/&quot;+response.id+&quot;/delete&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.38">
+      <div class="step-ref skipped">38</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>request &quot;&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.39">
+      <div class="step-ref skipped">39</div>
+      
+      <div class="step-cell skipped">
+        <span>When</span>&nbsp;<span>method PUT</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.40">
+      <div class="step-ref skipped">40</div>
+      
+      <div class="step-cell skipped">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.41">
+      <div class="step-ref skipped">41</div>
+      
+      <div class="step-cell skipped">
+        <span>Then</span>&nbsp;<span>match response.successMessage contains &quot;Deleted successfully&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.1:56]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.1:56]</span>
+                <span class="scenario-name">Verify the Campaign list</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>324</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.1:56]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.1:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.4">18:45:37.332 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="1.7">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.18">18:45:37.339 [print] GZCFBZQVZF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/campaign/list?orderBy=DESC&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.49">18:45:37.348 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">317</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.50">18:45:37.351 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/campaign/list?orderBy=DESC
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:45:37.666 response time in milliseconds: 315
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Mon, 02 Sep 2024 13:15:36 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:62,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:83,&quot;name&quot;:&quot;Aut Camp1 Prog upd&quot;,&quot;description&quot;:&quot;upd&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB3&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:82,&quot;name&quot;:&quot;Aut Camp1&quot;,&quot;description&quot;:&quot;upd&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB1&quot;,&quot;IAB2&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:81,&quot;name&quot;:&quot;TestCampaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:123,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:80,&quot;name&quot;:&quot;Aut camp Prog&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB3&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:79,&quot;name&quot;:&quot;Aut Camp upd&quot;,&quot;description&quot;:&quot;upd&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB6&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:78,&quot;name&quot;:&quot;new campaign dime&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:121,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:77,&quot;name&quot;:&quot;Aksh Camp&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:76,&quot;name&quot;:&quot;Creative test camp&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:73,&quot;name&quot;:&quot;Rename adserving 111&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:121,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:70,&quot;name&quot;:&quot;cccc&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:79,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB3&quot;],&quot;active&quot;:false,&quot;archived&quot;:false}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains deep { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;campaignType&quot;: &#39;#string&#39; ,&quot;advertiserId&quot;: &#39;#number&#39;,&quot;impression&quot;: &#39;#number&#39;,&quot;view&quot;: &#39;#number&#39;,&quot;click&quot;:&#39;#number&#39;,&quot;percentageDelivered&quot;:&#39;#number&#39;,&quot;overUnderDelivered&quot;:&#39;#number&#39;,&quot;active&quot;:&#39;#boolean&#39;,&quot;archived&quot;:&#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.2:56]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.2:56]</span>
+                <span class="scenario-name">Verify the status</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>377</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.2:56]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.2:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.4">18:45:37.332 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.2:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.2:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.2:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="2.7">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.2:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.2:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.18">18:45:37.339 [print] GZCFBZQVZF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/campaign/status&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.49">18:45:37.677 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">371</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.50">18:45:37.680 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/campaign/status
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:45:38.049 response time in milliseconds: 367
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Mon, 02 Sep 2024 13:15:37 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;entity&quot;:{&quot;active&quot;:5,&quot;inActive&quot;:57,&quot;archived&quot;:1},&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:1,&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.entity contains deep {&quot;active&quot;: &#39;#number&#39;,&quot;inActive&quot;: &#39;#number&#39;,&quot;archived&quot;:&#39;#number&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.3:56]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.3:56]</span>
+                <span class="scenario-name">Verify the Campaign list sort by ascending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>331</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.3:56]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.3:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.4">18:45:37.332 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.3:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.3:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.3:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="3.7">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.3:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.3:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.18">18:45:37.339 [print] GZCFBZQVZF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/campaign/list?orderBy=ASC&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.49">18:45:38.060 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">324</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.50">18:45:38.063 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/campaign/list?orderBy=ASC&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:45:38.382 response time in milliseconds: 318
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Mon, 02 Sep 2024 13:15:37 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:62,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:45,&quot;name&quot;:&quot;15 campaign &quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:54,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:26,&quot;name&quot;:&quot;Ad Campaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:11,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:27,&quot;name&quot;:&quot;Ad Campaign Programmatic&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:49,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB1&quot;,&quot;IAB2&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:64,&quot;name&quot;:&quot;Adserving airline donot delete&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:82,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:true,&quot;archived&quot;:false},{&quot;id&quot;:41,&quot;name&quot;:&quot;Adserving -Campaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:54,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:true,&quot;archived&quot;:false},{&quot;id&quot;:58,&quot;name&quot;:&quot;airlinetargeting&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:73,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:77,&quot;name&quot;:&quot;Aksh Camp&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:3,&quot;name&quot;:&quot;Apple Shot on iPhone&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:1,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:82,&quot;name&quot;:&quot;Aut Camp1&quot;,&quot;description&quot;:&quot;upd&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB1&quot;,&quot;IAB2&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:83,&quot;name&quot;:&quot;Aut Camp1 Prog upd&quot;,&quot;description&quot;:&quot;upd&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB3&quot;],&quot;active&quot;:false,&quot;archived&quot;:false}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains deep { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;campaignType&quot;: &#39;#string&#39; ,&quot;advertiserId&quot;: &#39;#number&#39;,&quot;impression&quot;: &#39;#number&#39;,&quot;view&quot;: &#39;#number&#39;,&quot;click&quot;:&#39;#number&#39;,&quot;percentageDelivered&quot;: &#39;#number&#39;,&quot;overUnderDelivered&quot;: &#39;#number&#39;,&quot;active&quot;: &#39;#boolean&#39;,&quot;archived&quot;: &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.4:56]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.4:56]</span>
+                <span class="scenario-name">Verify the Campaign list sort by descending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>338</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.4:56]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.4:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.4">18:45:37.332 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.4:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.4:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.4:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="4.7">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.4:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.4:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.18">18:45:37.339 [print] GZCFBZQVZF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/campaign/list?orderBy=DESC&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.49">18:45:38.398 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">330</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.50">18:45:38.403 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/campaign/list?orderBy=DESC&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:45:38.731 response time in milliseconds: 327
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Mon, 02 Sep 2024 13:15:37 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:62,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:42,&quot;name&quot;:&quot;Valdation Campaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:53,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB1&quot;,&quot;IAB4&quot;,&quot;IAB2&quot;,&quot;IAB3&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:29,&quot;name&quot;:&quot;Test QA 15&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:22,&quot;impression&quot;:3,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:18,&quot;name&quot;:&quot;test campaigns&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:21,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:17,&quot;name&quot;:&quot;Test CAmpaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:13,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB1&quot;,&quot;IAB2&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:81,&quot;name&quot;:&quot;TestCampaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:123,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:52,&quot;name&quot;:&quot;seven eleven campaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:60,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:48,&quot;name&quot;:&quot;San Camp Prog&quot;,&quot;description&quot;:&quot;Desc&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:61,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB5&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:49,&quot;name&quot;:&quot;San Camp DB&quot;,&quot;description&quot;:&quot;Desc&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:61,&quot;impression&quot;:1,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB5&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:10,&quot;name&quot;:&quot;Sample Campaign 8&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:1,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:8,&quot;name&quot;:&quot;Sample Campaign6&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:1,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains deep { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;campaignType&quot;: &#39;#string&#39; ,&quot;advertiserId&quot;: &#39;#number&#39;,&quot;impression&quot;: &#39;#number&#39;,&quot;view&quot;: &#39;#number&#39;,&quot;click&quot;: &#39;#number&#39;,&quot;percentageDelivered&quot;: &#39;#number&#39;,&quot;overUnderDelivered&quot;: &#39;#number&#39;,&quot;category&quot;: &#39;#[] #string&#39;,&quot;active&quot;: &#39;#boolean&#39;,&quot;archived&quot;: &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.5:56]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.5:56]</span>
+                <span class="scenario-name">Verify the active Campaign list sort by ascending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>315</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.5:56]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="5.4">18:45:37.332 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="5.7">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.5:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="5.18">18:45:37.339 [print] GZCFBZQVZF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/campaign/list?statusFilter=active&amp;orderBy=ASC&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="5.49">18:45:38.738 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">308</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="5.50">18:45:38.739 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/campaign/list?statusFilter=active&amp;orderBy=ASC&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:45:39.045 response time in milliseconds: 306
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Mon, 02 Sep 2024 13:15:38 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:5,&quot;items&quot;:5,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:64,&quot;name&quot;:&quot;Adserving airline donot delete&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:82,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:true,&quot;archived&quot;:false},{&quot;id&quot;:41,&quot;name&quot;:&quot;Adserving -Campaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:54,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:true,&quot;archived&quot;:false},{&quot;id&quot;:12,&quot;name&quot;:&quot;Sample Campaign 10&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:1,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:true,&quot;archived&quot;:false},{&quot;id&quot;:5,&quot;name&quot;:&quot;Sample Campaign2&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:1,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:true,&quot;archived&quot;:false},{&quot;id&quot;:7,&quot;name&quot;:&quot;Sample Campaign4&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:1,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:true,&quot;archived&quot;:false}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="5.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains deep { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;campaignType&quot;: &#39;#string&#39;,&quot;advertiserId&quot;: &#39;#number&#39;,&quot;impression&quot;: &#39;#number&#39;,&quot;view&quot;: &#39;#number&#39;,&quot;click&quot;: &#39;#number&#39;,&quot;percentageDelivered&quot;: &#39;#number&#39;,&quot;overUnderDelivered&quot;: &#39;#number&#39;,&quot;active&quot;: &#39;#boolean&#39;,&quot;archived&quot;: &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.6:56]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.6:56]</span>
+                <span class="scenario-name">Verify the active Campaign list sort by descending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>331</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.6:56]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.6:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="6.4">18:45:37.332 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.6:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.6:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.6:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="6.7">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.6:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.6:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="6.18">18:45:37.339 [print] GZCFBZQVZF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/campaign/list?statusFilter=active&amp;orderBy=DESC&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="6.49">18:45:39.058 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">325</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="6.50">18:45:39.063 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/campaign/list?statusFilter=active&amp;orderBy=DESC&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:45:39.382 response time in milliseconds: 319
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Mon, 02 Sep 2024 13:15:38 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:5,&quot;items&quot;:5,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:7,&quot;name&quot;:&quot;Sample Campaign4&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:1,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:true,&quot;archived&quot;:false},{&quot;id&quot;:5,&quot;name&quot;:&quot;Sample Campaign2&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:1,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:true,&quot;archived&quot;:false},{&quot;id&quot;:12,&quot;name&quot;:&quot;Sample Campaign 10&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:1,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:true,&quot;archived&quot;:false},{&quot;id&quot;:41,&quot;name&quot;:&quot;Adserving -Campaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:54,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:true,&quot;archived&quot;:false},{&quot;id&quot;:64,&quot;name&quot;:&quot;Adserving airline donot delete&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:82,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:true,&quot;archived&quot;:false}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="6.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains deep { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39; ,&quot;campaignType&quot;: &#39;#string&#39; ,&quot;advertiserId&quot;: &#39;#number&#39;,&quot;impression&quot;: &#39;#number&#39;,&quot;view&quot;: &#39;#number&#39;,&quot;click&quot;: &#39;#number&#39;,&quot;percentageDelivered&quot;: &#39;#number&#39;,&quot;overUnderDelivered&quot;: &#39;#number&#39;,&quot;active&quot;: &#39;#boolean&#39;,&quot;archived&quot;: &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.7:56]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.7:56]</span>
+                <span class="scenario-name">Verify the Inactive Campaign list sort by ascending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>327</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.7:56]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.7:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="7.4">18:45:37.332 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.7:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.7:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.7:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="7.7">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.7:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.7:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="7.18">18:45:37.339 [print] GZCFBZQVZF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/campaign/list?statusFilter=inactive&amp;orderBy=ASC&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="7.49">18:45:39.396 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">321</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="7.50">18:45:39.400 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/campaign/list?statusFilter=inactive&amp;orderBy=ASC&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:45:39.718 response time in milliseconds: 317
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Mon, 02 Sep 2024 13:15:38 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:57,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:45,&quot;name&quot;:&quot;15 campaign &quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:54,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:26,&quot;name&quot;:&quot;Ad Campaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:11,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:27,&quot;name&quot;:&quot;Ad Campaign Programmatic&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:49,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB1&quot;,&quot;IAB2&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:58,&quot;name&quot;:&quot;airlinetargeting&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:73,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:77,&quot;name&quot;:&quot;Aksh Camp&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:3,&quot;name&quot;:&quot;Apple Shot on iPhone&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:1,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:82,&quot;name&quot;:&quot;Aut Camp1&quot;,&quot;description&quot;:&quot;upd&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB1&quot;,&quot;IAB2&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:83,&quot;name&quot;:&quot;Aut Camp1 Prog upd&quot;,&quot;description&quot;:&quot;upd&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB3&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:80,&quot;name&quot;:&quot;Aut camp Prog&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB3&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:79,&quot;name&quot;:&quot;Aut Camp upd&quot;,&quot;description&quot;:&quot;upd&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB6&quot;],&quot;active&quot;:false,&quot;archived&quot;:false}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="7.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains deep { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;campaignType&quot;: &#39;#string&#39; ,&quot;advertiserId&quot;: &#39;#number&#39;,&quot;impression&quot;: &#39;#number&#39;,&quot;view&quot;: &#39;#number&#39;,&quot;click&quot;: &#39;#number&#39;,&quot;percentageDelivered&quot;: &#39;#number&#39;,&quot;overUnderDelivered&quot;: &#39;#number&#39;,&quot;active&quot;: &#39;#boolean&#39;,&quot;archived&quot;: &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.8:56]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.8:56]</span>
+                <span class="scenario-name">Verify the Inactive Campaign list sort by descending order</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>352</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.8:56]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.8:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="8.4">18:45:37.332 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.8:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.8:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.8:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="8.7">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.8:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.8:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="8.18">18:45:37.339 [print] GZCFBZQVZF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/campaign/list?statusFilter=inactive&amp;orderBy=DESC&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="8.49">18:45:39.724 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">343</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="8.50">18:45:39.726 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/campaign/list?statusFilter=inactive&amp;orderBy=DESC&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:45:40.063 response time in milliseconds: 336
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Mon, 02 Sep 2024 13:15:39 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:57,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:42,&quot;name&quot;:&quot;Valdation Campaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:53,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB1&quot;,&quot;IAB4&quot;,&quot;IAB2&quot;,&quot;IAB3&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:29,&quot;name&quot;:&quot;Test QA 15&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:22,&quot;impression&quot;:3,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:18,&quot;name&quot;:&quot;test campaigns&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:21,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:17,&quot;name&quot;:&quot;Test CAmpaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:13,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB1&quot;,&quot;IAB2&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:81,&quot;name&quot;:&quot;TestCampaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:123,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:52,&quot;name&quot;:&quot;seven eleven campaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:60,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:48,&quot;name&quot;:&quot;San Camp Prog&quot;,&quot;description&quot;:&quot;Desc&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:61,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB5&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:49,&quot;name&quot;:&quot;San Camp DB&quot;,&quot;description&quot;:&quot;Desc&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:61,&quot;impression&quot;:1,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB5&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:10,&quot;name&quot;:&quot;Sample Campaign 8&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:1,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:8,&quot;name&quot;:&quot;Sample Campaign6&quot;,&quot;description&quot;:&quot;desc&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:1,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="8.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains deep { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;campaignType&quot;: &#39;#string&#39; ,&quot;advertiserId&quot;: &#39;#number&#39;,&quot;impression&quot;: &#39;#number&#39;,&quot;view&quot;: &#39;#number&#39;,&quot;click&quot;: &#39;#number&#39;,&quot;percentageDelivered&quot;: &#39;#number&#39;,&quot;overUnderDelivered&quot;: &#39;#number&#39;,&quot;category&quot;: &#39;#[] #string&#39;,&quot;active&quot;: &#39;#boolean&#39;,&quot;archived&quot;: &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.9:56]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.9:56]</span>
+                <span class="scenario-name">Verify the Campaign search in campaign list</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>325</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.9:56]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.9:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="9.4">18:45:37.332 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.9:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.9:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.9:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="9.7">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.9:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.9:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="9.18">18:45:37.339 [print] GZCFBZQVZF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/campaign/list?orderBy=ASC&amp;search=Camp&amp;sortBy=name&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="9.49">18:45:40.083 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">319</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="9.50">18:45:40.086 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/campaign/list?orderBy=ASC&amp;search=Camp&amp;sortBy=name
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:45:40.403 response time in milliseconds: 317
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Mon, 02 Sep 2024 13:15:39 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:47,&quot;items&quot;:10,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:45,&quot;name&quot;:&quot;15 campaign &quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:54,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:26,&quot;name&quot;:&quot;Ad Campaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:11,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:27,&quot;name&quot;:&quot;Ad Campaign Programmatic&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:49,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB1&quot;,&quot;IAB2&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:41,&quot;name&quot;:&quot;Adserving -Campaign&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:54,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:true,&quot;archived&quot;:false},{&quot;id&quot;:77,&quot;name&quot;:&quot;Aksh Camp&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:82,&quot;name&quot;:&quot;Aut Camp1&quot;,&quot;description&quot;:&quot;upd&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB1&quot;,&quot;IAB2&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:83,&quot;name&quot;:&quot;Aut Camp1 Prog upd&quot;,&quot;description&quot;:&quot;upd&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB3&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:80,&quot;name&quot;:&quot;Aut camp Prog&quot;,&quot;campaignType&quot;:&quot;PROGRAMMATIC&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB3&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:79,&quot;name&quot;:&quot;Aut Camp upd&quot;,&quot;description&quot;:&quot;upd&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;category&quot;:[&quot;IAB6&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},{&quot;id&quot;:60,&quot;name&quot;:&quot;campaign 31&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:78,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;active&quot;:false,&quot;archived&quot;:false}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="9.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains deep { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;campaignType&quot;: &#39;#string&#39;,&quot;advertiserId&quot;: &#39;#number&#39;,&quot;impression&quot;: &#39;#number&#39;,&quot;view&quot;: &#39;#number&#39;,&quot;click&quot;: &#39;#number&#39;,&quot;percentageDelivered&quot;: &#39;#number&#39;,&quot;overUnderDelivered&quot;: &#39;#number&#39;,&quot;active&quot;: &#39;#boolean&#39;,&quot;archived&quot;: &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.10:56]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.10:56]</span>
+                <span class="scenario-name">Verify the Campaign detail (Direct Buy &amp; Programmatic)</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>318</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.10:56]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.10:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="10.4">18:45:37.332 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.10:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.10:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.10:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="10.7">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.10:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.10:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="10.18">18:45:37.339 [print] GZCFBZQVZF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/campaign/79&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="10.49">18:45:40.408 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">312</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="10.50">18:45:40.410 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/campaign/79
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:45:40.717 response time in milliseconds: 307
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Mon, 02 Sep 2024 13:15:39 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;entity&quot;:{&quot;id&quot;:79,&quot;name&quot;:&quot;Aut Camp upd&quot;,&quot;description&quot;:&quot;upd&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;advertiserName&quot;:&quot;Aksh Adv&quot;,&quot;category&quot;:[&quot;IAB6&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},&quot;httpStatus&quot;:&quot;OK&quot;,&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="10.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.entity contains deep {&quot;id&quot;: 79}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.11:56]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.11:56]</span>
+                <span class="scenario-name">Verify the Placement status in campaign detail page (Direct Buy &amp; Programmatic)</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>300</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.11:56]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.11:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="11.4">18:45:37.332 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.11:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.11:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.11:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="11.7">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.11:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.11:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="11.18">18:45:37.339 [print] GZCFBZQVZF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/placement/status/79&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="11.49">18:45:40.725 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">294</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="11.50">18:45:40.727 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/placement/status/79
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:45:41.020 response time in milliseconds: 293
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Mon, 02 Sep 2024 13:15:39 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;entity&quot;:{&quot;active&quot;:0,&quot;inActive&quot;:1},&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:1,&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="11.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.entity contains deep {&quot;active&quot;: &#39;#number&#39;,&quot;inActive&quot;: &#39;#number&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.12:56]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.12:56]</span>
+                <span class="scenario-name">Verify the Placement list (Direct Buy &amp; Programmatic)</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>362</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.12:56]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.12:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="12.4">18:45:37.332 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.12:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.12:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.12:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="12.7">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.12:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.12:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="12.18">18:45:37.339 [print] GZCFBZQVZF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/placement/list/79?orderBy=DESC&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="12.49">18:45:41.025 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">356</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="12.50">18:45:41.028 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/placement/list/79?orderBy=DESC
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:45:41.381 response time in milliseconds: 353
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Mon, 02 Sep 2024 13:15:41 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;httpStatus&quot;:&quot;OK&quot;,&quot;total&quot;:1,&quot;items&quot;:1,&quot;start&quot;:0,&quot;coll&quot;:[{&quot;id&quot;:105,&quot;name&quot;:&quot;Direct Buy Line item upd&quot;,&quot;description&quot;:&quot;upd&quot;,&quot;campaignId&quot;:79,&quot;startDate&quot;:&quot;2024-08-20 00:00:00&quot;,&quot;endDate&quot;:&quot;2024-08-20 00:00:00&quot;,&quot;costMethod&quot;:&quot;CPV&quot;,&quot;budget&quot;:20250.000000,&quot;bookedQuantity&quot;:45,&quot;priority&quot;:&quot;HIGH&quot;,&quot;deliveryMode&quot;:&quot;ASAP&quot;,&quot;targetId&quot;:134,&quot;frequencyCap&quot;:50,&quot;isDailyCap&quot;:true,&quot;manualCapping&quot;:10,&quot;timeZoneId&quot;:1,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;isActive&quot;:false,&quot;isProgrammatic&quot;:false,&quot;timeZoneCode&quot;:&quot;Asia/Calcutta&quot;,&quot;frequencyInterval&quot;:&quot;HOUR&quot;,&quot;frequencyExpires&quot;:300,&quot;costBasis&quot;:450.00,&quot;displayTypeId&quot;:1,&quot;openAuction&quot;:false}],&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="12.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.coll contains deep { &quot;id&quot;: &#39;#number&#39;,&quot;name&quot;: &#39;#string&#39;,&quot;description&quot;: &#39;#string&#39;,&quot;campaignId&quot;: &#39;#number&#39;,&quot;startDate&quot;:  &#39;#string&#39;,&quot;endDate&quot;:  &#39;#string&#39;,&quot;costMethod&quot;:  &#39;#string&#39;,&quot;budget&quot;: &#39;#number&#39;,&quot;bookedQuantity&quot;: &#39;#number&#39;,&quot;priority&quot;:  &#39;#string&#39;,&quot;deliveryMode&quot;:  &#39;#string&#39;,&quot;targetId&quot;: &#39;#number&#39;,&quot;frequencyCap&quot;:&#39;#number&#39;,&quot;isDailyCap&quot;: &#39;#boolean&#39;,&quot;manualCapping&quot;: &#39;#number&#39;,&quot;timeZoneId&quot;: &#39;#number&#39;,&quot;impression&quot;: &#39;#number&#39;,&quot;view&quot;: &#39;#number&#39;,&quot;click&quot;: &#39;#number&#39;,&quot;percentageDelivered&quot;: &#39;#number&#39;,&quot;overUnderDelivered&quot;: &#39;#number&#39;,&quot;isActive&quot;: &#39;#boolean&#39;,&quot;isProgrammatic&quot;: &#39;#boolean&#39;,&quot;timeZoneCode&quot;: &#39;#string&#39;,&quot;frequencyInterval&quot;: &#39;#string&#39;,&quot;frequencyExpires&quot;: &#39;#number&#39;,&quot;costBasis&quot;: &#39;#number&#39;,&quot;displayTypeId&quot;: &#39;#number&#39;,&quot;openAuction&quot;:  &#39;#boolean&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.13:56]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.13:56]</span>
+                <span class="scenario-name">Verify the updated data of Campaign (Direct Buy &amp; Programmatic)</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>300</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.13:56]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.13:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="13.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;http://122.165.121.195:8080&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="13.4">18:45:37.332 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.13:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="13.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseurl = baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.13:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="13.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newid = &quot;null&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.13:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="13.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def random_number =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="13.7">function(s) {
+var text = &quot;&quot;;
+var pattern = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+for (var i=0;i&lt;s;i++)
+text += pattern.charAt(Math.random() * pattern.length());
+return text;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.13:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="13.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomstring = random_number(10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.13:56]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="13.18">
+      <div class="step-ref bg-step">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print randomstring</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="13.18">18:45:37.339 [print] GZCFBZQVZF 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="13.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseURL+&quot;/api/v1/campaign/79&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="13.49">18:45:41.387 The value of env is :  qa 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="13.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">295</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="13.50">18:45:41.388 request:
+1 &gt; GET http://122.165.121.195:8080/api/v1/campaign/79
+1 &gt; Host: 122.165.121.195:8080
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.8.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:45:41.681 response time in milliseconds: 293
+1 &lt; 200
+1 &lt; Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PATCH, PUT
+1 &lt; Access-Control-Max-Age: 3600
+1 &lt; Access-Control-Allow-Headers: _token, Authorization, x-requested-with, content-type
+1 &lt; Vary: Origin
+1 &lt; Vary: Access-Control-Request-Method
+1 &lt; Vary: Access-Control-Request-Headers
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-XSS-Protection: 1; mode=block
+1 &lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Expires: 0
+1 &lt; X-Frame-Options: DENY
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Date: Mon, 02 Sep 2024 13:15:41 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Connection: keep-alive
+{&quot;entity&quot;:{&quot;id&quot;:79,&quot;name&quot;:&quot;Aut Camp upd&quot;,&quot;description&quot;:&quot;upd&quot;,&quot;campaignType&quot;:&quot;DIRECT_BUY&quot;,&quot;advertiserId&quot;:125,&quot;impression&quot;:0,&quot;view&quot;:0,&quot;click&quot;:0,&quot;percentageDelivered&quot;:0.0,&quot;overUnderDelivered&quot;:0.0,&quot;advertiserName&quot;:&quot;Aksh Adv&quot;,&quot;category&quot;:[&quot;IAB6&quot;],&quot;active&quot;:false,&quot;archived&quot;:false},&quot;httpStatus&quot;:&quot;OK&quot;,&quot;valid&quot;:true}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="13.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="13.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.entity contains deep {&quot;id&quot;: 79}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

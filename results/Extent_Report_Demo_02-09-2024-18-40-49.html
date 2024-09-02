@@ -1,0 +1,1587 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Karate Extent Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Karate Extent Demo</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">09/02/2024 06:40:49 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>09/02/2024 06:40:49 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>09/02/2024 06:40:57 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>12</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>3</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='80%'>
+<b>12</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='20%'><b>3</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'><b>0</b> events passed</small></div>
+<div>
+<small data-tooltip='2%'><b>3</b> events failed,
+<b data-tooltip='%'>119</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"<b>Scenario : </b>Create ,Edit and Delete Advertiser":0.004,"<b>Scenario : </b>Create ,Edit and Delete Advertiser":0.003,"<b>Scenario : </b>Verify the Campaign list":0.004,"<b>Scenario : </b>Verify the status":0.004,"<b>Scenario : </b>Verify the Campaign list sort by ascending order":0.002,"<b>Scenario : </b>Verify the Campaign list sort by descending order":0.003,"<b>Scenario : </b>Verify the active Campaign list sort by ascending order":0.002,"<b>Scenario : </b>Verify the active Campaign list sort by descending order":0.009,"<b>Scenario : </b>Verify the Inactive Campaign list sort by ascending order":0.003,"<b>Scenario : </b>Verify the Inactive Campaign list sort by descending order":0.003,"<b>Scenario : </b>Verify the Campaign search in campaign list":0.001,"<b>Scenario : </b>Verify the Campaign detail (Direct Buy & Programmatic)":0.002,"<b>Scenario : </b>Verify the Placement status in campaign detail page (Direct Buy & Programmatic)":0.001,"<b>Scenario : </b>Verify the Placement list (Direct Buy & Programmatic)":0.001,"<b>Scenario : </b>Verify the updated data of Campaign (Direct Buy & Programmatic)":0.001
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Created By</td>
+<td>Femina</td>
+</tr>
+<tr>
+<td>Autmation Type</td>
+<td>API</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 12,
+failParent: 3,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 0,
+failEvents: 3,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 119
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name"><b>Scenario : </b>Create ,Edit and Delete Advertiser</p>
+            <p class="text-sm">
+              <span>6:40:51 pm</span> / <span>00:00:00:004</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass"><b>Scenario : </b>Create ,Edit and Delete Advertiser</h5>
+<span class='badge badge-success'>09.02.2024 6:40:51 pm</span>
+<span class='badge badge-danger'>09.02.2024 6:40:51 pm</span>
+<span class='badge badge-default'>00:00:00:004</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b>Feature : </b>AERQ Campaign API
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b>Url : </b>http://122.165.121.195:8080/api/v1/target
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b> Steps :</b>[* def create = {"advertiserId": "125","airlineTargetRule":{"airlineIds":[93]},"audienceTargetRule":{"age":[1, 2],"gender":[1, 2],"travelGroup":[3, 4],"language":[2],"nationality":[5]},"description":"upd","flightClassTargetRule":{"classTypes":[2, 4]},"flightRouteTargetRule":{"routes": [1, 2]},"genreTargetRule":{"genre":[5, 7]},"name":"Aut Ad Target upd","slotTypeTargetRule":{"slotTypes": [4, 1]}}, * create.name= create.name+randomstring, * print create, Given url baseURL+"/api/v1/target", And request create, When method POST, Then status 201, And match response contains {"id": '#number'}, Given url baseURL+"/api/v1/campaign/"+response.id, * def update =  {"advertiserId": "125","airlineTargetRule":{"airlineIds":[93]},"audienceTargetRule":{"age":[1, 2],"gender":[1, 2],"travelGroup":[3, 4],"language":[2],"nationality":[5]},"description":"upd","flightClassTargetRule":{"classTypes":[2, 4]},"flightRouteTargetRule":{"routes": [1, 2]},"genreTargetRule":{"genre":[5, 7]},"name":"Aut Ad Target upd","slotTypeTargetRule":{"slotTypes": [4, 1]}}, * update.name= update.name+randomstring+ " Updated", * update.description = "Automation Updated", * print update, And request update, When method PUT, Then status 202, Given url baseURL+"/api/v1/campaign/"+response.id+"/delete", And request "", When method PUT, Then status 200, Then match response.successMessage contains "Deleted successfully"]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b>Status Code :</b>201
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b>Method :</b>POST
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b> Tags :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b>Response :</b>{"id":170,"name":"Aut Ad Target updINKRBCUKRP","description":"upd","advertiserId":125,"airlineTargetRule":{"airlineIds":[93]},"slotTypeTargetRule":{"slotTypes":[4,1]},"flightClassTargetRule":{"classTypes":[2,4]},"audienceTargetRule":{"age":[1,2],"gender":[1,2],"travelGroup":[3,4],"language":[2],"nationality":[5]},"flightRouteTargetRule":{"routes":[1,2]},"genreTargetRule":{"genre":[5,7]},"createdOn":"2024-09-02 13:10:51"}
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name"><b>Scenario : </b>Create ,Edit and Delete Advertiser</p>
+            <p class="text-sm">
+              <span>6:40:51 pm</span> / <span>00:00:00:003</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail"><b>Scenario : </b>Create ,Edit and Delete Advertiser</h5>
+<span class='badge badge-success'>09.02.2024 6:40:51 pm</span>
+<span class='badge badge-danger'>09.02.2024 6:40:51 pm</span>
+<span class='badge badge-default'>00:00:00:003</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b>Feature : </b>AERQ Campaign API
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b>Url : </b>http://122.165.121.195:8080/api/v1/campaign/170
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b> Steps :</b>[* def create = {"advertiserId": "125","airlineTargetRule":{"airlineIds":[93]},"audienceTargetRule":{"age":[1, 2],"gender":[1, 2],"travelGroup":[3, 4],"language":[2],"nationality":[5]},"description":"upd","flightClassTargetRule":{"classTypes":[2, 4]},"flightRouteTargetRule":{"routes": [1, 2]},"genreTargetRule":{"genre":[5, 7]},"name":"Aut Ad Target upd","slotTypeTargetRule":{"slotTypes": [4, 1]}}, * create.name= create.name+randomstring, * print create, Given url baseURL+"/api/v1/target", And request create, When method POST, Then status 201, And match response contains {"id": '#number'}, Given url baseURL+"/api/v1/campaign/"+response.id, * def update =  {"advertiserId": "125","airlineTargetRule":{"airlineIds":[93]},"audienceTargetRule":{"age":[1, 2],"gender":[1, 2],"travelGroup":[3, 4],"language":[2],"nationality":[5]},"description":"upd","flightClassTargetRule":{"classTypes":[2, 4]},"flightRouteTargetRule":{"routes": [1, 2]},"genreTargetRule":{"genre":[5, 7]},"name":"Aut Ad Target upd","slotTypeTargetRule":{"slotTypes": [4, 1]}}, * update.name= update.name+randomstring+ " Updated", * update.description = "Automation Updated", * print update, And request update, When method PUT, Then status 202, Given url baseURL+"/api/v1/campaign/"+response.id+"/delete", And request "", When method PUT, Then status 200, Then match response.successMessage contains "Deleted successfully"]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b>Status Code :</b>404
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b>Method :</b>PUT
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b> Tags :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b>Response :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b>Status: </b>Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:40:51 pm</td>
+        <td>
+          <b>Error : </b>com.intuit.karate.KarateException: status code was: 404, expected: 202, response time in milliseconds: 325, url: http://122.165.121.195:8080/api/v1/campaign/170, response: 
+
+classpath:apifeatures/Campaign.feature:36
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name"><b>Scenario : </b>Verify the Campaign list</p>
+            <p class="text-sm">
+              <span>6:40:52 pm</span> / <span>00:00:00:004</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass"><b>Scenario : </b>Verify the Campaign list</h5>
+<span class='badge badge-success'>09.02.2024 6:40:52 pm</span>
+<span class='badge badge-danger'>09.02.2024 6:40:52 pm</span>
+<span class='badge badge-default'>00:00:00:004</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Feature : </b>AERQ Campaign API
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Url : </b>http://122.165.121.195:8080/api/v1/campaign/list?orderBy=DESC
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b> Steps :</b>[Given url baseURL+"/api/v1/campaign/list?orderBy=DESC", When method GET, Then status 200, And match response.coll contains deep { "id": '#number',"name": '#string',"campaignType": '#string' ,"advertiserId": '#number',"impression": '#number',"view": '#number',"click":'#number',"percentageDelivered":'#number',"overUnderDelivered":'#number',"active":'#boolean',"archived":'#boolean'}]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Status Code :</b>200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Method :</b>GET
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b> Tags :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Response :</b>{"httpStatus":"OK","total":62,"items":10,"start":0,"coll":[{"id":83,"name":"Aut Camp1 Prog upd","description":"upd","campaignType":"PROGRAMMATIC","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB3"],"active":false,"archived":false},{"id":82,"name":"Aut Camp1","description":"upd","campaignType":"DIRECT_BUY","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB1","IAB2"],"active":false,"archived":false},{"id":81,"name":"TestCampaign","campaignType":"DIRECT_BUY","advertiserId":123,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":80,"name":"Aut camp Prog","campaignType":"PROGRAMMATIC","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB3"],"active":false,"archived":false},{"id":79,"name":"Aut Camp upd","description":"upd","campaignType":"DIRECT_BUY","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB6"],"active":false,"archived":false},{"id":78,"name":"new campaign dime","campaignType":"DIRECT_BUY","advertiserId":121,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":77,"name":"Aksh Camp","campaignType":"PROGRAMMATIC","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":76,"name":"Creative test camp","campaignType":"DIRECT_BUY","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":73,"name":"Rename adserving 111","campaignType":"DIRECT_BUY","advertiserId":121,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":70,"name":"cccc","campaignType":"DIRECT_BUY","advertiserId":79,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB3"],"active":false,"archived":false}],"valid":true}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Status: </b>Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name"><b>Scenario : </b>Verify the status</p>
+            <p class="text-sm">
+              <span>6:40:52 pm</span> / <span>00:00:00:004</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail"><b>Scenario : </b>Verify the status</h5>
+<span class='badge badge-success'>09.02.2024 6:40:52 pm</span>
+<span class='badge badge-danger'>09.02.2024 6:40:52 pm</span>
+<span class='badge badge-default'>00:00:00:004</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Feature : </b>AERQ Campaign API
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Url : </b>http://122.165.121.195:8080/api/v1/campaign/status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b> Steps :</b>[Given url baseURL+"/api/v1/campaign/status", When method GET, Then status 200, And match response.entity contains deep {"active": '#number',"inactive": '#number',"archived":'#number'}]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Status Code :</b>200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Method :</b>GET
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b> Tags :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Response :</b>{"entity":{"active":5,"inActive":57,"archived":1},"httpStatus":"OK","total":1,"valid":true}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Status: </b>Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Error : </b>com.intuit.karate.KarateException: match failed: CONTAINS_DEEP
+  $ | actual does not contain expected | actual does not contain key - 'inactive' (MAP:MAP)
+  {"active":5,"inActive":57,"archived":1}
+  {"active":"#number","archived":"#number","inactive":"#number"}
+
+
+classpath:apifeatures/Campaign.feature:52
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name"><b>Scenario : </b>Verify the Campaign list sort by ascending order</p>
+            <p class="text-sm">
+              <span>6:40:52 pm</span> / <span>00:00:00:002</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass"><b>Scenario : </b>Verify the Campaign list sort by ascending order</h5>
+<span class='badge badge-success'>09.02.2024 6:40:52 pm</span>
+<span class='badge badge-danger'>09.02.2024 6:40:52 pm</span>
+<span class='badge badge-default'>00:00:00:002</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Feature : </b>AERQ Campaign API
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Url : </b>http://122.165.121.195:8080/api/v1/campaign/list?orderBy=ASC&sortBy=name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b> Steps :</b>[Given url baseURL+"/api/v1/campaign/list?orderBy=ASC&sortBy=name", When method GET, Then status 200, And match response.coll contains deep { "id": '#number',"name": '#string',"campaignType": '#string' ,"advertiserId": '#number',"impression": '#number',"view": '#number',"click":'#number',"percentageDelivered": '#number',"overUnderDelivered": '#number',"active": '#boolean',"archived": '#boolean'}]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Status Code :</b>200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Method :</b>GET
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b> Tags :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Response :</b>{"httpStatus":"OK","total":62,"items":10,"start":0,"coll":[{"id":45,"name":"15 campaign ","campaignType":"DIRECT_BUY","advertiserId":54,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":26,"name":"Ad Campaign","campaignType":"DIRECT_BUY","advertiserId":11,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":27,"name":"Ad Campaign Programmatic","campaignType":"PROGRAMMATIC","advertiserId":49,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB1","IAB2"],"active":false,"archived":false},{"id":64,"name":"Adserving airline donot delete","campaignType":"DIRECT_BUY","advertiserId":82,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":true,"archived":false},{"id":41,"name":"Adserving -Campaign","campaignType":"DIRECT_BUY","advertiserId":54,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":true,"archived":false},{"id":58,"name":"airlinetargeting","campaignType":"DIRECT_BUY","advertiserId":73,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":77,"name":"Aksh Camp","campaignType":"PROGRAMMATIC","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":3,"name":"Apple Shot on iPhone","description":"desc","campaignType":"PROGRAMMATIC","advertiserId":1,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":82,"name":"Aut Camp1","description":"upd","campaignType":"DIRECT_BUY","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB1","IAB2"],"active":false,"archived":false},{"id":83,"name":"Aut Camp1 Prog upd","description":"upd","campaignType":"PROGRAMMATIC","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB3"],"active":false,"archived":false}],"valid":true}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:52 pm</td>
+        <td>
+          <b>Status: </b>Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name"><b>Scenario : </b>Verify the Campaign list sort by descending order</p>
+            <p class="text-sm">
+              <span>6:40:53 pm</span> / <span>00:00:00:003</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass"><b>Scenario : </b>Verify the Campaign list sort by descending order</h5>
+<span class='badge badge-success'>09.02.2024 6:40:53 pm</span>
+<span class='badge badge-danger'>09.02.2024 6:40:53 pm</span>
+<span class='badge badge-default'>00:00:00:003</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b>Feature : </b>AERQ Campaign API
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b>Url : </b>http://122.165.121.195:8080/api/v1/campaign/list?orderBy=DESC&sortBy=name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b> Steps :</b>[Given url baseURL+"/api/v1/campaign/list?orderBy=DESC&sortBy=name", When method GET, Then status 200, And match response.coll contains deep { "id": '#number',"name": '#string',"campaignType": '#string' ,"advertiserId": '#number',"impression": '#number',"view": '#number',"click": '#number',"percentageDelivered": '#number',"overUnderDelivered": '#number',"category": '#[] #string',"active": '#boolean',"archived": '#boolean'}]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b>Status Code :</b>200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b>Method :</b>GET
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b> Tags :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b>Response :</b>{"httpStatus":"OK","total":62,"items":10,"start":0,"coll":[{"id":42,"name":"Valdation Campaign","campaignType":"DIRECT_BUY","advertiserId":53,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB1","IAB4","IAB2","IAB3"],"active":false,"archived":false},{"id":29,"name":"Test QA 15","campaignType":"DIRECT_BUY","advertiserId":22,"impression":3,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":18,"name":"test campaigns","campaignType":"DIRECT_BUY","advertiserId":21,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":17,"name":"Test CAmpaign","campaignType":"DIRECT_BUY","advertiserId":13,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB1","IAB2"],"active":false,"archived":false},{"id":81,"name":"TestCampaign","campaignType":"DIRECT_BUY","advertiserId":123,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":52,"name":"seven eleven campaign","campaignType":"DIRECT_BUY","advertiserId":60,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":48,"name":"San Camp Prog","description":"Desc","campaignType":"PROGRAMMATIC","advertiserId":61,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB5"],"active":false,"archived":false},{"id":49,"name":"San Camp DB","description":"Desc","campaignType":"DIRECT_BUY","advertiserId":61,"impression":1,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB5"],"active":false,"archived":false},{"id":10,"name":"Sample Campaign 8","description":"desc","campaignType":"PROGRAMMATIC","advertiserId":1,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":8,"name":"Sample Campaign6","description":"desc","campaignType":"PROGRAMMATIC","advertiserId":1,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false}],"valid":true}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b>Status: </b>Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name"><b>Scenario : </b>Verify the active Campaign list sort by ascending order</p>
+            <p class="text-sm">
+              <span>6:40:53 pm</span> / <span>00:00:00:002</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass"><b>Scenario : </b>Verify the active Campaign list sort by ascending order</h5>
+<span class='badge badge-success'>09.02.2024 6:40:53 pm</span>
+<span class='badge badge-danger'>09.02.2024 6:40:53 pm</span>
+<span class='badge badge-default'>00:00:00:002</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b>Feature : </b>AERQ Campaign API
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b>Url : </b>http://122.165.121.195:8080/api/v1/campaign/list?statusFilter=active&orderBy=ASC&sortBy=name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b> Steps :</b>[Given url baseURL+"/api/v1/campaign/list?statusFilter=active&orderBy=ASC&sortBy=name", When method GET, Then status 200, And match response.coll contains deep { "id": '#number',"name": '#string',"campaignType": '#string',"advertiserId": '#number',"impression": '#number',"view": '#number',"click": '#number',"percentageDelivered": '#number',"overUnderDelivered": '#number',"active": '#boolean',"archived": '#boolean'}]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b>Status Code :</b>200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b>Method :</b>GET
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b> Tags :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b>Response :</b>{"httpStatus":"OK","total":5,"items":5,"start":0,"coll":[{"id":64,"name":"Adserving airline donot delete","campaignType":"DIRECT_BUY","advertiserId":82,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":true,"archived":false},{"id":41,"name":"Adserving -Campaign","campaignType":"DIRECT_BUY","advertiserId":54,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":true,"archived":false},{"id":12,"name":"Sample Campaign 10","description":"desc","campaignType":"PROGRAMMATIC","advertiserId":1,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":true,"archived":false},{"id":5,"name":"Sample Campaign2","description":"desc","campaignType":"PROGRAMMATIC","advertiserId":1,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":true,"archived":false},{"id":7,"name":"Sample Campaign4","description":"desc","campaignType":"PROGRAMMATIC","advertiserId":1,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":true,"archived":false}],"valid":true}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:53 pm</td>
+        <td>
+          <b>Status: </b>Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name"><b>Scenario : </b>Verify the active Campaign list sort by descending order</p>
+            <p class="text-sm">
+              <span>6:40:54 pm</span> / <span>00:00:00:009</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass"><b>Scenario : </b>Verify the active Campaign list sort by descending order</h5>
+<span class='badge badge-success'>09.02.2024 6:40:54 pm</span>
+<span class='badge badge-danger'>09.02.2024 6:40:54 pm</span>
+<span class='badge badge-default'>00:00:00:009</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b>Feature : </b>AERQ Campaign API
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b>Url : </b>http://122.165.121.195:8080/api/v1/campaign/list?statusFilter=active&orderBy=DESC&sortBy=name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b> Steps :</b>[Given url baseURL+"/api/v1/campaign/list?statusFilter=active&orderBy=DESC&sortBy=name", When method GET, Then status 200, And match response.coll contains deep { "id": '#number',"name": '#string',"description": '#string' ,"campaignType": '#string' ,"advertiserId": '#number',"impression": '#number',"view": '#number',"click": '#number',"percentageDelivered": '#number',"overUnderDelivered": '#number',"active": '#boolean',"archived": '#boolean'}]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b>Status Code :</b>200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b>Method :</b>GET
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b> Tags :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b>Response :</b>{"httpStatus":"OK","total":5,"items":5,"start":0,"coll":[{"id":7,"name":"Sample Campaign4","description":"desc","campaignType":"PROGRAMMATIC","advertiserId":1,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":true,"archived":false},{"id":5,"name":"Sample Campaign2","description":"desc","campaignType":"PROGRAMMATIC","advertiserId":1,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":true,"archived":false},{"id":12,"name":"Sample Campaign 10","description":"desc","campaignType":"PROGRAMMATIC","advertiserId":1,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":true,"archived":false},{"id":41,"name":"Adserving -Campaign","campaignType":"DIRECT_BUY","advertiserId":54,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":true,"archived":false},{"id":64,"name":"Adserving airline donot delete","campaignType":"DIRECT_BUY","advertiserId":82,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":true,"archived":false}],"valid":true}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b>Status: </b>Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name"><b>Scenario : </b>Verify the Inactive Campaign list sort by ascending order</p>
+            <p class="text-sm">
+              <span>6:40:54 pm</span> / <span>00:00:00:003</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass"><b>Scenario : </b>Verify the Inactive Campaign list sort by ascending order</h5>
+<span class='badge badge-success'>09.02.2024 6:40:54 pm</span>
+<span class='badge badge-danger'>09.02.2024 6:40:54 pm</span>
+<span class='badge badge-default'>00:00:00:003</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b>Feature : </b>AERQ Campaign API
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b>Url : </b>http://122.165.121.195:8080/api/v1/campaign/list?statusFilter=inactive&orderBy=ASC&sortBy=name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b> Steps :</b>[Given url baseURL+"/api/v1/campaign/list?statusFilter=inactive&orderBy=ASC&sortBy=name", When method GET, Then status 200, And match response.coll contains deep { "id": '#number',"name": '#string',"campaignType": '#string' ,"advertiserId": '#number',"impression": '#number',"view": '#number',"click": '#number',"percentageDelivered": '#number',"overUnderDelivered": '#number',"active": '#boolean',"archived": '#boolean'}]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b>Status Code :</b>200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b>Method :</b>GET
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b> Tags :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b>Response :</b>{"httpStatus":"OK","total":57,"items":10,"start":0,"coll":[{"id":45,"name":"15 campaign ","campaignType":"DIRECT_BUY","advertiserId":54,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":26,"name":"Ad Campaign","campaignType":"DIRECT_BUY","advertiserId":11,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":27,"name":"Ad Campaign Programmatic","campaignType":"PROGRAMMATIC","advertiserId":49,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB1","IAB2"],"active":false,"archived":false},{"id":58,"name":"airlinetargeting","campaignType":"DIRECT_BUY","advertiserId":73,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":77,"name":"Aksh Camp","campaignType":"PROGRAMMATIC","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":3,"name":"Apple Shot on iPhone","description":"desc","campaignType":"PROGRAMMATIC","advertiserId":1,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":82,"name":"Aut Camp1","description":"upd","campaignType":"DIRECT_BUY","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB1","IAB2"],"active":false,"archived":false},{"id":83,"name":"Aut Camp1 Prog upd","description":"upd","campaignType":"PROGRAMMATIC","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB3"],"active":false,"archived":false},{"id":80,"name":"Aut camp Prog","campaignType":"PROGRAMMATIC","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB3"],"active":false,"archived":false},{"id":79,"name":"Aut Camp upd","description":"upd","campaignType":"DIRECT_BUY","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB6"],"active":false,"archived":false}],"valid":true}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:54 pm</td>
+        <td>
+          <b>Status: </b>Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name"><b>Scenario : </b>Verify the Inactive Campaign list sort by descending order</p>
+            <p class="text-sm">
+              <span>6:40:55 pm</span> / <span>00:00:00:003</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass"><b>Scenario : </b>Verify the Inactive Campaign list sort by descending order</h5>
+<span class='badge badge-success'>09.02.2024 6:40:55 pm</span>
+<span class='badge badge-danger'>09.02.2024 6:40:55 pm</span>
+<span class='badge badge-default'>00:00:00:003</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Feature : </b>AERQ Campaign API
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Url : </b>http://122.165.121.195:8080/api/v1/campaign/list?statusFilter=inactive&orderBy=DESC&sortBy=name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b> Steps :</b>[Given url baseURL+"/api/v1/campaign/list?statusFilter=inactive&orderBy=DESC&sortBy=name", When method GET, Then status 200, And match response.coll contains deep { "id": '#number',"name": '#string',"campaignType": '#string' ,"advertiserId": '#number',"impression": '#number',"view": '#number',"click": '#number',"percentageDelivered": '#number',"overUnderDelivered": '#number',"category": '#[] #string',"active": '#boolean',"archived": '#boolean'}]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Status Code :</b>200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Method :</b>GET
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b> Tags :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Response :</b>{"httpStatus":"OK","total":57,"items":10,"start":0,"coll":[{"id":42,"name":"Valdation Campaign","campaignType":"DIRECT_BUY","advertiserId":53,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB1","IAB4","IAB2","IAB3"],"active":false,"archived":false},{"id":29,"name":"Test QA 15","campaignType":"DIRECT_BUY","advertiserId":22,"impression":3,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":18,"name":"test campaigns","campaignType":"DIRECT_BUY","advertiserId":21,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":17,"name":"Test CAmpaign","campaignType":"DIRECT_BUY","advertiserId":13,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB1","IAB2"],"active":false,"archived":false},{"id":81,"name":"TestCampaign","campaignType":"DIRECT_BUY","advertiserId":123,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":52,"name":"seven eleven campaign","campaignType":"DIRECT_BUY","advertiserId":60,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":48,"name":"San Camp Prog","description":"Desc","campaignType":"PROGRAMMATIC","advertiserId":61,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB5"],"active":false,"archived":false},{"id":49,"name":"San Camp DB","description":"Desc","campaignType":"DIRECT_BUY","advertiserId":61,"impression":1,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB5"],"active":false,"archived":false},{"id":10,"name":"Sample Campaign 8","description":"desc","campaignType":"PROGRAMMATIC","advertiserId":1,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":8,"name":"Sample Campaign6","description":"desc","campaignType":"PROGRAMMATIC","advertiserId":1,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false}],"valid":true}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Status: </b>Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name"><b>Scenario : </b>Verify the Campaign search in campaign list</p>
+            <p class="text-sm">
+              <span>6:40:55 pm</span> / <span>00:00:00:001</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass"><b>Scenario : </b>Verify the Campaign search in campaign list</h5>
+<span class='badge badge-success'>09.02.2024 6:40:55 pm</span>
+<span class='badge badge-danger'>09.02.2024 6:40:55 pm</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Feature : </b>AERQ Campaign API
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Url : </b>http://122.165.121.195:8080/api/v1/campaign/list?orderBy=ASC&search=Camp&sortBy=name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b> Steps :</b>[Given url baseURL+"/api/v1/campaign/list?orderBy=ASC&search=Camp&sortBy=name", When method GET, Then status 200, And match response.coll contains deep { "id": '#number',"name": '#string',"campaignType": '#string',"advertiserId": '#number',"impression": '#number',"view": '#number',"click": '#number',"percentageDelivered": '#number',"overUnderDelivered": '#number',"active": '#boolean',"archived": '#boolean'}]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Status Code :</b>200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Method :</b>GET
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b> Tags :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Response :</b>{"httpStatus":"OK","total":47,"items":10,"start":0,"coll":[{"id":45,"name":"15 campaign ","campaignType":"DIRECT_BUY","advertiserId":54,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":26,"name":"Ad Campaign","campaignType":"DIRECT_BUY","advertiserId":11,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":27,"name":"Ad Campaign Programmatic","campaignType":"PROGRAMMATIC","advertiserId":49,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB1","IAB2"],"active":false,"archived":false},{"id":41,"name":"Adserving -Campaign","campaignType":"DIRECT_BUY","advertiserId":54,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":true,"archived":false},{"id":77,"name":"Aksh Camp","campaignType":"PROGRAMMATIC","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false},{"id":82,"name":"Aut Camp1","description":"upd","campaignType":"DIRECT_BUY","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB1","IAB2"],"active":false,"archived":false},{"id":83,"name":"Aut Camp1 Prog upd","description":"upd","campaignType":"PROGRAMMATIC","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB3"],"active":false,"archived":false},{"id":80,"name":"Aut camp Prog","campaignType":"PROGRAMMATIC","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB3"],"active":false,"archived":false},{"id":79,"name":"Aut Camp upd","description":"upd","campaignType":"DIRECT_BUY","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"category":["IAB6"],"active":false,"archived":false},{"id":60,"name":"campaign 31","campaignType":"DIRECT_BUY","advertiserId":78,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"active":false,"archived":false}],"valid":true}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Status: </b>Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name"><b>Scenario : </b>Verify the Campaign detail (Direct Buy & Programmatic)</p>
+            <p class="text-sm">
+              <span>6:40:55 pm</span> / <span>00:00:00:002</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass"><b>Scenario : </b>Verify the Campaign detail (Direct Buy & Programmatic)</h5>
+<span class='badge badge-success'>09.02.2024 6:40:55 pm</span>
+<span class='badge badge-danger'>09.02.2024 6:40:55 pm</span>
+<span class='badge badge-default'>00:00:00:002</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Feature : </b>AERQ Campaign API
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Url : </b>http://122.165.121.195:8080/api/v1/campaign/79
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b> Steps :</b>[Given url baseURL+"/api/v1/campaign/79", When method GET, Then status 200, And match response.entity contains deep {"id": 79}]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Status Code :</b>200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Method :</b>GET
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b> Tags :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Response :</b>{"entity":{"id":79,"name":"Aut Camp upd","description":"upd","campaignType":"DIRECT_BUY","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"advertiserName":"Aksh Adv","category":["IAB6"],"active":false,"archived":false},"httpStatus":"OK","valid":true}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Status: </b>Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="13"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name"><b>Scenario : </b>Verify the Placement status in campaign detail page (Direct Buy & Programmatic)</p>
+            <p class="text-sm">
+              <span>6:40:55 pm</span> / <span>00:00:00:001</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail"><b>Scenario : </b>Verify the Placement status in campaign detail page (Direct Buy & Programmatic)</h5>
+<span class='badge badge-success'>09.02.2024 6:40:55 pm</span>
+<span class='badge badge-danger'>09.02.2024 6:40:55 pm</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Feature : </b>AERQ Campaign API
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Url : </b>http://122.165.121.195:8080/api/v1/placement/status/79
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b> Steps :</b>[Given url baseURL+"/api/v1/placement/status/79", When method GET, Then status 200, And match response.entity contains deep {"active": '#number',"inactive": '#number',"archived":'#number'}]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Status Code :</b>200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Method :</b>GET
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b> Tags :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Response :</b>{"entity":{"active":0,"inActive":1},"httpStatus":"OK","total":1,"valid":true}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Status: </b>Failed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:40:55 pm</td>
+        <td>
+          <b>Error : </b>com.intuit.karate.KarateException: match failed: CONTAINS_DEEP
+  $ | actual does not contain expected | actual does not contain key - 'inactive' (MAP:MAP)
+  {"active":0,"inActive":1}
+  {"active":"#number","inactive":"#number","archived":"#number"}
+
+
+classpath:apifeatures/Campaign.feature:52
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name"><b>Scenario : </b>Verify the Placement list (Direct Buy & Programmatic)</p>
+            <p class="text-sm">
+              <span>6:40:56 pm</span> / <span>00:00:00:001</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass"><b>Scenario : </b>Verify the Placement list (Direct Buy & Programmatic)</h5>
+<span class='badge badge-success'>09.02.2024 6:40:56 pm</span>
+<span class='badge badge-danger'>09.02.2024 6:40:56 pm</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b>Feature : </b>AERQ Campaign API
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b>Url : </b>http://122.165.121.195:8080/api/v1/placement/list/79?orderBy=DESC
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b> Steps :</b>[Given url baseURL+"/api/v1/placement/list/79?orderBy=DESC", When method GET, Then status 200, And match response.coll contains deep { "id": '#number',"name": '#string',"description": '#string',"campaignId": '#number',"startDate":  '#string',"endDate":  '#string',"costMethod":  '#string',"budget": '#number',"bookedQuantity": '#number',"priority":  '#string',"deliveryMode":  '#string',"targetId": '#number',"frequencyCap":'#number',"isDailyCap": '#boolean',"manualCapping": '#number',"timeZoneId": '#number',"impression": '#number',"view": '#number',"click": '#number',"percentageDelivered": '#number',"overUnderDelivered": '#number',"isActive": '#boolean',"isProgrammatic": '#boolean',"timeZoneCode": '#string',"frequencyInterval": '#string',"frequencyExpires": '#number',"costBasis": '#number',"displayTypeId": '#number',"openAuction":  '#boolean'}]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b>Status Code :</b>200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b>Method :</b>GET
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b> Tags :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b>Response :</b>{"httpStatus":"OK","total":1,"items":1,"start":0,"coll":[{"id":105,"name":"Direct Buy Line item upd","description":"upd","campaignId":79,"startDate":"2024-08-20 00:00:00","endDate":"2024-08-20 00:00:00","costMethod":"CPV","budget":20250.000000,"bookedQuantity":45,"priority":"HIGH","deliveryMode":"ASAP","targetId":134,"frequencyCap":50,"isDailyCap":true,"manualCapping":10,"timeZoneId":1,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"isActive":false,"isProgrammatic":false,"timeZoneCode":"Asia/Calcutta","frequencyInterval":"HOUR","frequencyExpires":300,"costBasis":450.00,"displayTypeId":1,"openAuction":false}],"valid":true}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b>Status: </b>Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="15"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name"><b>Scenario : </b>Verify the updated data of Campaign (Direct Buy & Programmatic)</p>
+            <p class="text-sm">
+              <span>6:40:56 pm</span> / <span>00:00:00:001</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass"><b>Scenario : </b>Verify the updated data of Campaign (Direct Buy & Programmatic)</h5>
+<span class='badge badge-success'>09.02.2024 6:40:56 pm</span>
+<span class='badge badge-danger'>09.02.2024 6:40:56 pm</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b>Feature : </b>AERQ Campaign API
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b>Url : </b>http://122.165.121.195:8080/api/v1/campaign/79
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b> Steps :</b>[Given url baseURL+"/api/v1/campaign/79", When method GET, Then status 200, And match response.entity contains deep {"id": 79}]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b>Status Code :</b>200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b>Method :</b>GET
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b> Tags :</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b>Response :</b>{"entity":{"id":79,"name":"Aut Camp upd","description":"upd","campaignType":"DIRECT_BUY","advertiserId":125,"impression":0,"view":0,"click":0,"percentageDelivered":0.0,"overUnderDelivered":0.0,"advertiserName":"Aksh Adv","category":["IAB6"],"active":false,"archived":false},"httpStatus":"OK","valid":true}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:40:56 pm</td>
+        <td>
+          <b>Status: </b>Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

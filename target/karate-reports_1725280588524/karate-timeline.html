@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"apifeatures\/Target[1.1:44]","start":1725274071850,"end":1725274073369,"title":"apifeatures\/Target[1.1:44] 16:17:51.850-16:17:53.369 Create ,Edit and Delete Advertiser"},{"id":2,"group":1,"content":"apifeatures\/Target[2.1:55]","start":1725274073388,"end":1725274073722,"title":"apifeatures\/Target[2.1:55] 16:17:53.388-16:17:53.722 Verify the Target list"},{"id":3,"group":1,"content":"apifeatures\/Target[2.2:55]","start":1725274073732,"end":1725274074041,"title":"apifeatures\/Target[2.2:55] 16:17:53.732-16:17:54.041 Verify the status"},{"id":4,"group":1,"content":"apifeatures\/Target[2.3:55]","start":1725274074053,"end":1725274074369,"title":"apifeatures\/Target[2.3:55] 16:17:54.053-16:17:54.369 Verify the active target list sort by ascending order"},{"id":5,"group":1,"content":"apifeatures\/Target[2.4:55]","start":1725274074375,"end":1725274074688,"title":"apifeatures\/Target[2.4:55] 16:17:54.375-16:17:54.688 Verify the active target list sort by descending order"},{"id":6,"group":1,"content":"apifeatures\/Target[2.5:55]","start":1725274074692,"end":1725274074948,"title":"apifeatures\/Target[2.5:55] 16:17:54.692-16:17:54.948 Verify the target search in target list"},{"id":7,"group":1,"content":"apifeatures\/Target[2.6:55]","start":1725274074952,"end":1725274075206,"title":"apifeatures\/Target[2.6:55] 16:17:54.952-16:17:55.206 Verify the target detail"},{"id":8,"group":1,"content":"apifeatures\/Target[2.7:55]","start":1725274075211,"end":1725274075465,"title":"apifeatures\/Target[2.7:55] 16:17:55.211-16:17:55.465 Verify the advertiser linked to the target"},{"id":9,"group":1,"content":"apifeatures\/Target[2.8:55]","start":1725274075470,"end":1725274075733,"title":"apifeatures\/Target[2.8:55] 16:17:55.470-16:17:55.733 Verify the updated data of target"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

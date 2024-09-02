@@ -34,10 +34,11 @@ return text;
 	And request update
   When method PUT
   Then status 202
- Given url baseURL+"/api/v1/target/"+response.id+"/delete"
- And request ""
+ 	Given url baseURL+"/api/v1/target/"+response.id+"/delete"
+ 	And request ""
   When method PUT
   Then status 200
+  Then match response.successMessage contains "Deleted successfully"
   
   Examples: 
   |read('data/testdata_Target_Put.csv')|
@@ -47,16 +48,7 @@ return text;
   Given url baseURL+<URL>
   When method <METHOD>
   Then status <STATUS_CODE>
-  * def projectSchema = <VALUE>
-  * def keyafter = "<KEY>"
-* eval
-"""
-if (keyafter != '') {
-  keyafter = 'response.' + keyafter
-}
-"""
-	And print keyafter
- 	And match <KEY> contains <VALUE> 	
+ 	And match <KEY> contains deep <VALUE> 	
  #Then match karate.toString(response) contains "<EXPECTED_RESULT>"
 
   Examples: 
