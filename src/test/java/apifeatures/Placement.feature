@@ -18,9 +18,31 @@ return text;
 		* print randomstring
 
   Scenario Outline: <SCENARIO>
+  
+   * def create_target = <POST_DATA_TARGET>
+  * create_target.name= create_target.name+randomstring
+  * print create_target
+  Given url baseURL+"/api/v1/target"
+  And request create_target
+  When method <METHOD>
+  Then status <STATUS_CODE>
+  * def target_id = response.id
+  * print target_id
+  * def create_creative = <POST_DATA_CREATIVE>
+  * create_creative.name = create_creative.name+randomstring
+  * print create_creative
+  Given url baseURL+"/api/v1/creative"
+  And request create_creative
+  When method <METHOD>
+  Then status <STATUS_CODE>
+   * def creative_id = response.id
+  * print creative_id
   * def create = <POST_DATA>
-  * create.name= create.name+randomstring
-  * print create
+  * create.name = create.name+randomstring
+  * create.targetId = target_id
+  * create.creatives.creativeId = creative_id
+    * print create
+  
   Given url baseURL+<URL>
   And request create
   When method <METHOD>
