@@ -1,0 +1,273 @@
+S.NO,Modules,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY,VALUE
+1,Placement (Direct Buy and Programmatic Campaign),Verify the deal type,"""/api/v1/dealtype""",Open Placement page,GET,200,Deal type should appear,"""entity"": [
+{
+""id"": 1,
+""name"": ""Direct 1-on-1"",
+""description"": ""Direct 1-on-1""
+}",response.entity,"{ ""id"": 1,""name"": ""Direct 1-on-1"",""description"": ""Direct 1-on-1""}"
+2,Placement (Direct Buy and Programmatic Campaign),Verify the advertiser linked to the target,"""/api/v1/target/list-by-advertiser?advertiserId=125""",Open Placement page,GET,200,Linked Advertiser should appear,"""id"": 129",response.entity,"{""id"": 129}"
+3,Placement (Direct Buy and Programmatic Campaign),Verify the campaign linked to the creative,"""/api/v1/creative/list-by-campaign?campaignId=79""",Open Placement page,GET,200,Linked Campaign should appear,"""entity"": [
+{
+""id"": 170,
+""name"": ""Li AC Img"",
+""isCreativeReplaced"": false,
+""isDestinationUrlUpdated"": false,
+""active"": false
+}",response.entity,"{
+""id"": 170,
+""name"": ""Li AC Img"",
+""isCreativeReplaced"": false,
+""isDestinationUrlUpdated"": false,
+""active"": false
+}"
+4,Placement (Direct Buy and Programmatic Campaign),Verify the Placement list,"""/api/v1/placement/list/79?orderBy=ASC&sortBy=name""",Open Placement page,GET,200,Placement list should appear,"""coll"": [
+{
+""id"": 105,
+""name"": ""Direct Buy Line item upd"",
+""description"": ""upd"",
+""campaignId"": 79,
+""startDate"": ""2024-07-30 00:00:00"",
+""endDate"": ""2024-07-31 00:00:00"",
+""costMethod"": ""CPV"",
+""budget"": 20250.000000,
+""bookedQuantity"": 45,
+""priority"": ""HIGH"",
+""deliveryMode"": ""ASAP"",
+""targetId"": 134,
+""frequencyCap"": 50,
+""isDailyCap"": true,
+""manualCapping"": 10,
+""timeZoneId"": 1,
+""impression"": 0,
+""view"": 0,
+""click"": 0,
+""percentageDelivered"": 0.0,
+""overUnderDelivered"": 0.0,
+""isActive"": false,
+""isProgrammatic"": false,
+""timeZoneCode"": ""Asia/Calcutta"",
+""frequencyInterval"": ""HOUR"",
+""frequencyExpires"": 300,
+""costBasis"": 450.00,
+""displayTypeId"": 1,
+""openAuction"": false
+}",response.coll,"{""id"": '#number',""name"":'#string',""description"":'#string',""campaignId"": '#number',""startDate"": '#string',""endDate"": '#string',""costMethod"": '#string',""budget"":'#number',""bookedQuantity"": '#number',""priority"": '#string',""deliveryMode"": '#string',""targetId"": '#number',""frequencyCap"":'#number',""isDailyCap"": '#boolean',""manualCapping"": '#number',""timeZoneId"": '#number',""impression"": '#number',""view"": '#number',""click"": '#number',""percentageDelivered"": '#number',""overUnderDelivered"": '#number',""isActive"": '#boolean',
+""isProgrammatic"": '#boolean',
+""timeZoneCode"": '#string',
+""frequencyInterval"":'#string',
+""frequencyExpires"": '#number',
+""costBasis"": '#number',
+""displayTypeId"": '#number',
+""openAuction"": '#boolean'
+}"
+5,Placement (Direct Buy and Programmatic Campaign),Verify the active Placement list sort by ascending order,"""/api/v1/placement/list/79?statusFilter=active&orderBy=ASC&sortBy=name""",Open Placement page,GET,200,Active Placement should be shown in ascending list,"""coll"": [
+{
+""id"": 105,
+""name"": ""Direct Buy Line item upd"",
+""description"": ""upd"",
+""campaignId"": 79,
+""startDate"": ""2024-08-20 00:00:00"",
+""endDate"": ""2024-08-20 00:00:00"",
+""costMethod"": ""CPV"",
+""budget"": 20250.000000,
+""bookedQuantity"": 45,
+""priority"": ""HIGH"",
+""deliveryMode"": ""ASAP"",
+""targetId"": 134,
+""frequencyCap"": 50,
+""isDailyCap"": true,
+""manualCapping"": 10,
+""timeZoneId"": 1,
+""impression"": 0,
+""view"": 0,
+""click"": 0,
+""percentageDelivered"": 0.0,
+""overUnderDelivered"": 0.0,
+""isActive"": true,
+""isProgrammatic"": false,
+""timeZoneCode"": ""Asia/Calcutta"",
+""frequencyInterval"": ""HOUR"",
+""frequencyExpires"": 300,
+""costBasis"": 450.00,
+""displayTypeId"": 1,
+""openAuction"": false
+}",response.coll,"{""id"": '#number',""name"":'#string',""description"":'#string',""campaignId"": '#number',""startDate"": '#string',""endDate"": '#string',""costMethod"": '#string',""budget"":'#number',""bookedQuantity"": '#number',""priority"": '#string',""deliveryMode"": '#string',""targetId"": '#number',""frequencyCap"":'#number',""isDailyCap"": '#boolean',""manualCapping"": '#number',""timeZoneId"": '#number',""impression"": '#number',""view"": '#number',""click"": '#number',""percentageDelivered"": '#number',""overUnderDelivered"": '#number',""isActive"": '#boolean',
+""isProgrammatic"": '#boolean',
+""timeZoneCode"": '#string',
+""frequencyInterval"":'#string',
+""frequencyExpires"": '#number',
+""costBasis"": '#number',
+""displayTypeId"": '#number',
+""openAuction"": '#boolean'
+}"
+6,Placement (Direct Buy and Programmatic Campaign),Verify the active Placement list sort by descending order,"""/api/v1/placement/list/79?statusFilter=active&orderBy=DESC&sortBy=name""",Open Placement page,GET,200,Active Placement should be shown in descending list,"""coll"": [
+{
+""id"": 105,
+""name"": ""Direct Buy Line item upd"",
+""description"": ""upd"",
+""campaignId"": 79,
+""startDate"": ""2024-08-20 00:00:00"",
+""endDate"": ""2024-08-20 00:00:00"",
+""costMethod"": ""CPV"",
+""budget"": 20250.000000,
+""bookedQuantity"": 45,
+""priority"": ""HIGH"",
+""deliveryMode"": ""ASAP"",
+""targetId"": 134,
+""frequencyCap"": 50,
+""isDailyCap"": true,
+""manualCapping"": 10,
+""timeZoneId"": 1,
+""impression"": 0,
+""view"": 0,
+""click"": 0,
+""percentageDelivered"": 0.0,
+""overUnderDelivered"": 0.0,
+""isActive"": true,
+""isProgrammatic"": false,
+""timeZoneCode"": ""Asia/Calcutta"",
+""frequencyInterval"": ""HOUR"",
+""frequencyExpires"": 300,
+""costBasis"": 450.00,
+""displayTypeId"": 1,
+""openAuction"": false
+}",response.coll,"{""id"": '#number',""name"":'#string',""description"":'#string',""campaignId"": '#number',""startDate"": '#string',""endDate"": '#string',""costMethod"": '#string',""budget"":'#number',""bookedQuantity"": '#number',""priority"": '#string',""deliveryMode"": '#string',""targetId"": '#number',""frequencyCap"":'#number',""isDailyCap"": '#boolean',""manualCapping"": '#number',""timeZoneId"": '#number',""impression"": '#number',""view"": '#number',""click"": '#number',""percentageDelivered"": '#number',""overUnderDelivered"": '#number',""isActive"": '#boolean',
+""isProgrammatic"": '#boolean',
+""timeZoneCode"": '#string',
+""frequencyInterval"":'#string',
+""frequencyExpires"": '#number',
+""costBasis"": '#number',
+""displayTypeId"": '#number',
+""openAuction"": '#boolean'
+}"
+7,Placement (Direct Buy and Programmatic Campaign),Verify the Inactive Placement list sort by ascending order,"""/api/v1/placement/list/79?statusFilter=inactive&orderBy=ASC&sortBy=name""",Open Placement page,GET,200,InActive Placement should be shown in ascending list,"""coll"": [
+{
+""id"": 105,
+""name"": ""Direct Buy Line item upd"",
+""description"": ""upd"",
+""campaignId"": 79,
+""startDate"": ""2024-07-30 00:00:00"",
+""endDate"": ""2024-07-31 00:00:00"",
+""costMethod"": ""CPV"",
+""budget"": 20250.000000,
+""bookedQuantity"": 45,
+""priority"": ""HIGH"",
+""deliveryMode"": ""ASAP"",
+""targetId"": 134,
+""frequencyCap"": 50,
+""isDailyCap"": true,
+""manualCapping"": 10,
+""timeZoneId"": 1,
+""impression"": 0,
+""view"": 0,
+""click"": 0,
+""percentageDelivered"": 0.0,
+""overUnderDelivered"": 0.0,
+""isActive"": false,
+""isProgrammatic"": false,
+""timeZoneCode"": ""Asia/Calcutta"",
+""frequencyInterval"": ""HOUR"",
+""frequencyExpires"": 300,
+""costBasis"": 450.00,
+""displayTypeId"": 1,
+""openAuction"": false
+}",response.coll,"{""id"": '#number',""name"":'#string',""description"":'#string',""campaignId"": '#number',""startDate"": '#string',""endDate"": '#string',""costMethod"": '#string',""budget"":'#number',""bookedQuantity"": '#number',""priority"": '#string',""deliveryMode"": '#string',""targetId"": '#number',""frequencyCap"":'#number',""isDailyCap"": '#boolean',""manualCapping"": '#number',""timeZoneId"": '#number',""impression"": '#number',""view"": '#number',""click"": '#number',""percentageDelivered"": '#number',""overUnderDelivered"": '#number',""isActive"": '#boolean',
+""isProgrammatic"": '#boolean',
+""timeZoneCode"": '#string',
+""frequencyInterval"":'#string',
+""frequencyExpires"": '#number',
+""costBasis"": '#number',
+""displayTypeId"": '#number',
+""openAuction"": '#boolean'
+}"
+8,Placement (Direct Buy and Programmatic Campaign),Verify the Inactive Placement list sort by descending order,"""/api/v1/placement/list/79?statusFilter=inactive&orderBy=DESC&sortBy=name""",Open Placement page,GET,200,InActive Placement should be shown in descending list,"""coll"": [
+{
+""id"": 105,
+""name"": ""Direct Buy Line item upd"",
+""description"": ""upd"",
+""campaignId"": 79,
+""startDate"": ""2024-07-30 00:00:00"",
+""endDate"": ""2024-07-31 00:00:00"",
+""costMethod"": ""CPV"",
+""budget"": 20250.000000,
+""bookedQuantity"": 45,
+""priority"": ""HIGH"",
+""deliveryMode"": ""ASAP"",
+""targetId"": 134,
+""frequencyCap"": 50,
+""isDailyCap"": true,
+""manualCapping"": 10,
+""timeZoneId"": 1,
+""impression"": 0,
+""view"": 0,
+""click"": 0,
+""percentageDelivered"": 0.0,
+""overUnderDelivered"": 0.0,
+""isActive"": false,
+""isProgrammatic"": false,
+""timeZoneCode"": ""Asia/Calcutta"",
+""frequencyInterval"": ""HOUR"",
+""frequencyExpires"": 300,
+""costBasis"": 450.00,
+""displayTypeId"": 1,
+""openAuction"": false
+}",response.coll,"{""id"": '#number',""name"":'#string',""description"":'#string',""campaignId"": '#number',""startDate"": '#string',""endDate"": '#string',""costMethod"": '#string',""budget"":'#number',""bookedQuantity"": '#number',""priority"": '#string',""deliveryMode"": '#string',""targetId"": '#number',""frequencyCap"":'#number',""isDailyCap"": '#boolean',""manualCapping"": '#number',""timeZoneId"": '#number',""impression"": '#number',""view"": '#number',""click"": '#number',""percentageDelivered"": '#number',""overUnderDelivered"": '#number',""isActive"": '#boolean',
+""isProgrammatic"": '#boolean',
+""timeZoneCode"": '#string',
+""frequencyInterval"":'#string',
+""frequencyExpires"": '#number',
+""costBasis"": '#number',
+""displayTypeId"": '#number',
+""openAuction"": '#boolean'
+}"
+9,Placement (Direct Buy and Programmatic Campaign),Verify the Placement search in placement list,"""/api/v1/placement/list/79?orderBy=ASC&search=buy&sortBy=name""",Open Placement page,GET,200,Searched Placement should be shown in list,"""coll"": [
+{
+""id"": 105,
+""name"": ""Direct Buy Line item upd"",
+""description"": ""upd"",
+""campaignId"": 79,
+""startDate"": ""2024-08-20 00:00:00"",
+""endDate"": ""2024-08-20 00:00:00"",
+""costMethod"": ""CPV"",
+""budget"": 20250.000000,
+""bookedQuantity"": 45,
+""priority"": ""HIGH"",
+""deliveryMode"": ""ASAP"",
+""targetId"": 134,
+""frequencyCap"": 50,
+""isDailyCap"": true,
+""manualCapping"": 10,
+""timeZoneId"": 1,
+""impression"": 0,
+""view"": 0,
+""click"": 0,
+""percentageDelivered"": 0.0,
+""overUnderDelivered"": 0.0,
+""isActive"": true,
+""isProgrammatic"": false,
+""timeZoneCode"": ""Asia/Calcutta"",
+""frequencyInterval"": ""HOUR"",
+""frequencyExpires"": 300,
+""costBasis"": 450.00,
+""displayTypeId"": 1,
+""openAuction"": false
+}",response.coll,"{""id"": '#number',""name"":'#string',""description"":'#string',""campaignId"": '#number',""startDate"": '#string',""endDate"": '#string',""costMethod"": '#string',""budget"":'#number',""bookedQuantity"": '#number',""priority"": '#string',""deliveryMode"": '#string',""targetId"": '#number',""frequencyCap"":'#number',""isDailyCap"": '#boolean',""manualCapping"": '#number',""timeZoneId"": '#number',""impression"": '#number',""view"": '#number',""click"": '#number',""percentageDelivered"": '#number',""overUnderDelivered"": '#number',""isActive"": '#boolean',
+""isProgrammatic"": '#boolean',
+""timeZoneCode"": '#string',
+""frequencyInterval"":'#string',
+""frequencyExpires"": '#number',
+""costBasis"": '#number',
+""displayTypeId"": '#number',
+""openAuction"": '#boolean'
+}"
+10,Placement (Direct Buy and Programmatic Campaign),Verify user able to select the target through Select Ad Target option,"""/api/v1/target/129""",Open Create placement,GET,200,User should be able to select the target,"""id"": 129",response.entity,"{""id"": 129}"
+11,Placement (Direct Buy and Programmatic Campaign),Verify the advertiser linked to the target,"""/api/v1/advertiser/125""",Open Create placement,GET,200,Linked advertiser should appear,"""id"": 125",response.entity,"{""id"":125}"
+12,Placement (Direct Buy and Programmatic Campaign),Verify the target detail created through placement,"""/api/v1/target/135""",Open Create placement,GET,200,User should be able to create the target,"""id"": 135",response.coll,"{ ""id"": 135}"
+13,Placement (Direct Buy and Programmatic Campaign),Verify the advertiser linked to the target,"""/api/v1/advertiser/125""",Open Create placement,GET,200,Linked advertiser should appear,"""id"": 125",response.entity,"{""id"": 125}"
+14,Placement (Direct Buy and Programmatic Campaign),Verify user able to select the creative through Select Ad creative option,"""/api/v1/creative/170""",Open Create placement,GET,200,User should be able to select the creative,"""id"": 170",response.entity,"{""id"": 170}"
+15,Placement (Direct Buy and Programmatic Campaign),Verify the advertiser linked to the creative,"""/api/v1/advertiser/125""",Open Create placement,GET,200,Linked advertiser should appear,"""id"": 125",response.entity,"{""id"": 125}"
+16,Placement (Direct Buy and Programmatic Campaign),Verify the creative detail created through placement,"""/api/v1/creative/204""",Open Create placement,GET,200,User should be able to create the creative,"""id"": 204",response.entity,"{""id"": 204}"
+17,Placement (Direct Buy and Programmatic Campaign),Verify the advertiser linked to the creative,"""/api/v1/advertiser/125""",Open Create placement,GET,200,Linked advertiser should appear,"""id"": 125",response.entity,"{""id"": 125}"
+18,Placement (Direct Buy and Programmatic Campaign),Verify user able to activate/deactivate the placement,"""/api/v1/placement/105/toggle-activate""",Open Create placement,GET,200,Placement should be activated/deactivated,"""successMessage"": ""Activated/Deactivated successfully",response.entity,"{""successMessage"": ""Activated/Deactivated successfully""}"
+19,Placement (Direct Buy and Programmatic Campaign),Verify the placement detail,"""/api/v1/placement/105""",Open view placement,GET,200,User should be able to view the created placement,"""id"": 105",response.entity,"{""id"":105}"
+20,Placement (Direct Buy and Programmatic Campaign),Verify the updated placement detail,"""/api/v1/placement/105""",Open view placement,GET,200,User should be able to view the updated placement,"""id"": 105",response.entity,"{""id"":105}"

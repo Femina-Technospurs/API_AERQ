@@ -41,7 +41,7 @@ return text;
   Then match response.successMessage contains "Deleted successfully"
   
   Examples: 
-  |read('data/testdata_Campaign_Put.csv')|
+  |read('data/testdata_Placement_Put.csv')|
   
   
   Scenario Outline: <SCENARIO>
@@ -52,5 +52,5 @@ return text;
  #Then match karate.toString(response) contains "<EXPECTED_RESULT>"
 
   Examples: 
-  |read('data/testdata_Campaign_Get.csv')|
+  |read('data/testdata_Placement_Get.csv')|
   
