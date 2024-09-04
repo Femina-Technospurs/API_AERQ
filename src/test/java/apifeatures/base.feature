@@ -9,7 +9,7 @@ Background:
   Given url 'http://122.165.121.195:8080'+<URL>
   When method <METHOD>
   Then status <STATUS_CODE>
-  And match karate.toString(response) contains <VALIDATION>
+  And match <KEY> contains deep <VALUE> 	
  
   Examples: 
   |read('/data/testdata_Common.csv')|

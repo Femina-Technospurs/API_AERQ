@@ -1,45 +1,189 @@
 S.NO,MODULES,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED RESULT,KEY,VALUE
-1,Schedule,Verify the Schedule header,"""/api/v1/import/schedule/headers""",To get the header,GET,200,Should get the headers of schedule import page ,entity,,
-2,Airline,Veriy all the active class type in the portal,"""/api/v1/class-type/active""",To get the active status,GET,200,"Should get the active class type values of ""ECONOMY"",""PREMIUM_ECONOMY"",""BUSINESS_CLASS"",""FIRST_CLASS""",entity,,"{
-  ""id"": 1,
-  ""name"": ""Economy"",
-  ""code"": ""ECONOMY""
-  }"
-3,Airline,verify all the Banner size,"""/api/v1/bannerSize""",To get the banner size,GET,200,Should get the details of banner sizes in portal ,entity,,
-4,Airline,Verify all the active display types,"""/api/v1/display-type/list/active""",To get the display types,GET,200,"Should get the list of display types with ISD,PED & CDS 
-",entity,,
-5,Schedule import,verify the details of schedule flight,"""/api/v1/import/schedule/headers""",Headers,GET,200,Should get the details of schedule flight details.,entity,,
-6,Iabcategory,verify  details of the Categort list,"""/api/v1/iabcategory/list-tree""",Categort list,GET,200,Should get the details of category,entity,,
-7,Target language list,Verify the list of Languages available ,"""/api/v1/language/active""",Language,GET,200,Language details should appear ,entity,,
-8,Target national list,verify the list of Nationality available,"""/api/v1/nationality/active""",Nationality,GET,200,Nationality details should appear,entity,,
-9,Target genre list,Verify Genre details in target list,"""/api/v1/genre/list/active""",Active ist/active,GET,200,Genre details should appear,entity,,
-10,Target airline list,Verify to get the details of active airline ,"""/api/v1/airline/get-active""",Get-Ac /get-active,GET,200,Active airline details should appear,entity,,
-11,Target route list,Verify to get the details of active route ,"""/api/v1/route/get-active""",Get-Ac et-active,GET,200,Active route details should appear,entity,,
-12,Target group list,Verify to get the details of travel group,"""/api/v1/travel-group/active""",Active group/active,GET,200,Active travel group details should appear,entity,,
-13,Target gender list,Verify to get the details of gender ,"""/api/v1/gender/active""",Gender,GET,200,Active gender details of male or female should appear ,entity,,
-14,Target age list,Verify to get the details of age ,"""/api/v1/age/active""",Age,GET,200,Active age list details should appear,entity,,
-15,Target beacon list,Verify to get the details of third party beacon list,"""/api/v1/beacon/active""",Beacon,GET,200,Third party beacon list should appear ,entity,,
-16,Adsource,Verify to get the details of Adsource ,"""/api/v1/adsource/active""",Adsource,GET,200,Ad source details should appear,entity,,
-17,Reports,Verify to get the details of report types,"""/api/v1/reporttype""",Report ype,GET,200,Report type available list should appear,entity,,
-18,Reports,Verify to get the details of active timezone,"""/api/v1/timezone""",Timezon e,GET,200,Active time zone should appear,entity,,
-19,Reports,Verify to get the details of active date range,"""/api/v1/report/daterange""",Report,GET,200,Active date range should appear,entity,,
-20,Creative,Verify the advertiser,"""/api/v1/advertiser/list?statusFilter=active&orderBy=DESC&pageNo=0""",Open creative page,GET,200,Advertiser should appear,entity,,
-21,Creative,Verify the ad restrictions,"""/api/v1/adrestriction/get""",Open creative page,GET,200,Ad restrictions should appear,entity,,
-22,Creative,Verify to get the details of data centers,"""/api/v1/datacenter""",Open creative page,GET,200,Data centers should appear,entity,,
-23,Creative,Verify the creative list,"""/api/v1/creative/list?orderBy=DESC""",Open creative page,GET,200,Creative list should be shown,entity,,
-24,Creative,Verify the status,"""/api/v1/creative/status""",Open creative page,GET,200,Status should appear,entity,,
-25,Creative,Verify the version,"""/api/v1/session/version""",Open creative page,GET,200,Version should appear,entity,,
-26,Creative,Verify the creative list sort by ascending order,"""/api/v1/creative/list?orderBy=ASC&sortBy=name""",Open creative page,GET,200,Creative list sort should be in ascending order,entity,,
-27,Creative,Verify the creative list sort by descending order,"""/api/v1/creative/list?orderBy=DESC&sortBy=name""",Open creative page,GET,200,Creative list sort should be in descending order,entity,,
-28,Creative,Verify the active creative list,"""/api/v1/creative/list?statusFilter=active&orderBy=DESC&sortBy=name""",Open creative page,GET,200,Active creative should be shown in list,entity,,
-29,Creative,Verify the active creative list sort by ascending order,"""/api/v1/creative/list?statusFilter=active&orderBy=ASC&sortBy=name""",Open creative page,GET,200,Active creative should be shown in ascending list,entity,,
-30,Creative,Verify the active creative list sort by descending order,"""/api/v1/creative/list?statusFilter=active&orderBy=DESC&sortBy=name""",Open creative page,GET,200,Active creative should be shown in descending list,entity,,
-31,Creative,Verify the inactive creative list,"""/api/v1/creative/list?statusFilter=inactive&orderBy=DESC&sortBy=name""",Open creative page,GET,200,Inactive creative should be shown in list,entity,,
-32,Creative,Verify the inactive creative list sort by ascending order,"""/api/v1/creative/list?statusFilter=inactive&orderBy=ASC&sortBy=name""",Open creative page,GET,200,Inactive creative should be shown in ascending list,entity,,
-33,Creative,Verify the inactive creative list sort by descending order,"""/api/v1/creative/list?statusFilter=inactive&orderBy=DESC&sortBy=name""",Open creative page,GET,200,Inactive creative should be shown in descending list,entity,,
-34,Creative,Verify the creative search in creative list,"""/api/v1/creative/list?orderBy=DESC&search=29&sortBy=name""",Open creative page,GET,200,Searched creative should be shown in list,entity,,
-35,Creative,Verify the profile,"""/api/v1/profile/list?statusFilter=active&orderBy=DESC""",Open view creative page,GET,200,Profile should appear,entity,,
-36,Target,Verify the Target list,"""/api/v1/target/list?orderBy=DESC""",Open target page,GET,200,Target list should be shown,entity,,
-37,Target,Verify the status,"""/api/v1/target/status""",Open target page,GET,200,Status should be correct,entity,,
-38,Target,Verify the active target list sort by ascending order,"""/api/v1/target/list?orderBy=ASC&sortBy=name""",Open target page,GET,200,Active target should be shown in ascending list,entity,,
-39,Target,Verify the target search in creative list,"""/api/v1/target/list?orderBy=ASC&search=111&sortBy=name""",Open target page,GET,200,Searched target should be shown in list,entity,,
+1,Schedule,Verify the Schedule header,"""/api/v1/import/schedule/headers""",To get the header,GET,200,Should get the headers of schedule import page,"""entity"": [
+""Tail Sign No"",
+""Route"",
+""Start Time"",
+""End Time"",
+""Sequence"",
+""Transit"",
+""Transit Start Time"",
+""Transit End Time""
+]",response.entity,"""Tail Sign No"",""Route"",""Start Time"",""End Time"",""Sequence"",""Transit"",""Transit Start Time"",""Transit End Time"""
+2,Airline,Veriy all the active class type in the portal,"""/api/v1/class-type/active""",To get the active status,GET,200,"Should get the active class type values of ""ECONOMY"",""PREMIUM_ECONOMY"",""BUSINESS_CLASS"",""FIRST_CLASS""","{
+""id"": 1,
+""name"": ""Economy"",
+""code"": ""ECONOMY""
+}",response,"{""id"": 1,""name"": ""Economy"",""code"": ""ECONOMY""}"
+3,Airline,verify all the Banner size,"""/api/v1/bannerSize""",To get the banner size,GET,200,Should get the details of banner sizes in portal,"""entity"": [
+{
+""id"": 1,
+""name"": ""MEDIUM_RECTANGLE"",
+""dimension"": ""300 x 250"",
+""width"": 300,
+""height"": 250
+}",response.entity,"{""id"": 1,""name"": ""MEDIUM_RECTANGLE"",""dimension"": ""300 x 250"",""width"": 300,""height"": 250}"
+4,Airline,Verify all the active display types,"""/api/v1/display-type/list/active""",To get the display types,GET,200,"Should get the list of display types with ISD,PED & CDS","""entity"": [
+{
+""id"": 2,
+""name"": ""ISD"",
+""code"": ""ISD""
+}",response.entity,"{""id"": 2,""name"": ""ISD"",""code"": ""ISD""}"
+5,Iabcategory,verify details of the Categort list,"""/api/v1/iabcategory/list-tree""",Categort list,GET,200,Should get the details of category,"""entity"": [
+{
+""title"": ""Arts & Entertainment"",
+""key"": ""IAB1"",
+""value"": ""IAB1"",
+""children"": [
+{
+""title"": ""Books & Literature"",
+""key"": ""IAB1_IAB1-1"",
+""value"": ""IAB1_IAB1-1"",
+""isLeaf"": true
+}",response.entity,"{""title"":'#string',""key"":'#string',""value"":'#string'}"
+6,Target language list,Verify the list of Languages available,"""/api/v1/language/active""",Language,GET,200,Language details should appear,"{
+""id"": 1,
+""name"": ""English"",
+""code"": ""EN""
+}",response,"{""id"": 1,""name"": ""English"",""code"": ""EN""}"
+7,Target national list,verify the list of Nationality available,"""/api/v1/nationality/active""",Nationality,GET,200,Nationality details should appear,"{
+""id"": 1,
+""name"": ""American"",
+""code"": ""AME""
+}",response,"{""id"": 1,""name"": ""American"",""code"": ""AME""}"
+8,Target genre list,Verify Genre details in target list,"""/api/v1/genre/list/active""",Active ist/active,GET,200,Genre details should appear,"""entity"": [
+{
+""id"": 1,
+""name"": ""DRAMA""
+}",response.entity,"{""id"": 1,""name"": ""DRAMA""}"
+9,Target airline list,Verify to get the details of active airline,"""/api/v1/airline/get-active""",Get-Ac /get-active,GET,200,Active airline details should appear,"""entity"": [
+{
+""id"": 42,
+""name"": ""Indigo Airline for QA validation in new server 30""
+}",response.entity,"{""id"":'#number',""name"":'#string'}"
+10,Target route list,Verify to get the details of active route,"""/api/v1/route/get-active""",Get-Ac et-active,GET,200,Active route details should appear,"""entity"": [
+{
+""id"": 1,
+""sourceId"": 1,
+""destinationId"": 2,
+""source"": ""Frankfurt"",
+""destination"": ""Tampa"",
+""route"": ""FRA-TPA""
+}",response.entity,"{""id"":'#number',""sourceId"":'#number',""destinationId"":'#number',""source"":'#string',""destination"":'#string',""route"":'#string'}"
+11,Target group list,Verify to get the details of travel group,"""/api/v1/travel-group/active""",Active group/active,GET,200,Active travel group details should appear,"{
+""id"": 1,
+""name"": ""Alone"",
+""code"": ""Alone""
+}",response,"{""id"":1,""name"":""Alone"",""code"":""Alone""},{""id"":2,""name"":""Couple"",""code"":""Couple""},{""id"":3,""name"":""Family"",""code"":""Family""},{""id"":4,""name"":""Group"",""code"":""Group""}"
+12,Target gender list,Verify to get the details of gender,"""/api/v1/gender/active""",Gender,GET,200,Active gender details of male or female should appear,"{
+""id"": 1,
+""gender"": ""Female"",
+""code"": ""Female""
+}",response,"[{""id"":1,""gender"":""Female"",""code"":""Female""},{""id"":2,""gender"":""Male"",""code"":""Male""}]"
+13,Target age list,Verify to get the details of age,"""/api/v1/age/active""",Age,GET,200,Active age list details should appear,"{
+""id"": 1,
+""name"": ""Kid"",
+""age"": ""0-18"",
+""code"": ""Kid""
+}",response,"[{""id"":1,""name"":""Kid"",""age"":""0-18"",""code"":""Kid""},{""id"":2,""name"":""Adult"",""age"":""18+"",""code"":""Adult""}]"
+14,Target beacon list,Verify to get the details of third party beacon list,"""/api/v1/beacon/active""",Beacon,GET,200,Third party beacon list should appear,"{
+""id"": 1,
+""beaconName"": ""0%"",
+""beaconValue"": ""0""
+}",response,"[{""id"":1,""beaconName"":""0%"",""beaconValue"":""0""},{""id"":2,""beaconName"":""25%"",""beaconValue"":""25""},{""id"":3,""beaconName"":""50%"",""beaconValue"":""50""},{""id"":4,""beaconName"":""75%"",""beaconValue"":""75""},{""id"":5,""beaconName"":""100%"",""beaconValue"":""100""},{""id"":6,""beaconName"":""Click"",""beaconValue"":""click""}]"
+15,Adsource,Verify to get the details of Adsource,"""/api/v1/adsource/active""",Adsource,GET,200,Ad source details should appear,"""entity"": [
+{
+""id"": 29,
+""name"": ""CB Ad Source"",
+""active"": false
+}",response.entity,"{""id"":'#number',""name"":'#string',""active"":'#boolean'}"
+16,Reports,Verify to get the details of report types,"""/api/v1/reporttype""",Report ype,GET,200,Report type available list should appear,"""entity"": [
+{
+""id"": 1,
+""name"": ""Airline Summary Report"",
+""description"": ""Airline Summary Report""
+}",response.entity,"{""id"":'#number',""name"":'#string',""description"":'#string'}"
+17,Reports,Verify to get the details of active timezone,"""/api/v1/timezone""",Timezon e,GET,200,Active time zone should appear,"""entity"": [
+{
+""id"": 1,
+""name"": ""(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi"",
+""countryId"": 1,
+""code"": ""Asia/Calcutta""
+}",response.entity,"{""id"":'#number',""name"":'#string',""countryId"":'#number',""code"":'#string'}"
+18,Reports,Verify to get the details of active date range,"""/api/v1/report/daterange""",Report,GET,200,Active date range should appear,"""entity"": [
+{
+""value"": ""Today"",
+""key"": 1
+}",response.entity,"[{""value"":""Today"",""key"":1},{""value"":""This Week"",""key"":2},{""value"":""This Month"",""key"":3},{""value"":""Custom Range"",""key"":4},{""value"":""Yesterday"",""key"":5},{""value"":""Last Week"",""key"":6},{""value"":""Last Month"",""key"":7}]"
+19,Advertiser,Verify the advertiser,"""/api/v1/advertiser/list?statusFilter=active&orderBy=DESC&pageNo=0""",Open creative page,GET,200,Advertiser should appear,"""coll"": [
+{
+""id"": 128,
+""name"": ""TestAd"",
+""email"": ""k@gmail.com"",
+""phoneNumber"": ""1234567890"",
+""active"": true
+}",response.coll,"{""id"":'#number',""name"":'#string',""email"":'#string',""phoneNumber"":'#string',""active"":'#boolean'}"
+20,Ad Restriction,Verify the ad restrictions,"""/api/v1/adrestriction/get""",Open creative page,GET,200,Ad restrictions should appear,"""entity"": {
+""id"": 28,
+""blockedCategory"": [
+""IAB1"",
+""IAB2"",
+""IAB3""
+]",response.entity,"{""id"":'#number',""blockedCategory"":'#[] #string',""aDomain"":'#[] #string',""blockedCategoryDirectBuy"":'#[] #string'}"
+21,Ad source,Verify to get the details of data centers,"""/api/v1/datacenter""",Open creative page,GET,200,Data centers should appear,"""entity"": [
+{
+""id"": 1,
+""name"": ""Data Center1"",
+""code"": ""DC1""
+}",response.entity,"[{""id"":1,""name"":""Data Center1"",""code"":""DC1""},{""id"":2,""name"":""Data Center2"",""code"":""DC1""}]"
+22,Creative,Verify the version,"""/api/v1/session/version""",Open creative page,GET,200,Version should appear,"""1.0.2""",response,"""1.0.2"""
+23,Profile,Verify the profile,"""/api/v1/profile/list?statusFilter=active&orderBy=DESC""",Open view creative page,GET,200,Profile should appear,"""coll"": [
+{
+""id"": 58,
+""name"": ""Aut Profile upd"",
+""description"": ""upd"",
+""priceType"": ""FLOOR"",
+""isActive"": true,
+""displayTypeSettings"": [
+{
+""id"": 888,
+""profileType"": ""default"",
+""displayTypeId"": 1,
+""slotType"": ""Image"",
+""price"": 10.00
+},
+{
+""id"": 889,
+""profileType"": ""default"",
+""displayTypeId"": 1,
+""slotType"": ""Video"",
+""price"": 100.00
+},
+{
+""id"": 890,
+""profileType"": ""default"",
+""displayTypeId"": 2,
+""slotType"": ""Image"",
+""price"": 89.12
+},
+{
+""id"": 891,
+""profileType"": ""default"",
+""displayTypeId"": 2,
+""slotType"": ""Video"",
+""price"": 999.99
+},
+{
+""id"": 892,
+""profileType"": ""default"",
+""displayTypeId"": 3,
+""slotType"": ""Image"",
+""price"": 1.20
+},
+{
+""id"": 893,
+""profileType"": ""default"",
+""displayTypeId"": 3,
+""slotType"": ""Video"",
+""price"": 111.80
+}
+]",response.coll,"{""id"":'#number',""name"":'#string',""description"":'#string',""priceType"":'#string',""isActive"":'#boolean',""displayTypeSettings"":{}}"
