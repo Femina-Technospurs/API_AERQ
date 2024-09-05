@@ -1,0 +1,176 @@
+S.NO,Modules,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY,VALUE
+1,Airline,Verify the Airline list,"""/api/v1/airline/list?orderBy=DESC""",Open Airline page,GET,200,Airline list should be shown,"""coll"": [
+{
+""id"": 99,
+""name"": ""Aut Airline upd"",
+""inventoryType"": ""ALL"",
+""supportedDisplayTypes"": [
+1,
+2,
+3
+],
+""isCoppaEnabled"": false,
+""category"": [
+""IAB15""
+],
+""blockedCategory"": [
+""IAB3""
+],
+""aDomain"": [
+""www.domai.com"",
+""www.testdomain.com""
+],
+""isActive"": true
+}",response.coll,"{""id"":'#number',""name"":'#string',""inventoryType"":'#string',""supportedDisplayTypes"":'#[] #number',""isCoppaEnabled"":'#boolean',""category"":'#[] #string',""blockedCategory"":'#[] #string',""aDomain"":'#[] #string',""isActive"":'#boolean'}"
+2,Airline,Verify the status,"""/api/v1/airline/status""",Open Airline page,GET,200,Status should be correct,"{""entity"":{""active"":30,""inActive"":29},""httpStatus"":""OK"",""total"":1,""valid"":true}",response.entity,"{""active"":'#number',""inActive"":'#number'}"
+3,Airline,Verify the Airline list sort by ascending order,"""/api/v1/airline/list?orderBy=ASC&sortBy=name""",Open Airline page,GET,200,All Airline should be shown in ascending list,"""coll"": [
+{
+""id"": 70,
+""name"": ""10kair"",
+""inventoryType"": ""ALL"",
+""supportedDisplayTypes"": [
+3
+],
+""isCoppaEnabled"": false,
+""isActive"": false
+}",response.coll,"{""id"":'#number',""name"":'#string',""inventoryType"":'#string',""supportedDisplayTypes"":'#[] #number',""isCoppaEnabled"":'#boolean',""isActive"":'#boolean'}"
+4,Airline,Verify the Airline list sort by descending order,"""/api/v1/airline/list?orderBy=DESC&sortBy=name""",Open Airline page,GET,200,All Airline should be shown in descending list,"""coll"": [
+{
+""id"": 14,
+""name"": ""Validate Airline"",
+""inventoryType"": ""ALL"",
+""isCoppaEnabled"": true,
+""blockedCategory"": [
+""IAB1"",
+""IAB4""
+],
+""aDomain"": [
+""www.facebook.com"",
+""www.google.com"",
+""www.gmail.com""
+],
+""isActive"": false
+}",response.coll,"{""id"":'#number',""name"":'#string',""inventoryType"":'#string',""isCoppaEnabled"":'#boolean',""blockedCategory"":'#[] #string',""aDomain"":'#[] #string',""isActive"":'#boolean'}"
+5,Airline,Verify the active Airline list sort by ascending order,"""/api/v1/airline/list?statusFilter=active&orderBy=ASC&sortBy=name""",Open Airline page,GET,200,Active Airline should be shown in ascending list,"""coll"": [
+{
+""id"": 58,
+""name"": ""Adserving "",
+""inventoryType"": ""ALL"",
+""supportedDisplayTypes"": [
+1
+],
+""isCoppaEnabled"": true,
+""isActive"": true
+}",response.coll,"{""id"":'#number',""name"":'#string',""inventoryType"":'#string',""supportedDisplayTypes"":'#[] #number',""isCoppaEnabled"":'#boolean',""isActive"":'#boolean'}"
+6,Airline,Verify the active Airline list sort by descending order,"""/api/v1/airline/list?statusFilter=active&orderBy=DESC&sortBy=name""",Open Airline page,GET,200,Active Airline should be shown in descending list,"""coll"": [
+{
+""id"": 72,
+""name"": ""tyyi"",
+""inventoryType"": ""ALL"",
+""supportedDisplayTypes"": [
+3
+],
+""isCoppaEnabled"": false,
+""isActive"": true
+}",response.coll,"{""id"":'#number',""name"":'#string',""inventoryType"":'#string',""supportedDisplayTypes"":'#[] #number',""isCoppaEnabled"":'#boolean',""isActive"":'#boolean'}"
+7,Airline,Verify the Inactive Airline list sort by ascending order,"""/api/v1/airline/list?statusFilter=inactive&orderBy=ASC&sortBy=name""",Open Airline page,GET,200,InActive Airline should be shown in ascending list,"""coll"": [
+{
+""id"": 70,
+""name"": ""10kair"",
+""inventoryType"": ""ALL"",
+""supportedDisplayTypes"": [
+3
+],
+""isCoppaEnabled"": false,
+""isActive"": false
+}",response.coll,"{""id"":'#number',""name"":'#string',""inventoryType"":'#string',""supportedDisplayTypes"":'#[] #number',""isCoppaEnabled"":'#boolean',""isActive"":'#boolean'}"
+8,Airline,Verify the Inactive Airline list sort by descending order,"""/api/v1/airline/list?statusFilter=inactive&orderBy=DESC&sortBy=name""",Open Airline page,GET,200,InActive Airline should be shown in descending list,"""coll"": [
+{
+""id"": 14,
+""name"": ""Validate Airline"",
+""inventoryType"": ""ALL"",
+""isCoppaEnabled"": true,
+""blockedCategory"": [
+""IAB1"",
+""IAB4""
+],
+""aDomain"": [
+""www.facebook.com"",
+""www.google.com"",
+""www.gmail.com""
+],
+""isActive"": false
+}",response.coll,"{""id"":'#number',""name"":'#string',""inventoryType"":'#string',""isCoppaEnabled"":'#boolean',""blockedCategory"":'#[] #string',""aDomain"":'#[] #string',""isActive"":'#boolean'}"
+9,Airline,Verify the Airline search in airline list,"""/api/v1/airline/list?orderBy=ASC&search=Fracne&sortBy=name""",Open Airline page,GET,200,Searched Airline should be shown in list,"""coll"": [
+{
+""id"": 93,
+""name"": ""France Airline"",
+""inventoryType"": ""ALL"",
+""isCoppaEnabled"": false,
+""blockedCategory"": [
+""IAB7""
+],
+""aDomain"": [
+""2""
+],
+""isActive"": false
+}
+]",response.coll,"{""id"":'#number',""name"":'#string',""inventoryType"":'#string',""isCoppaEnabled"":'#boolean',""blockedCategory"":'#[] #string',""aDomain"":'#[] #string',""isActive"":'#boolean'}"
+10,Airline,Verify user able to activate/deactivate the airline,"""/api/v1/airline/26/toggle-activate""",Open Airline page,GET,200,Airline should be activated/deactivated,"""successMessage"": ""Activated/Deactivated successfully "",
+""valid"": true",response.entity,"{""successMessage"": ""Activated/Deactivated successfully ""}"
+11,Airline,Verify the headers of the imported csv file,"""/api/v1/import/flight/headers""",Open Airline page,GET,200,Headers of the csv file should be retrived,"""entity"": [
+""Flight Name"",
+""Tail Sign No"",
+""Class Type"",
+""Display Type"",
+""No Of Displays"",
+""Slot Type"",
+""Banner Size"",
+""Route""
+]",response.entity,"[""Flight Name"",""Tail Sign No"",""Class Type"",""Display Type"",""No Of Displays"",""Slot Type"",""Banner Size"",""Route""]"
+12,Airline,Verify the Airline detail,"""/api/v1/airline/99""",Open View Airline page,GET,200,User should be able to view the created airline,"""id"": 99",response.entity,"{""id"":99}"
+13,Airline,Verify the Flight list,"""/api/v1/flight/list/99?orderBy=DESC&sortBy=name""",Open Flight list,GET,200,User should be able to view the flight list,"""coll"": [
+{
+""id"": 122,
+""tailSignNo"": ""564564"",
+""name"": ""AUTFlight"",
+""airlineId"": 99
+}
+]",response.coll,"{""id"":122,""tailSignNo"":""564564"",""name"":""AUTFlight"",""airlineId"":99}"
+14,Flight,Verify the Flight list sort by ascending order,"""/api/v1/flight/list/99?orderBy=ASC&sortBy=name""",Open Flight list,GET,200,All Flights should be shown in ascending list,"""coll"": [
+{
+""id"": 122,
+""tailSignNo"": ""564564"",
+""name"": ""AUTFlight"",
+""airlineId"": 99
+}
+]",response.coll,"{""id"":122,""tailSignNo"":""564564"",""name"":""AUTFlight"",""airlineId"":99}"
+15,Flight,Verify the Flight list sort by descending order,"""/api/v1/flight/list/99?orderBy=ASC&search=aut&sortBy=name""",Open Flight list,GET,200,All Flights should be shown in descending list,"""coll"": [
+{
+""id"": 122,
+""tailSignNo"": ""564564"",
+""name"": ""AUTFlight"",
+""airlineId"": 99
+}
+]",response.coll,"{""id"":122,""tailSignNo"":""564564"",""name"":""AUTFlight"",""airlineId"": 99}"
+16,Flight,Verify the flight route details,"""/api/v1/flight-route/get/122""",Open view Flight,GET,200,Flight route details should be displayed,"""entity"": [
+{
+""id"": 201,
+""flightId"": 122,
+""routeId"": 2,
+""route"": ""TPA-FRA"",
+""source"": ""Tampa"",
+""destination"": ""Frankfurt"",
+""transits"": [
+{
+""id"": 356,
+""flightRouteId"": 201,
+""transitId"": 2,
+""route"": ""TPA-FRA"",
+""source"": ""Tampa"",
+""destination"": ""Frankfurt""
+}
+]
+}",response.entity,"{""id"": 201,""flightId"": 122,""routeId"": 2,""route"": ""TPA-FRA"",""source"": ""Tampa"",""destination"": ""Frankfurt"",""transits"": [{""id"": 356,""flightRouteId"": 201,""transitId"": 2,""route"": ""TPA-FRA"",""source"": ""Tampa"",""destination"": ""Frankfurt""}]}"
+17,Flight,Verify all the flight details,"""/api/v1/flight/122""",Open view Flight,GET,200,All Flight details should be displayed,"""id"": 122",response.entity,"{""id"":122}"
+18,Flight,Verify the transit details of the route,"""/api/v1/transit/get-transit/1""",Open view Flight,GET,200,Transit of flight route should be displayed,"""id"": 1",response.entity,"{""id"":1}"
