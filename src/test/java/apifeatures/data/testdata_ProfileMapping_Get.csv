@@ -1,0 +1,9 @@
+S.NO,Modules,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY,VALUE
+1,Target,Verify the Target list,"""/api/v1/target/list?orderBy=DESC""",Open target page,GET,200,Target list should be shown,"""coll""",response.coll,"{ ""id"": '#number',""name"": '#string',""advertiserId"":'#number'}"
+2,Target,Verify the status,"""/api/v1/target/status""",Open target page,GET,200,Status should be correct,"""entity""",response,"{""httpStatus"":""OK""}"
+3,Target,Verify the active target list sort by ascending order,"""/api/v1/target/list?orderBy=ASC&sortBy=name""",Open target page,GET,200,Active target should be shown in ascending list,"""coll""",response.coll,"{ ""id"": '#number',""name"": '#string',""advertiserId"":'#number'}"
+4,Target,Verify the active target list sort by descending order,"""/api/v1/target/list?orderBy=DESC&sortBy=name""",Open target page,GET,200,Active target should be shown in descending list,"""coll""",response.coll,"{ ""id"": '#number',""name"": '#string',""advertiserId"":'#number'}"
+5,Target,Verify the target search in target list,"""/api/v1/target/list?orderBy=ASC&search=111&sortBy=name""",Open target page,GET,200,Searched target should be shown in list,"""coll""",response.coll,"{ ""id"": '#number',""name"": '#string',""advertiserId"":'#number'}"
+6,Target,Verify the target detail,"""/api/v1/target/134""",Open view target,GET,200,Users should be able to view the target,"""id"": 134",response.entity,"{""id"": 134}"
+7,Target,Verify the advertiser linked to the target,"""/api/v1/advertiser/125""",Open view target,GET,200,Linked advertiser should be dispayed,"""id"": 125",response.entity,"{""id"": 125}"
+8,Target,Verify the updated data of target,"""/api/v1/target/134""",Open view updated target,GET,200,Updated target should be displayed,"""id"": 134",response.entity,"{""id"": 134}"

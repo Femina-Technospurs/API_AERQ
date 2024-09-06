@@ -101,7 +101,7 @@ S.NO,Modules,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY
 ],
 ""isActive"": false
 }",response.coll,"{""id"":'#number',""name"":'#string',""inventoryType"":'#string',""isCoppaEnabled"":'#boolean',""blockedCategory"":'#[] #string',""aDomain"":'#[] #string',""isActive"":'#boolean'}"
-9,Airline,Verify the Airline search in airline list,"""/api/v1/airline/list?orderBy=ASC&search=Fracne&sortBy=name""",Open Airline page,GET,200,Searched Airline should be shown in list,"""coll"": [
+9,Airline,Verify the Airline search in airline list,"""/api/v1/airline/list?orderBy=ASC&search=Fran&sortBy=name""",Open Airline page,GET,200,Searched Airline should be shown in list,"""coll"": [
 {
 ""id"": 93,
 ""name"": ""France Airline"",
@@ -116,8 +116,8 @@ S.NO,Modules,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY
 ""isActive"": false
 }
 ]",response.coll,"{""id"":'#number',""name"":'#string',""inventoryType"":'#string',""isCoppaEnabled"":'#boolean',""blockedCategory"":'#[] #string',""aDomain"":'#[] #string',""isActive"":'#boolean'}"
-10,Airline,Verify user able to activate/deactivate the airline,"""/api/v1/airline/26/toggle-activate""",Open Airline page,GET,200,Airline should be activated/deactivated,"""successMessage"": ""Activated/Deactivated successfully "",
-""valid"": true",response.entity,"{""successMessage"": ""Activated/Deactivated successfully ""}"
+10,Airline,Verify user able to activate/deactivate the airline,"""/api/v1/airline/101/toggle-activate""",Open Airline page,GET,200,Airline should be activated/deactivated,"""successMessage"": ""Activated/Deactivated successfully "",
+""valid"": true",response,"{""successMessage"":""Activated/Deactivated successfully ""}"
 11,Airline,Verify the headers of the imported csv file,"""/api/v1/import/flight/headers""",Open Airline page,GET,200,Headers of the csv file should be retrived,"""entity"": [
 ""Flight Name"",
 ""Tail Sign No"",
