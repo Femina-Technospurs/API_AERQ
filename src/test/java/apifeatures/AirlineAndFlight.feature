@@ -17,7 +17,8 @@ return text;
 		* def randomstring = random_number(10)
 		* print randomstring
 
-  Scenario Outline: <SCENARIO>
+
+   Scenario Outline: <SCENARIO>
   * def create = <POST_DATA>
   * create.name= create.name+randomstring
   * print create
@@ -43,6 +44,28 @@ return text;
   Examples: 
   |read('data/testdata_AirlineAndFlight_Put.csv')|
   
+
+
+  Scenario Outline: <Modules> "- " <SCENARIO>
+  Given url baseURL+<URL>
+  And request <POST_DATA>
+  When method <METHOD>
+  Then status <STATUS_CODE>
+  And match <KEY> contains deep <VALUE> 	
+ 	
+  Examples: 
+  |read('data/testdata_AirlineAndFlightImport_Post.csv')|
+   
+  #Scenario Outline: <Modules> "- " <SCENARIO>
+  #Given url baseURL+<URL>
+  #And request <POST_DATA>
+  #And multipart file file = { read: 'sampleflightImport.csv', filename: 'sampleflightImport.csv', contentType: 'text/csv' }
+  #When method <METHOD>
+  #Then status <STATUS_CODE>
+  #And match <KEY> contains <VALUE> 	
+ 	
+ # Examples: 
+ # |read('data/testdata_AirlineAndFlightImportCSV_Post.csv')|
   
   Scenario Outline: <SCENARIO>
   Given url baseURL+<URL>

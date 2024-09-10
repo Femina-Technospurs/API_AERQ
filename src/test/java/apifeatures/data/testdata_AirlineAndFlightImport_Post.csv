@@ -1,0 +1,132 @@
+S.NO,MODULE,SCENARIO,URL,DESC,METHOD,POST_DATA,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY,VALUE
+5,Flight,Verify the csv values of each row of the imported flight at first level,"""/api/v1/import/flights/101/715/validate""",Import the flight,POST,"[""Flight Name"",""Tail Sign No"",""Class Type"",""Display Type"",""No Of Displays"",""Slot Type"",""Banner Size"",""Route""]",200,CSV values should be checked at first level,"""entity"": {
+""processId"": 715,
+""flights"": [
+{
+""airlineId"": 101,
+""flightName"": ""Flight1"",
+""tailSignNo"": ""123456"",
+""classType"": ""Business"",
+""displayType"": ""ISD"",
+""noOfDisplays"": ""12"",
+""slotType"": ""IMAGE"",
+""bannerSize"": ""300 x 250"",
+""route"": ""CHE-US"",
+""recordType"": ""ERROR"",
+""errors"": [
+{
+""value"": ""Not Valid Class Type"",
+""key"": ""Class Type""
+},
+{
+""value"": ""Not Valid Route"",
+""key"": ""Route""
+},
+{
+""value"": ""Tail sign number is already exist"",
+""key"": ""Tail Sign No""
+}
+],
+""hasError"": false,
+""valid"": false
+}",response.entity,"{""processId"":715}"
+6,Flight,Verify the csv values of each row of the imported flight at second level,"""/api/v1/import/flights/101/715/validate-data""",Import the flight,POST,"[{""airlineId"":101,""flightName"":""FRANCE1"",""tailSignNo"":""098765"",""classType"":""Economy"",""displayType"":""ISD"",""noOfDisplays"":""12"",""slotType"":""IMAGE"",""bannerSize"":""300 x 250"",""route"":""FRA-TPA""}]",200,CSV values should be checked at first level and the validate should be success,"{
+""entity"": {
+""processId"": 715,
+""createCount"": 1,
+""updateCount"": 0
+},
+""httpStatus"": ""OK"",
+""total"": 1,
+""valid"": true
+}",response.entity,"{""processId"":715}"
+7,Flight,Verify user able to import the flight details by clicking submit button,"""/api/v1/import/flights/101/715/submit""",Click on Submit,POST,"[""Flight Name"",""Tail Sign No"",""Class Type"",""Display Type"",""No Of Displays"",""Slot Type"",""Banner Size"",""Route""]",200,The flight import should be successful on clicking Submit button,"""entity"": [
+{
+""airlineId"": 101,
+""flightName"": ""FRANCE1"",
+""tailSignNo"": ""098765"",
+""classType"": ""Economy"",
+""displayType"": ""ISD"",
+""noOfDisplays"": ""12"",
+""slotType"": ""IMAGE"",
+""bannerSize"": ""300 x 250"",
+""route"": ""FRA-TPA"",
+""recordType"": ""TOBECREATED"",
+""hasError"": false,
+""valid"": false
+}
+]",response.entity,"{""processId"":715}"
+9,Flight,Verify the csv values of each row of the imported Flight Schedule at first level,"""/api/v1/import/schedule/101/716/validate""",Import the Flight Schedule,POST,"[""Tail Sign No"",""Route"",""Start Time"",""End Time"",""Sequence"",""Transit"",""Transit Start Time"",""Transit End Time""]",200,CSV values should be checked at first level,"
+""entity"": {
+""processId"": 716,
+""schedules"": [
+{
+""tailSignNo"": ""123456"",
+""route"": ""CHE-US"",
+""transit"": ""CHE-DXB"",
+""sequenceNumber"": ""1"",
+""startTime"": ""6/20/2025 13:00"",
+""endTime"": ""6/20/2025 19:00"",
+""transitStartTime"": ""6/20/2025 13:00"",
+""transitEndTime"": ""6/20/2025 19:00"",
+""recordType"": ""ERROR"",
+""errors"": [
+{
+""value"": ""Not Valid Start Time"",
+""key"": ""Start Time""
+},
+{
+""value"": ""Not Valid End Time"",
+""key"": ""End Time""
+},
+{
+""value"": ""Not Valid Transit Start Time"",
+""key"": ""Transit Start Time""
+},
+{
+""value"": ""Not Valid Transit End Time"",
+""key"": ""Transit End Time""
+},
+{
+""value"": ""Not Valid Tail Sign No"",
+""key"": ""Tail Sign No""
+},
+{
+""value"": ""Not Valid Route"",
+""key"": ""Route""
+},
+{
+""value"": ""Not valid sequence for this transit"",
+""key"": ""Sequence""
+}
+],
+""hasError"": false,
+""valid"": false
+}
+]",response.entity,"{""processId"":716}"
+10,Flight,Verify the csv values of each row of the imported Flight Schedule at second level,"""/api/v1/import/schedule/101/716/validate-data""",Import the Flight Schedule,POST,"[{""tailSignNo"":""098765"",""route"":""FRA-TPA"",""transit"":""FRA-TPA"",""sequenceNumber"":""1"",""startTime"":""2024-09-15 00:00:00"",""endTime"":""2024-09-15 05:00:00"",""transitStartTime"":""2024-09-15 01:00:00"",""transitEndTime"":""2024-09-15 04:00:00"",""flightId"":101}]",200,CSV values should be checked at first level and the validate should be success,"{
+""entity"": {
+""processId"": 716,
+""createCount"": 1,
+""updateCount"": 0
+},
+""httpStatus"": ""OK"",
+""total"": 1,
+""valid"": true
+}",response.entity,"{""processId"":716}"
+11,Flight,Verify user able to import the Flight Schedule details by clicking submit button,"""/api/v1/import/schedule/101/716/submit""",Click on Submit,POST,"[""Tail Sign No"",""Route"",""Start Time"",""End Time"",""Sequence"",""Transit"",""Transit Start Time"",""Transit End Time""]",200,The Flight Schedule import should be successful on clicking Submit button,"""entity"": [
+{
+""tailSignNo"": ""098765"",
+""route"": ""FRA-TPA"",
+""transit"": ""FRA-TPA"",
+""sequenceNumber"": ""1"",
+""startTime"": ""2024-09-15 00:00:00"",
+""endTime"": ""2024-09-15 05:00:00"",
+""transitStartTime"": ""2024-09-15 01:00:00"",
+""transitEndTime"": ""2024-09-15 04:00:00"",
+""flightId"": 127,
+""recordType"": ""TOBECREATED"",
+""hasError"": false,
+""valid"": false
+}
+]",response.entity,"{""processId"":716}"

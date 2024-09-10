@@ -1,0 +1,28 @@
+S.NO,MODULE,SCENARIO,URL,DESC,METHOD,POST_DATA,FILE,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY,VALUE
+4,Flight,Verify user can click on Import Flight,"""/api/v1/import/flights/101""",Click Import flight,POST,"""""",data/sampleflightImport.csv,200,User should be able to click on import flight option,"
+""entity"": {
+""mapping"": [
+{
+""Flight Name"": ""Flight1"",
+""Tail Sign No"": ""123456"",
+""Class Type"": ""Business"",
+""Display Type"": ""ISD"",
+""No Of Displays"": ""12"",
+""Slot Type"": ""IMAGE"",
+""Banner Size"": ""300 x 250"",
+""Route"": ""CHE-US""
+}
+]",response.entity,"{""id"": '#number',""name"": '#string'}"
+8,Flight,Verify user can click on Import Flight Schedule,"""/api/v1/import/schedule/101""",Click Import Flight Schedule,POST,"""""",data/SampleScheduleImport.csv,200,User should be able to click on import Flight Schedule option,"""entity"": {
+""mapping"": [
+{
+""Tail Sign No"": ""123456"",
+""Route"": ""CHE-US"",
+""Start Time"": ""6/20/2025 13:00"",
+""End Time"": ""6/20/2025 19:00"",
+""Sequence"": ""1"",
+""Transit"": ""CHE-DXB"",
+""Transit Start Time"": ""6/20/2025 13:00"",
+""Transit End Time"": ""6/20/2025 19:00""
+}
+]",response.entity,"{""processId"":715}"
