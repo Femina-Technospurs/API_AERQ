@@ -17,7 +17,7 @@ public class ScenarioRunner {
     void testParallel(){
 		System.setProperty("karate.env", "qa");
 
-       Results results = Runner.path("classpath:apifeatures/Profile.feature")
+       Results results = Runner.path("classpath:apifeatures/ProfileMapping.feature")
                        .hook(new ReportHook())
                                .parallel(1);
       // assertEquals(0, results.getFailCount(), results.getErrorMessages());
