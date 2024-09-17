@@ -27,7 +27,7 @@ return text;
   Then status <STATUS_CODE>
   And match <KEY> contains <VALUE> 	
  	Given url baseURL+<URL>+response.id
- 	  * def update =  <POST_DATA>
+ 	* def update =  <POST_DATA>
   * update.name= update.name+randomstring+ " Updated"
   * update.description = "Automation Updated"
   * print update

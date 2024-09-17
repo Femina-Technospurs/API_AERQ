@@ -56,6 +56,15 @@ return text;
   Examples: 
   |read('data/testdata_AirlineAndFlightImport_Post.csv')|
    
+  Scenario Outline: <Modules> "- " <SCENARIO>
+		Given url baseURL+<URL>
+		* multipart file file = { read: 'sampleflightImport.csv' }
+		Then method <METHOD>
+		Then status <STATUS_CODE>
+		
+		Examples: 							
+		|read('data/testdata_AirlineAndFlightImportCSV_Post.csv')|
+		
   #Scenario Outline: <Modules> "- " <SCENARIO>
   #Given url baseURL+<URL>
   #And request <POST_DATA>

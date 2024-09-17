@@ -1,0 +1,4 @@
+S.NO,SCENARIO,URL,DESC,METHOD,POST_DATA,POST_DATA_2,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY,VALUE
+"1,2,3","Verify user can able to Create,Edit and Delete Adsource","""/api/v1/adsource/""","Create,Edit and Delete Profile",POST,"{""name"":""Aut AS1"",""adsourceInstances"":[{""dataCenterId"":1,""id"":1,""adSourceUrl"":""qa""}],""adsourceParams"":[]}
+","{""name"":""Aut AS1"",""adsourceInstances"":[{""id"":61,""adSourceId"":45,""adSourceUrl"":""qa1"",""dataCenterId"":1,""dataCenterName"":""Data Center1"",""dataCenterCode"":""DC1"",""flowControlEnabled"":false}],""adsourceParams"":[{""paramType"":""Header"",""adSourceKey"":""Key"",""adSourceValue"":""1"",""id"":1}]}
+",201,"User should be able to create,Update and Delete the Ad Source by filling all the details",,response,"{""id"": '#number',""name"": '#string'}"
