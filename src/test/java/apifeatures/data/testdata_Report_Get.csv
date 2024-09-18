@@ -1,0 +1,127 @@
+S.NO,Modules,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY,VALUE
+1,Scheduled Report,Verify the Scheduled Report list,"""/api/v1/reporttemplate/list?orderBy=DESC""",Open Report page,GET,200,Scheduled Report list should be shown,"""coll"": [
+{
+""id"": 82,
+""reportTypeId"": 2,
+""reportName"": ""Aut Scheduled Report UPD"",
+""startDate"": ""2024-08-05 00:00:00"",
+""endDate"": ""2024-08-05 00:00:00"",
+""dateRangeTypeId"": 4,
+""reportDeliveryFrequencyInDays"": 10,
+""reportDeliveryEndDate"": ""2024-08-05 23:59:59"",
+""executedOn"": ""2024-08-13 06:16:49"",
+""nextExecutionTime"": ""2024-08-16 00:00:00"",
+""reportStatus"": ""SUCCESS"",
+""dateRangeTypeName"": ""Custom Range"",
+""reportTypeName"": ""Campaign Summary Report"",
+""timeZoneId"": 2
+}",response.coll,"{""id"":'#number',""reportTypeId"":'#number',""reportName"":'#string',""startDate"":'#string',""endDate"":'#string',""dateRangeTypeId"":'#number',""reportDeliveryFrequencyInDays"":'#number',""reportDeliveryEndDate"":'#string',""executedOn"":'#string',""nextExecutionTime"":'#string',""reportStatus"":'#string',""dateRangeTypeName"":'#string',""reportTypeName"":'#string',""timeZoneId"":'#number'}"
+2,Scheduled Report,Verify the Scheduled Report list sort by ascending order,"""/api/v1/reporttemplate/list?orderBy=ASC&sortBy=reportName""",Open Report page,GET,200,All Scheduled Report should be shown in ascending list,"""coll"": [
+{
+""id"": 28,
+""reportTypeId"": 2,
+""reportName"": ""15 scheduled report "",
+""dateRangeTypeId"": 3,
+""reportDeliveryFrequencyInDays"": 11,
+""reportDeliveryEndDate"": ""2024-05-15 23:59:59"",
+""nextExecutionTime"": ""2024-08-15 00:00:00"",
+""reportStatus"": ""SUCCESS"",
+""dateRangeTypeName"": ""This Month"",
+""reportTypeName"": ""Campaign Summary Report"",
+""timeZoneId"": 6
+}",response.coll,"{""id"":'#number',""reportTypeId"":'#number',""reportName"":'#string',""dateRangeTypeId"":'#number',""reportDeliveryFrequencyInDays"":'#number',""reportDeliveryEndDate"":'#string',""nextExecutionTime"":'#string',""reportStatus"":'#string',""dateRangeTypeName"":'#string',""reportTypeName"":'#string',""timeZoneId"":'#number'}"
+3,Scheduled Report,Verify the Scheduled Report list sort by descending order,"""/api/v1/reporttemplate/list?orderBy=DESC&sortBy=reportName""",Open Report page,GET,200,All Scheduled Report should be shown in descending list,"""coll"": [
+{
+""id"": 70,
+""reportTypeId"": 2,
+""reportName"": ""yui"",
+""startDate"": ""2024-05-31 00:00:00"",
+""endDate"": ""2024-06-29 00:00:00"",
+""dateRangeTypeId"": 4,
+""reportDeliveryFrequencyInDays"": 1,
+""reportDeliveryEndDate"": ""2024-05-31 23:59:59"",
+""nextExecutionTime"": ""2024-06-01 00:00:00"",
+""reportStatus"": ""SUCCESS"",
+""dateRangeTypeName"": ""Custom Range"",
+""reportTypeName"": ""Campaign Summary Report"",
+""timeZoneId"": 1
+}",response.coll,"{""id"":'#number',""reportTypeId"":'#number',""reportName"":'#string',""startDate"":'#string',""endDate"":'#string',""dateRangeTypeId"":'#number',""reportDeliveryFrequencyInDays"":'#number',""reportDeliveryEndDate"":'#string',""nextExecutionTime"":'#string',""reportStatus"":'#string',""dateRangeTypeName"":'#string',""reportTypeName"":'#string',""timeZoneId"":'#number'}"
+4,Scheduled Report,Verify the Scheduled Report search in Scheduled Report list,"""/api/v1/reporttemplate/list?orderBy=DESC&search=Rep&sortBy=reportName""",Open Report page,GET,200,Searched Scheduled Report should be shown in list,"""coll"": [
+{
+""id"": 8,
+""reportTypeId"": 2,
+""reportName"": ""Weekly Campaign Report"",
+""dateRangeTypeId"": 2,
+""reportDeliveryFrequencyInDays"": 1,
+""reportDeliveryEndDate"": ""2024-08-08 23:59:59"",
+""executedOn"": ""2024-08-13 06:16:15"",
+""nextExecutionTime"": ""2024-08-09 00:00:00"",
+""reportStatus"": ""SUCCESS"",
+""dateRangeTypeName"": ""This Week"",
+""reportTypeName"": ""Campaign Summary Report"",
+""timeZoneId"": 1
+}",response.coll,"{""id"":'#number',""reportTypeId"":'#number',""reportName"":'#string',""startDate"":'#string',""endDate"":'#string',""dateRangeTypeId"":'#number',""reportDeliveryFrequencyInDays"":'#number',""reportDeliveryEndDate"":'#string',""executedOn"":'#string',""nextExecutionTime"":'#string',""reportStatus"":'#string',""dateRangeTypeName"":'#string',""reportTypeName"":'#string',""timeZoneId"":'#number'}"
+5,Ondemand Report,Verify the Ondemand Report list,"""/api/v1/ondemand/list?statusFilter=active&orderBy=DESC""",Open Report page,GET,200,Ondemand Report list should be shown,"""coll"": [
+{
+""id"": 210,
+""reportTypeId"": 2,
+""reportName"": ""ttt"",
+""startDate"": ""2024-08-01 00:00:00"",
+""endDate"": ""2024-08-31 23:59:59"",
+""dateRangeTypeId"": 3,
+""reportStatus"": ""SUCCESS"",
+""dateRangeTypeName"": ""This Month"",
+""reportTypeName"": ""Campaign Summary Report"",
+""timeZoneId"": 6,
+""reportLocationUrl"": ""2024-08-19/Campaign_Summary_Report--19_08_2024--12_20_00.0_848458_.csv""
+}",response.coll,"{""id"":'#number',""reportTypeId"":'#number',""reportName"":'#string',""startDate"":'#string',""endDate"":'#string',""dateRangeTypeId"":'#number',""reportStatus"":'#string',""dateRangeTypeName"":'#string',""reportTypeName"":'#string',""timeZoneId"":'#number',""reportLocationUrl"":'#string'}"
+6,Ondemand Report,Verify the Ondemand Report list sort by ascending order,"""/api/v1/ondemand/list?statusFilter=active&orderBy=ASC&sortBy=reportName""",Open Report page,GET,200,All Ondemand Report should be shown in ascending list,"""coll"": [
+{
+""id"": 11,
+""reportTypeId"": 1,
+""reportName"": ""09 Airline QA"",
+""startDate"": ""2024-05-09 00:00:00"",
+""endDate"": ""2024-05-09 23:59:59"",
+""dateRangeTypeId"": 1,
+""reportStatus"": ""SUCCESS"",
+""dateRangeTypeName"": ""Today"",
+""reportTypeName"": ""Airline Summary Report"",
+""timeZoneId"": 1,
+""reportLocationUrl"": ""2024-05-09/Airline_Summary_Report--09_05_2024--10_00_00.0_851176_.csv""
+}",response.coll,"{""id"":'#number',""reportTypeId"":'#number',""reportName"":'#string',""startDate"":'#string',""endDate"":'#string',""dateRangeTypeId"":'#number',""reportStatus"":'#string',""dateRangeTypeName"":'#string',""reportTypeName"":'#string',""timeZoneId"":'#number',""reportLocationUrl"":'#string'}"
+7,Ondemand Report,Verify the Ondemand Report list sort by descending order,"""/api/v1/ondemand/list?statusFilter=active&orderBy=DESC&sortBy=reportName""",Open Report page,GET,200,All Ondemand Report should be shown in descending list,"""coll"": [
+{
+""id"": 207,
+""reportTypeId"": 3,
+""reportName"": ""yyyy"",
+""startDate"": ""2024-07-01 00:00:00"",
+""endDate"": ""2024-07-31 00:00:00"",
+""dateRangeTypeId"": 4,
+""reportStatus"": ""SUCCESS"",
+""dateRangeTypeName"": ""Custom Range"",
+""reportTypeName"": ""Slot Summary Report"",
+""timeZoneId"": 6,
+""reportLocationUrl"": ""2024-08-16/Slot_Summary_Report--16_08_2024--08_11_00.0_457512_.csv""
+}",response.coll,"{""id"":'#number',""reportTypeId"":'#number',""reportName"":'#string',""startDate"":'#string',""endDate"":'#string',""dateRangeTypeId"":'#number',""reportStatus"":'#string',""dateRangeTypeName"":'#string',""reportTypeName"":'#string',""timeZoneId"":'#number',""reportLocationUrl"":'#string'}"
+8,Ondemand Report,Verify the Ondemand Report search in Ondemand Report list,"""/api/v1/ondemand/list?statusFilter=active&orderBy=DESC&search=Rep&sortBy=reportName""",Open Report page,GET,200,Searched Ondemand Report should be shown in list,"""coll"": [
+{
+""id"": 142,
+""reportTypeId"": 2,
+""reportName"": ""TestReportSel"",
+""startDate"": ""2024-07-01 00:00:00"",
+""endDate"": ""2024-07-31 00:00:00"",
+""dateRangeTypeId"": 4,
+""reportStatus"": ""SUCCESS"",
+""dateRangeTypeName"": ""Custom Range"",
+""reportTypeName"": ""Campaign Summary Report"",
+""timeZoneId"": 1,
+""reportLocationUrl"": ""2024-07-23/Campaign_Summary_Report--23_07_2024--06_09_00.0_731795_.csv""
+}",response.coll,"{""id"":'#number',""reportTypeId"":'#number',""reportName"":'#string',""startDate"":'#string',""endDate"":'#string',""dateRangeTypeId"":'#number',""reportStatus"":'#string',""dateRangeTypeName"":'#string',""reportTypeName"":'#string',""timeZoneId"":'#number',""reportLocationUrl"":'#string'}"
+9,Scheduled Report,Verify the View Instance of Scheduled Report,"""/api/v1/reportinstance/list/82""",Open Report page,GET,200,View Instance should be displayed to download the report,"""reportTemplateId"": 82",response.entity,"{""reportTemplateId"":82}"
+10,Scheduled Report,Verify the Scheduled report details,"""/api/v1/reporttemplate/82""",Open Report page,GET,200,User should be able to view the created Scheduled report,"""id"": 82",,"{""id"":82}"
+11,Ondemand Report,Verify user can download the Ondemand report,"""/api/v1/ondemand/download/161""",Open Report page,GET,200,User should be able to download the Ondemand report,"{
+""entity"": ""https://uploaded-ads.s3.amazonaws.com/2024-08-05/Adsource_Summary_Report--05_08_2024--07_10_00.0_473958_.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240820T063159Z&X-Amz-SignedHeaders=host&X-Amz-Expires=599&X-Amz-Credential=AKIAVB23ZFURJ4O2D7BS%2F20240820%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=8afe9462153f070648d9aa9db1f1e94df4cb73d786baf62f7ffa477ff3c5c14e"",
+""httpStatus"": ""OK"",
+""total"": 1,
+""valid"": true
+}",response,"{""entity"":'#string',""httpStatus"": ""OK"",""total"": 1,""valid"": true}"

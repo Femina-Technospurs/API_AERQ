@@ -1,0 +1,2 @@
+S.NO,Modules,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY,VALUE
+1,Ad Restriction,Verify the added Ad Restriction,"""/api/v1/adrestriction/get""",Open Ad Restriction page,GET,200,All the added Ad Restrictions should get displayed,"""id"": 28",response.entity,"{ ""id"":28}"

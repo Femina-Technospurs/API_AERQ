@@ -1,0 +1,3 @@
+S.NO,Module,SCENARIO,URL,DESC,METHOD,POST_DATA,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY,VALUE
+1,Ad Restriction,Verify user able to add the Ad Restrictions,"""/api/v1/adrestriction/save""",Open Ad Restriction page,POST,"{""aDomain"":[""www.domai.com"",""www.testdomain.com"",""www.123.com""],""blockedCategory"":[""IAB1"",""IAB2"",""IAB3""],""blockedCategoryDirectBuy"":[""IAB26"",""IAB23""],""id"":28}
+",200,User should be able to add the Ad Restrictions categories,id:28,response,"{""id"":28}"

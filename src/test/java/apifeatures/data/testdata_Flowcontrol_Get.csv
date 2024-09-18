@@ -1,0 +1,80 @@
+S.NO,Modules,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY,VALUE
+1,Flow Control,Verify the Flow Control list,"""/api/v1/adsourceinstance/list?orderBy=DESC""",Open Flow Control page,GET,200,Flow Control list should be shown,"""coll"": [
+{
+""id"": 60,
+""adSourceId"": 44,
+""dataCenterId"": 1,
+""dataCenterName"": ""Data Center1"",
+""adSourceName"": ""TestAdsource1"",
+""flowControlEnabled"": false
+}",response.coll,"{""id"":'#number',""adSourceId"":'#number',""dataCenterId"":'#number',""dataCenterName"":'#string',""adSourceName"":'#string',""flowControlEnabled"": false}"
+2,Flow Control,Verify the status,"""/api/v1/adsourceinstance/status""",Open Flow Control page,GET,200,Status should be correct,"{""entity"":{""active"":3,""inActive"":10},""httpStatus"":""OK"",""total"":1,""valid"":true}",response,"{""entity"":{""active"": '#number',""inActive"": '#number'},""httpStatus"":""OK"",""total"":'#number',""valid"":true}"
+3,Flow Control,Verify the Flow Control list sort by ascending order,"""/api/v1/adsourceinstance/list?orderBy=ASC&sortBy=name""",Open Flow Control page,GET,200,All Flow Control should be shown in ascending list,"""coll"": [
+{
+""id"": 57,
+""adSourceId"": 41,
+""dataCenterId"": 2,
+""dataCenterName"": ""Data Center2"",
+""adSourceName"": ""ad source dim"",
+""flowControlEnabled"": false
+}",response.coll,"{""id"":'#number',""adSourceId"":'#number',""dataCenterId"":'#number',""dataCenterName"":'#string',""adSourceName"":'#string',""flowControlEnabled"": false}"
+4,Flow Control,Verify the Flow Control list sort by descending order,"""/api/v1/adsourceinstance/list?orderBy=DESC&sortBy=name""",Open Flow Control page,GET,200,All Flow Control should be shown in descending list,"""coll"": [
+{
+""id"": 31,
+""adSourceId"": 21,
+""dataCenterId"": 1,
+""dataCenterName"": ""Data Center1"",
+""adSourceName"": ""Validation Ad Source"",
+""flowControlEnabled"": false
+}",response.coll,"{""id"":'#number',""adSourceId"":'#number',""dataCenterId"":'#number',""dataCenterName"":'#string',""adSourceName"":'#string',""flowControlEnabled"": false}"
+5,Flow Control,Verify the active Flow Control list sort by ascending order,"""/api/v1/adsourceinstance/list?statusFilter=active&orderBy=ASC&sortBy=name""",Open Flow Control page,GET,200,Active Flow Control should be shown in ascending list,"""coll"": [
+{
+""id"": 58,
+""adSourceId"": 42,
+""dataCenterId"": 1,
+""dataCenterName"": ""Data Center1"",
+""adSourceName"": ""Aut Ad Source UPD"",
+""flowControlEnabled"": true
+}",response.coll,"{""id"":'#number',""adSourceId"":'#number',""dataCenterId"":'#number',""dataCenterName"":'#string',""adSourceName"":'#string',""flowControlEnabled"":true}"
+6,Flow Control,Verify the active Flow Control list sort by descending order,"""/api/v1/adsourceinstance/list?statusFilter=active&orderBy=DESC&sortBy=name""",Open Flow Control page,GET,200,Active Flow Control should be shown in descending list,"""coll"": [
+{
+""id"": 34,
+""adSourceId"": 23,
+""dataCenterId"": 1,
+""dataCenterName"": ""Data Center1"",
+""adSourceName"": ""San Ad Source"",
+""flowControlEnabled"": true
+}",response.coll,"{""id"":'#number',""adSourceId"":'#number',""dataCenterId"":'#number',""dataCenterName"":'#string',""adSourceName"":'#string',""flowControlEnabled"":true}"
+7,Flow Control,Verify the Inactive Flow Control list sort by ascending order,"""/api/v1/adsourceinstance/list?statusFilter=inactive&orderBy=ASC&sortBy=name""",Open Flow Control page,GET,200,InActive Flow Control should be shown in ascending list,"""coll"": [
+{
+""id"": 57,
+""adSourceId"": 41,
+""dataCenterId"": 2,
+""dataCenterName"": ""Data Center2"",
+""adSourceName"": ""ad source dim"",
+""flowControlEnabled"": false
+}",response.coll,"{""id"":'#number',""adSourceId"":'#number',""dataCenterId"":'#number',""dataCenterName"":'#string',""adSourceName"":'#string',""flowControlEnabled"": false}"
+8,Flow Control,Verify the Inactive Flow Control list sort by descending order,"""/api/v1/adsourceinstance/list?statusFilter=inactive&orderBy=DESC&sortBy=name""",Open Flow Control page,GET,200,InActive Flow Control should be shown in descending list,"""coll"": [
+{
+""id"": 31,
+""adSourceId"": 21,
+""dataCenterId"": 1,
+""dataCenterName"": ""Data Center1"",
+""adSourceName"": ""Validation Ad Source"",
+""flowControlEnabled"": false
+}",response.coll,"{""id"":'#number',""adSourceId"":'#number',""dataCenterId"":'#number',""dataCenterName"":'#string',""adSourceName"":'#string',""flowControlEnabled"": false}"
+9,Flow Control,Verify the Flow Control search in Flow Control list,"""/api/v1/adsourceinstance/list?orderBy=DESC&search=Aut""",Open Flow Control page,GET,200,Searched Flow Control should be shown in list,"""coll"": [
+{
+""id"": 59,
+""adSourceId"": 42,
+""dataCenterId"": 2,
+""dataCenterName"": ""Data Center2"",
+""adSourceName"": ""Aut Ad Source UPD"",
+""flowControlEnabled"": false
+}",response.coll,"{""id"":'#number',""adSourceId"":'#number',""dataCenterId"":'#number',""dataCenterName"":'#string',""adSourceName"":'#string',""flowControlEnabled"":'#boolean'}"
+10,Flow Control,Verify user able to activate/deactivate the Flow Control,"""/api/v1/adsourceinstance/58/toggle-activate""",Open Flow Control page,GET,200,Flow Control should be activated/deactivated,"""successMessage"": ""Activated/Deactivated successfully "",
+""valid"": true",response,"{""successMessage"":""Activated/Deactivated successfully ""}"
+11,Flow Control,Verify the Flow Control detail,"""/api/v1/adsourceinstance/58""",Open View/Create Flow Control page,GET,200,User should be able to view the created Flow Control,"""id"": 58",response.entity,"{""id"":58}"
+12,Flow Control,Verify the Ad source,"""/api/v1/adsource/42""",Open View/Create Flow Control page,GET,200,The Ad source should be shown,"""id"": 42",response.entity,"{""id"":42}"
+13,Flow Control,Verify the Data Center of the Ad source,"""/api/v1/adsource/datacenters/42""",Open View/Create Flow Control page,GET,200,The Data center of the Ad source should be shown,"""id"": 58
+""adSourceId"": 42",response.entity,"{""id"":58,""adSourceId"":42}"
