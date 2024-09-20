@@ -18,39 +18,12 @@ return text;
 		* print randomstring
 
   Scenario Outline: <SCENARIO>
-  * def create = <POST_DATA>
-  * create.name= create.name+randomstring
-  * print create
-  Given url baseURL+<URL>
-  And request create
-  When method <METHOD>
-  Then status <STATUS_CODE>
-  And match <KEY> contains <VALUE> 	
- 	Given url baseURL+"/api/v1/target/"+response.id
- 	  * def update =  <POST_DATA>
-  * update.name= update.name+randomstring+ " Updated"
-  * update.description = "Automation Updated"
-  * print update
-	And request update
-  When method PUT
-  Then status 202
- 	Given url baseURL+"/api/v1/target/"+response.id+"/delete"
- 	And request ""
-  When method PUT
-  Then status 200
-  Then match response.successMessage contains "Deleted successfully"
-  
-  Examples: 
-  |read('data/testdata_Target_Put.csv')|
-  
-  
-  Scenario Outline: <SCENARIO>
   Given url baseURL+<URL>
   When method <METHOD>
   Then status <STATUS_CODE>
+  And print response
  	And match <KEY> contains deep <VALUE> 	
- #Then match karate.toString(response) contains "<EXPECTED_RESULT>"
 
   Examples: 
-  |read('data/testdata_Target_Get.csv')|
+  |read('data/testdata_Dashboard_Get.csv')|
   

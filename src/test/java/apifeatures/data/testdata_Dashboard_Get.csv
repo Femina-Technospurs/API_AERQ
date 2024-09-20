@@ -1,9 +1,2123 @@
 S.NO,Modules,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY,VALUE
-1,Target,Verify the Target list,"""/api/v1/target/list?orderBy=DESC""",Open target page,GET,200,Target list should be shown,"""coll""",response.coll,"{ ""id"": '#number',""name"": '#string',""advertiserId"":'#number'}"
-2,Target,Verify the status,"""/api/v1/target/status""",Open target page,GET,200,Status should be correct,"""entity""",response,"{""httpStatus"":""OK""}"
-3,Target,Verify the active target list sort by ascending order,"""/api/v1/target/list?orderBy=ASC&sortBy=name""",Open target page,GET,200,Active target should be shown in ascending list,"""coll""",response.coll,"{ ""id"": '#number',""name"": '#string',""advertiserId"":'#number'}"
-4,Target,Verify the active target list sort by descending order,"""/api/v1/target/list?orderBy=DESC&sortBy=name""",Open target page,GET,200,Active target should be shown in descending list,"""coll""",response.coll,"{ ""id"": '#number',""name"": '#string',""advertiserId"":'#number'}"
-5,Target,Verify the target search in target list,"""/api/v1/target/list?orderBy=ASC&search=111&sortBy=name""",Open target page,GET,200,Searched target should be shown in list,"""coll""",response.coll,"{ ""id"": '#number',""name"": '#string',""advertiserId"":'#number'}"
-6,Target,Verify the target detail,"""/api/v1/target/134""",Open view target,GET,200,Users should be able to view the target,"""id"": 134",response.entity,"{""id"": 134}"
-7,Target,Verify the advertiser linked to the target,"""/api/v1/advertiser/125""",Open view target,GET,200,Linked advertiser should be dispayed,"""id"": 125",response.entity,"{""id"": 125}"
-8,Target,Verify the updated data of target,"""/api/v1/target/134""",Open view updated target,GET,200,Updated target should be displayed,"""id"": 134",response.entity,"{""id"": 134}"
+1,Dashboard,Verify the Daterange ,"""/api/v1/dashboard/daterange""",Open Dashboard page,GET,200,Daterange should be shown,"""entity"": [
+{
+""value"": ""Today"",
+""key"": 1
+}",response.entity,"{ ""value"": ""Today"", ""key"": 1 }"
+2,Dashboard,Verify the Advertiser list,"""/api/v1/advertiser/all""",Open Dashboard page,GET,200,All advertiser should appear,"""entity"": [
+{
+""id"": 3,
+""name"": ""Dunkin Donuts"",
+""active"": false
+}",response.entity,"{ ""id"": 3, ""name"": ""Dunkin Donuts"", ""active"": false }"
+3,Dashboard - Airline Insight,Verify The KPI for time zone and Date range ,"""/api/v1/dashboard/kpi/AIRLINE_VIEW?timeZoneId=1&dateRangeTypeId=2""",Open Airline Insights,GET,200,Kpi should appear,"""data"": {
+""TODAY"": {
+""data"": [
+[
+0,
+0,
+0,
+0,
+0,
+0
+]
+],
+""label"": ""2024-08-19""
+}",response.entity,"{
+        ""label"": ""Gross Revenue"",
+        ""keyName"": ""revenue"",
+        ""index"": 5
+      }"
+4,Dashboard - Airline Insight,Verify the Report for the Gross Revenue for the Airline Insights,"""/api/v1/dashboard/report/AIRLINE_VIEW?dateRangeTypeId=1&timeZoneId=1&pageNo=0&metricType=REVENUE""",Open Airline Insights,GET,200,Report for the Gross Revenue for the Airline should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,"{ ""httpStatus"": ""OK"", ""total"": 0, ""items"": 0, ""start"": 0, ""valid"": true}"
+5,Dashboard - Airline Insight,Verify the Graph for the Gross Revenue for the Airline Insights,"""/api/v1/dashboard/graph/AIRLINE_VIEW?dateRangeTypeId=1&timeZoneId=1&metricType=REVENUE""",Open Airline Insights,GET,200,Graph for the Gross Revenue for the Airline should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response.entity,"{
+    ""data"": {
+      ""TODAY"": {
+        ""startDate"": ""2024-09-17"",
+        ""endDate"": ""2024-09-18"",
+        ""days"": 0
+      },
+      ""YESTERDAY"": {
+        ""startDate"": ""2024-09-16"",
+        ""endDate"": ""2024-09-17"",
+        ""days"": 0
+      }
+    }
+  },
+  ""httpStatus"": ""OK"",
+  ""total"": 1,
+  ""valid"": true
+}"
+6,Dashboard - Airline Insight,Verify the Report for the Ad Request for the Airline Insights,"""/api/v1/dashboard/report/AIRLINE_VIEW?dateRangeTypeId=1&timeZoneId=1&pageNo=0&metricType=ADREQUEST""",Open Airline Insights,GET,200,Report for the Ad Request for the Airline should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,"{
+    ""httpStatus"": ""OK"",
+    ""total"": 0,
+    ""items"": 0,
+    ""start"": 0,
+    ""valid"": true
+}"
+7,Dashboard - Airline Insight,Verify the Graph for the Ad Request for the Airline Insights,"""/api/v1/dashboard/graph/AIRLINE_VIEW?dateRangeTypeId=1&timeZoneId=1&metricType=ADREQUEST""",Open Airline Insights,GET,200,Graph for the Ad Request for the Airline should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,"{""data"": {
+      ""TODAY"": {
+        ""startDate"": ""2024-09-10"",
+        ""endDate"": ""2024-09-11"",
+        ""days"": 0}}}"
+8,Dashboard - Airline Insight,Verify the Report for the Ad Response for the Airline Insights,"""/api/v1/dashboard/report/AIRLINE_VIEW?dateRangeTypeId=1&timeZoneId=1&pageNo=0&metricType=ADRESPONSE""",Open Airline Insights,GET,200,Report for the Ad Response for the Airline should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,"{""httpStatus"": ""OK"", ""total"": 0, ""items"": 0, ""start"": 0, ""valid"": true}"
+9,Dashboard - Airline Insight,Verify the Graph for the Ad Response for the Airline Insights,"""/api/v1/dashboard/graph/AIRLINE_VIEW?dateRangeTypeId=1&timeZoneId=1&metricType=ADRESPONSE""",Open Airline Insights,GET,200,Graph for the Ad Response for the Airline should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response.entity,"{""data"": { ""TODAY"": { ""startDate"": ""2024-09-10"", ""endDate"": ""2024-09-11"", ""days"": 0}}}"
+10,Dashboard - Airline Insight,Verify the Report for the Impression for the Airline Insights,"""/api/v1/dashboard/report/AIRLINE_VIEW?dateRangeTypeId=1&timeZoneId=1&pageNo=0&metricType=IMPRESSION""",Open Airline Insights,GET,200,Report for the Impression for the Airline should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,"{""httpStatus"": ""OK"",
+  ""total"": 0,
+  ""items"": 0,
+  ""start"": 0,
+  ""valid"": true
+}"
+11,Dashboard - Airline Insight,Verify the Graph for the Impression for the Airline Insights,"""/api/v1/dashboard/graph/AIRLINE_VIEW?dateRangeTypeId=1&timeZoneId=1&metricType=IMPRESSION""",Open Airline Insights,GET,200,Graph for the Impression for the Airline should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,"{""data"": {
+      ""TODAY"": {
+        ""startDate"": ""2024-09-10"",
+        ""endDate"": ""2024-09-11"",
+        ""days"": 0}}}"
+12,Dashboard - Airline Insight,Verify the Report for the Views for the Airline Insights,"""/api/v1/dashboard/report/AIRLINE_VIEW?dateRangeTypeId=1&timeZoneId=1&pageNo=0&metricType=VIEWS""",Open Airline Insights,GET,200,Report for the Views for the Airline should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,"{""httpStatus"": ""OK"",
+  ""total"": 0,
+  ""items"": 0,
+  ""start"": 0,
+  ""valid"": true}"
+13,,Verify the Graph for the Views for the Airline Insights,"""/api/v1/dashboard/graph/AIRLINE_VIEW?dateRangeTypeId=1&timeZoneId=1&metricType=VIEWS""",Open Airline Insights,GET,200,Graph for the Views for the Airline should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}"
+14,Dashboard - Airline Insight,Verify the Report for the Clicks for the Airline Insights,"""/api/v1/dashboard/report/AIRLINE_VIEW?dateRangeTypeId=1&timeZoneId=1&pageNo=0&metricType=CLICKS""",Open Airline Insights,GET,200,Report for the Clicks for the Airline should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}"
+15,Dashboard - Airline Insight,Verify the Graph for the Clicks for the Airline Insights,"""/api/v1/dashboard/graph/AIRLINE_VIEW?dateRangeTypeId=1&timeZoneId=1&metricType=CLICKS""",Open Airline Insights,GET,200,Graph for the Clicks for the Airline should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,"{""data"": {
+      ""TODAY"": {
+        ""startDate"": ""2024-09-10"",
+        ""endDate"": ""2024-09-11"",
+        ""days"": 0}}}"
+16,Dashboard - Airline Insight,Verify the selected airline from airline list,"""/api/v1/flight/list-by-airlines?airlineIds=93""",Open Airline Insights,GET,200,Airline should be selected from the Airline list,"""id"": 113",response.entity," {
+            ""id"": 113,
+            ""tailSignNo"": ""0123"",
+            ""name"": ""France""
+        }"
+17,Dashboard - Airline Insight,Verify the kpi for the selected airline,"""/api/v1/dashboard/kpi/AIRLINE_VIEW?dateRangeTypeId=2&timeZoneId=1&entityIds=93""",Open Airline Insights,GET,200,Kpi should appear for the selected airline filter,"""data"": {
+""TODAY"": {
+""data"": [
+[
+0,
+0,
+0,
+0,
+0,
+0
+]
+],
+""label"": ""2024-08-19""
+}",response.entity,"{
+    ""data"": {
+        ""CURRENT_WEEK"": {
+            ""data"": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            ""label"": ""2024-09-15""
+        }
+    }
+}"
+18,Dashboard - Airline Insight,Verify the report for the selected airline,"""/api/v1/dashboard/report/AIRLINE_VIEW?dateRangeTypeId=2&timeZoneId=1&entityIds=93&pageNo=0&metricType=REVENUE""",Open Airline Insights,GET,200,Report should appear for the selected airline filter,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,"{
+    ""httpStatus"": ""OK"",
+    ""total"": 0,
+    ""items"": 0,
+    ""start"": 0,
+    ""valid"": true
+}"
+19,Dashboard - Airline Insight,Verify the graph for the selected airline,"""/api/v1/dashboard/graph/AIRLINE_VIEW?dateRangeTypeId=2&timeZoneId=1&entityIds=93&metricType=REVENUE""",Open Airline Insights,GET,200,Graph should appear for the selected airline filter,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response.entity,"{
+    ""data"": {
+        ""LAST_WEEK"": {
+            ""startDate"": ""2024-09-08"",
+            ""endDate"": ""2024-09-15"",
+            ""days"": 6
+        }
+    }
+}"
+20,Dashboard - Airline Insight,Verify the kpi for the selected airline and flight,"""/api/v1/dashboard/kpi/AIRLINE_VIEW?dateRangeTypeId=2&timeZoneId=1&entityIds=93&flightIds=113""",Open Airline Insights,GET,200,Kpi should appear for the selected airline and flight filter,"""data"": {
+""TODAY"": {
+""data"": [
+[
+0,
+0,
+0,
+0,
+0,
+0
+]
+],
+""label"": ""2024-08-19""
+}",response.entity,"{
+    ""data"": {
+        ""LAST_WEEK"": {
+            ""data"": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            ""label"": ""2024-09-08""
+        }
+    }
+}"
+21,Dashboard - Airline Insight,Verify the report for the selected airline and flight,"""/api/v1/dashboard/report/AIRLINE_VIEW?dateRangeTypeId=2&timeZoneId=1&entityIds=93&flightIds=113&pageNo=0&metricType=REVENUE""",Open Airline Insights,GET,200,Report should appear for the selected airline and flight filter,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,"{
+    ""httpStatus"": ""OK"",
+    ""total"": 0,
+    ""items"": 0,
+    ""start"": 0,
+    ""valid"": true
+}"
+22,Dashboard - Airline Insight,Verify the graph for the selected airline and flight,"""/api/v1/dashboard/graph/AIRLINE_VIEW?dateRangeTypeId=2&timeZoneId=1&entityIds=93&flightIds=113&metricType=REVENUE""",Open Airline Insights,GET,200,Graph should appear for the selected airline and flight filter,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response.entity,"{
+    ""data"": {
+        ""LAST_WEEK"": {
+            ""startDate"": ""2024-09-08"",
+            ""endDate"": ""2024-09-15"",
+            ""days"": 6
+        }
+    }
+}"
+23,Dashboard - Airline Insight,Verify the kpi for custom date (Start date and End date),"""/api/v1/dashboard/kpi/AIRLINE_VIEW?dateRangeTypeId=4&timeZoneId=1&dataStartDate=2024-07-01&dataEndDate=2024-07-31""",Open Airline Insights,GET,200,Kpi should appear for the selected airline and flight filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+52,
+40,
+10,
+0,
+0,
+7.500000
+]
+],
+""label"": ""2024-06-30""
+}",response.entity,"{
+    ""data"": {
+        ""CUSTOM_DATE"": {
+            ""data"": [
+                [
+                    52,
+                    40,
+                    10,
+                    0,
+                    0,
+                    7.5
+                ]
+            ],
+            ""label"": ""2024-06-30""
+        }
+    }
+}"
+24,Dashboard - Airline Insight,Verify the report for custom date (Start date and End date),"""/api/v1/dashboard/report/AIRLINE_VIEW?dateRangeTypeId=4&timeZoneId=1&dataStartDate=2024-07-01&dataEndDate=2024-07-31&pageNo=0&metricType=REVENUE""",Open Airline Insights,GET,200,Report should appear for the selected airline and flight filter,"""coll"": [
+[
+""Airline Adserver Testing"",
+""Flight1000"",
+""1000"",
+""Economy"",
+""CDS"",
+6,
+1,
+0,
+0,
+0.750000
+]",response,"{
+    ""httpStatus"": ""OK"",
+    ""total"": 8,
+    ""items"": 8,
+    ""start"": 0,
+    ""coll"": [
+        [
+            ""Airline Adserver Testing"",
+            ""Flight1000"",
+            ""1000"",
+            ""Economy"",
+            ""CDS"",
+            6,
+            1,
+            0,
+            0,
+            0.75
+        ],
+        [
+            ""Deccan Air"",
+            ""Deccan Air Air Asia"",
+            ""10675"",
+            ""Economy"",
+            ""CDS"",
+            6,
+            1,
+            0,
+            0,
+            0.75
+        ],
+        [
+            ""indigo airlines"",
+            ""Flight1"",
+            ""1234567"",
+            ""Economy"",
+            ""CDS"",
+            4,
+            1,
+            0,
+            0,
+            0.75
+        ],
+        [
+            ""Lufthansa"",
+            ""Lufthansa Air Express"",
+            ""101"",
+            ""Economy"",
+            ""CDS"",
+            6,
+            1,
+            0,
+            0,
+            0.75
+        ],
+        [
+            ""QA Flight Airline"",
+            ""Flight1"",
+            ""1234"",
+            ""Economy"",
+            ""CDS"",
+            4,
+            1,
+            0,
+            0,
+            0.75
+        ],
+        [
+            ""San Airline"",
+            ""Flight1"",
+            ""123456"",
+            ""Economy"",
+            ""CDS"",
+            4,
+            1,
+            0,
+            0,
+            0.75
+        ]
+    ]
+}"
+25,Dashboard - Airline Insight,Verify the graph for custom date (Start date and End date),"""/api/v1/dashboard/graph/AIRLINE_VIEW?dateRangeTypeId=4&timeZoneId=1&dataStartDate=2024-07-01&dataEndDate=2024-07-31&metricType=REVENUE""",Open Airline Insights,GET,200,Graph should appear for the selected airline and flight filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+""2024-07-28"",
+""Singapore Airlines"",
+1.5
+]",response.entity,"{
+    ""data"": {
+        ""CUSTOM_DATE"": {
+            ""data"": [
+                [
+                    ""2024-07-27"",
+                    ""Adserving-New advertiser"",
+                    0.75
+                ]
+            ]
+        }
+    }
+}"
+26,Dashboard - Airline Insight,Verify the kpi for custome date (Compare Start date and Compare End date),"""/api/v1/dashboard/kpi/AIRLINE_VIEW?dateRangeTypeId=4&timeZoneId=1&dataStartDate=2024-07-01&dataEndDate=2024-07-31&cStartDate=2024-07-10&cEndDate=2024-07-12""",Open Airline Insights,GET,200,Kpi should appear for the selected airline and flight for custome date filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+52,
+40,
+10,
+0,
+0,
+7.500000
+]
+]",response.entity,"{
+    ""data"": {
+        ""CUSTOM_DATE"": {
+            ""data"": [
+                [
+                    7.5,
+                    6,
+                    1.5,
+                    10,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            ""label"": ""2024-07-01""
+        }
+    }
+}"
+27,Dashboard - Airline Insight,Verify the report for custom date (Compare Start date and Compare End date),"""/api/v1/dashboard/report/AIRLINE_VIEW?dateRangeTypeId=4&timeZoneId=1&dataStartDate=2024-07-01&dataEndDate=2024-07-31&pageNo=0&metricType=REVENUE&cStartDate=2024-07-10&cEndDate=2024-07-12""",Open Airline Insights,GET,200,Report should appear for the selected airline and flight for custom date filter,"""coll"": [
+[
+""Airline Adserver Testing"",
+""Flight1000"",
+""1000"",
+""Economy"",
+""CDS"",
+6,
+1,
+0,
+0,
+0.750000
+]",response,"{
+    ""httpStatus"": ""OK"",
+    ""total"": 5,
+    ""items"": 5,
+    ""start"": 0,
+    ""coll"": [
+        [
+            ""Adserving-New advertiser"",
+            2,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1.5
+        ]
+    ]
+}"
+28,Dashboard - Airline Insight,Verify the graph for custom date (Compare Start date and Compare End date),"""/api/v1/dashboard/graph/AIRLINE_VIEW?dateRangeTypeId=4&timeZoneId=1&dataStartDate=2024-07-01&dataEndDate=2024-07-31&metricType=REVENUE&cStartDate=2024-07-10&cEndDate=2024-07-12""",Open Airline Insights,GET,200,Graph should appear for the selected airline and flight for custom date filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+""2024-07-28"",
+""Singapore Airlines"",
+1.5
+]",response.entity,"{
+    ""data"": {
+        ""CUSTOM_DATE"": {
+            ""data"": [
+                [
+                    ""2024-07-27"",
+                    ""Adserving-New advertiser"",
+                    0.75
+                ]
+            ]
+        }
+    }
+}"
+29,Dashboard - Airline Insight,Verify the kpi,"""/api/v1/dashboard/kpi/ADVERTISER_VIEW?dateRangeTypeId=1&timeZoneId=2""",Open Advertiser Insights,GET,200,Kpi should appear,"""data"": {
+""TODAY"": {
+""data"": [
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0.0,
+0.0
+]
+],
+""label"": ""2024-08-20""
+}",response.entity,"{
+    ""data"": {
+        ""TODAY"": {
+            ""data"": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            ""label"": ""2024-09-18""
+        }
+    }
+}"
+30,Dashboard - Advertiser Insight,Verify the Report for the Gross Revenue for the Advertiser Insights,"""/api/v1/dashboard/report/ADVERTISER_VIEW?dateRangeTypeId=1&timeZoneId=2&pageNo=0&metricType=REVENUE""",Open Advertiser Insights,GET,200,Report for the Gross Revenue for the Advertiser should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response," {
+  ""httpStatus"": ""OK"",
+  ""total"": 0,
+  ""items"": 0,
+  ""start"": 0,
+  ""valid"": true
+}"
+31,Dashboard - Advertiser Insight,Verify the Graph for the Gross Revenue for the Advertiser Insights,"""/api/v1/dashboard/graph/ADVERTISER_VIEW?dateRangeTypeId=1&timeZoneId=2&metricType=REVENUE""",Open Advertiser Insights,GET,200,Graph for the Gross Revenue for the Advertiser should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-20"",
+""endDate"": ""2024-08-21"",
+""days"": 0
+}",response.entity,"{
+    ""data"": {
+        ""TODAY"": {
+            ""startDate"": ""2024-09-18"",
+            ""endDate"": ""2024-09-18"",
+            ""days"": 0
+        }
+    }
+}"
+32,Dashboard - Advertiser Insight,Verify the Report for the Impression for the Advertiser Insights,"""/api/v1/dashboard/report/ADVERTISER_VIEW?dateRangeTypeId=1&timeZoneId=2&pageNo=0&metricType=IMPRESSION""",Open Advertiser Insights,GET,200,Report for the Impression for the Advertiser should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,"{
+  ""httpStatus"": ""OK"",
+  ""total"": 0,
+  ""items"": 0,
+  ""start"": 0,
+  ""valid"": true
+}"
+33,Dashboard - Advertiser Insight,Verify the Graph for the Impression for the Advertiser Insights,"""/api/v1/dashboard/graph/ADVERTISER_VIEW?dateRangeTypeId=1&timeZoneId=2&metricType=IMPRESSION""",Open Advertiser Insights,GET,200,Graph for the Impression for the Advertiser should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-20"",
+""endDate"": ""2024-08-21"",
+""days"": 0
+}",response.entity,"{
+    ""data"": {
+        ""TODAY"": {
+            ""startDate"": ""2024-09-18"",
+            ""endDate"": ""2024-09-18"",
+            ""days"": 0
+        }
+    }
+}"
+34,Dashboard - Advertiser Insight,Verify the Report for the Views for the Advertiser Insights,"""/api/v1/dashboard/report/ADVERTISER_VIEW?dateRangeTypeId=1&timeZoneId=2&pageNo=0&metricType=VIEWS""",Open Advertiser Insights,GET,200,Report for the Views for the Advertiser should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,"{
+  ""httpStatus"": ""OK"",
+  ""total"": 0,
+  ""items"": 0,
+  ""start"": 0,
+  ""valid"": true
+}"
+35,Dashboard - Advertiser Insight,Verify the Graph for the Views for the Advertiser Insights,"""/api/v1/dashboard/graph/ADVERTISER_VIEW?dateRangeTypeId=1&timeZoneId=2&metricType=VIEWS""",Open Advertiser Insights,GET,200,Graph for the Views for the Advertiser should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-20"",
+""endDate"": ""2024-08-21"",
+""days"": 0
+}",response,
+36,Dashboard - Advertiser Insight,Verify the Report for the Clicks for the Advertiser Insights,"""/api/v1/dashboard/report/ADVERTISER_VIEW?dateRangeTypeId=1&timeZoneId=2&pageNo=0&metricType=CLICKS""",Open Advertiser Insights,GET,200,Report for the Clicks for the Advertiser should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+37,Dashboard - Advertiser Insight,Verify the Graph for the Clicks for the Advertiser Insights,"""/api/v1/dashboard/graph/ADVERTISER_VIEW?dateRangeTypeId=1&timeZoneId=2&metricType=CLICKS""",Open Advertiser Insights,GET,200,Graph for the Clicks for the Advertiser should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-20"",
+""endDate"": ""2024-08-21"",
+""days"": 0
+}",response,
+38,Dashboard - Advertiser Insight,Verify the Report for the CTR for the Advertiser Insights,"""/api/v1/dashboard/report/ADVERTISER_VIEW?dateRangeTypeId=1&timeZoneId=2&pageNo=0&metricType=CTR""",Open Advertiser Insights,GET,200,Report for the CTR for the Advertiser should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+39,Dashboard - Advertiser Insight,Verify the Graph for the CTR for the Advertiser Insights,"""/api/v1/dashboard/graph/ADVERTISER_VIEW?dateRangeTypeId=1&timeZoneId=2&metricType=CTR""",Open Advertiser Insights,GET,200,Graph for the CTR for the Advertiser should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-20"",
+""endDate"": ""2024-08-21"",
+""days"": 0
+}",response,
+40,Dashboard - Advertiser Insight,Verify the Report for the VCR for the Advertiser Insights,"""/api/v1/dashboard/report/ADVERTISER_VIEW?dateRangeTypeId=1&timeZoneId=2&pageNo=0&metricType=VCR""",Open Advertiser Insights,GET,200,Report for the VCR for the Advertiser should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+41,Dashboard - Advertiser Insight,Verify the Graph for the VCR for the Advertiser Insights,"""/api/v1/dashboard/graph/ADVERTISER_VIEW?dateRangeTypeId=1&timeZoneId=2&metricType=VCR""",Open Advertiser Insights,GET,200,Graph for the VCR for the Advertiser should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-20"",
+""endDate"": ""2024-08-21"",
+""days"": 0
+}",response,
+42,Dashboard - Advertiser Insight,Verify the selected Advertiser from Advertiser list,"""/api/v1/campaign/list-by-advertisers?advertiserIds=66""",Open Advertiser Insights,GET,200,Advertiser should be selected from the Advertiser list,"{""entity"":[],""httpStatus"":""OK"",""total"":1,""valid"":true}",response,
+43,Dashboard - Advertiser Insight,Verify the kpi for the selected Advertiser,"""/api/v1/dashboard/kpi/ADVERTISER_VIEW?dateRangeTypeId=2&timeZoneId=2&entityIds=66""",Open Advertiser Insights,GET,200,Kpi should appear for the selected Advertiser filter,"""data"": {
+""TODAY"": {
+""data"": [
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0.0,
+0.0
+]
+],
+""label"": ""2024-08-20""
+}",response,
+44,Dashboard - Advertiser Insight,Verify the report for the selected Advertiser,"""/api/v1/dashboard/report/ADVERTISER_VIEW?dateRangeTypeId=2&timeZoneId=2&entityIds=66&pageNo=0&metricType=REVENUE""",Open Advertiser Insights,GET,200,Report should appear for the selected Advertiser filter,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+45,Dashboard - Advertiser Insight,Verify the graph for the selected Advertiser,"""/api/v1/dashboard/graph/ADVERTISER_VIEW?dateRangeTypeId=2&timeZoneId=2&entityIds=66&metricType=REVENUE""",Open Advertiser Insights,GET,200,Graph should appear for the selected Advertiser filter,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-20"",
+""endDate"": ""2024-08-21"",
+""days"": 0
+}",response,
+46,Dashboard - Advertiser Insight,Verify the kpi for custom date (Start date and End date),"""/api/v1/dashboard/kpi/ADVERTISER_VIEW?dateRangeTypeId=4&timeZoneId=2&dataStartDate=2024-07-01&dataEndDate=2024-07-31""",Open Advertiser Insights,GET,200,Kpi should appear for the selected Advertiser filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+7.500000,
+6.000000,
+1.500000,
+10,
+0,
+0,
+0.0,
+0.0
+]
+],
+""label"": ""2024-07-01""
+}
+}",response,
+47,Dashboard - Advertiser Insight,Verify the report for custom date (Start date and End date),"""/api/v1/dashboard/report/ADVERTISER_VIEW?dateRangeTypeId=4&timeZoneId=2&dataStartDate=2024-07-01&dataEndDate=2024-07-31&pageNo=0&metricType=REVENUE""",Open Advertiser Insights,GET,200,Report should appear for the selected Advertiser filter,"""coll"": [
+[
+""Adserving-New advertiser"",
+2,
+2,
+0,
+0,
+0,
+0.00,
+0.00,
+1.500000
+]",response,
+48,Dashboard - Advertiser Insight,Verify the graph for custom date (Start date and End date),"""/api/v1/dashboard/graph/ADVERTISER_VIEW?dateRangeTypeId=4&timeZoneId=2&dataStartDate=2024-07-01&dataEndDate=2024-07-31&metricType=REVENUE""",Open Advertiser Insights,GET,200,Graph should appear for the selected Advertiser filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+""2024-07-27"",
+""Adserving-New advertiser"",
+0.75
+]",response,
+49,Dashboard - Advertiser Insight,Verify the kpi for custome date (Compare Start date and Compare End date),"""/api/v1/dashboard/kpi/ADVERTISER_VIEW?dateRangeTypeId=4&timeZoneId=2&dataStartDate=2024-07-01&dataEndDate=2024-07-31&cStartDate=2024-07-10&cEndDate=2024-07-12""",Open Advertiser Insights,GET,200,Kpi should appear for the selected Advertiser filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+7.500000,
+6.000000,
+1.500000,
+10,
+0,
+0,
+0.0,
+0.0
+]
+],
+""label"": ""2024-07-01""
+}",response,
+50,Dashboard - Advertiser Insight,Verify the report for custom date (Compare Start date and Compare End date),"""/api/v1/dashboard/report/ADVERTISER_VIEW?dateRangeTypeId=4&timeZoneId=2&dataStartDate=2024-07-01&dataEndDate=2024-07-31&pageNo=0&metricType=REVENUE&cStartDate=2024-07-10&cEndDate=2024-07-12""",Open Advertiser Insights,GET,200,Report should appear for the selected Advertiser filter,"""coll"": [
+[
+""Adserving-New advertiser"",
+2,
+2,
+0,
+0,
+0,
+0.00,
+0.00,
+1.500000
+]",response,
+51,Dashboard - Advertiser Insight,Verify the graph for custom date (Compare Start date and Compare End date),"""/api/v1/dashboard/graph/ADVERTISER_VIEW?dateRangeTypeId=4&timeZoneId=2&dataStartDate=2024-07-01&dataEndDate=2024-07-31&metricType=REVENUE&cStartDate=2024-07-10&cEndDate=2024-07-12""",Open Advertiser Insights,GET,200,Graph should appear for the selected Advertiser filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+""2024-07-27"",
+""Adserving-New advertiser"",
+0.75
+]",response,
+52,Dashboard - Advertiser Insight,Verify the kpi,"""/api/v1/dashboard/kpi/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6""",Open Campaign Insights,GET,200,Kpi should appear,"""data"": {
+""TODAY"": {
+""data"": [
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0.0,
+0.0
+]
+],
+""label"": ""2024-08-20""
+}",response,
+53,Dashboard - Campaign Insight,Verify the Report for the Gross Revenue for the Campaign Insights,"""/api/v1/dashboard/report/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&pageNo=0&metricType=REVENUE""",Open Campaign Insights,GET,200,Report for the Gross Revenue for the Campaign should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+54,Dashboard - Campaign Insight,Verify the Graph for the Gross Revenue for the Campaign Insights,"""/api/v1/dashboard/graph/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&metricType=REVENUE""",Open Campaign Insights,GET,200,Graph for the Gross Revenue for the Campaign should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-20"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,
+55,Dashboard - Campaign Insight,Verify the Report for the Impression for the Campaign Insights,"""/api/v1/dashboard/report/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&pageNo=0&metricType=IMPRESSION""",Open Campaign Insights,GET,200,Report for the Impression for the Campaign should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+56,Dashboard - Campaign Insight,Verify the Graph for the Impression for the Campaign Insights,"""/api/v1/dashboard/graph/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&metricType=IMPRESSION""",Open Campaign Insights,GET,200,Graph for the Impression for the Campaign should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-20"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,
+57,Dashboard - Campaign Insight,Verify the Report for the Views for the Campaign Insights,"""/api/v1/dashboard/report/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&pageNo=0&metricType=VIEWS""",Open Campaign Insights,GET,200,Report for the Views for the Campaign should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+58,Dashboard - Campaign Insight,Verify the Graph for the Views for the Campaign Insights,"""/api/v1/dashboard/graph/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&metricType=VIEWS""",Open Campaign Insights,GET,200,Graph for the Views for the Campaign should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-20"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,
+59,Dashboard - Campaign Insight,Verify the Report for the Clicks for the Campaign Insights,"""/api/v1/dashboard/report/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&pageNo=0&metricType=CLICKS""",Open Campaign Insights,GET,200,Report for the Clicks for the Campaign should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+60,Dashboard - Campaign Insight,Verify the Graph for the Clicks for the Campaign Insights,"""/api/v1/dashboard/graph/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&metricType=CLICKS""",Open Campaign Insights,GET,200,Graph for the Clicks for the Campaign should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-20"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,
+61,Dashboard - Campaign Insight,Verify the Report for the CTR for the Campaign Insights,"""/api/v1/dashboard/report/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&pageNo=0&metricType=CTR""",Open Campaign Insights,GET,200,Report for the CTR for the Campaign should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+62,Dashboard - Campaign Insight,Verify the Graph for the CTR for the Campaign Insights,"""/api/v1/dashboard/graph/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&metricType=CTR""",Open Campaign Insights,GET,200,Graph for the CTR for the Campaign should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-20"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,
+63,Dashboard - Campaign Insight,Verify the Report for the VCR for the Campaign Insights,"""/api/v1/dashboard/report/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&pageNo=0&metricType=VCR""",Open Campaign Insights,GET,200,Report for the VCR for the Campaign should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+64,Dashboard - Campaign Insight,Verify the Graph for the VCR for the Campaign Insights,"""/api/v1/dashboard/graph/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&metricType=VCR""",Open Campaign Insights,GET,200,Graph for the VCR for the Campaign should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-20"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,
+65,Dashboard - Campaign Insight,Verify the selected Advertiser from Advertiser list,"""/api/v1/campaign/list-by-advertisers?advertiserIds=36""",Open Campaign Insights,GET,200,Advertiser should be selected from the Advertiser list,"""id"": 37",response,
+66,Dashboard - Campaign Insight,Verify the kpi for the selected Advertiser,"""/api/v1/dashboard/kpi/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&entityIds=36""",Open Campaign Insights,GET,200,Kpi should appear for the selected Advertiser filter,"""data"": {
+""TODAY"": {
+""data"": [
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0.0,
+0.0
+]
+],
+""label"": ""2024-08-20""
+}",response,
+67,Dashboard - Campaign Insight,Verify the report for the selected Advertiser,"""/api/v1/dashboard/report/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&entityIds=36&pageNo=0&metricType=REVENUE""",Open Campaign Insights,GET,200,Report should appear for the selected Advertiser filter,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+68,Dashboard - Campaign Insight,Verify the graph for the selected Advertiser,"""/api/v1/dashboard/graph/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&entityIds=36&metricType=REVENUE""",Open Campaign Insights,GET,200,Graph should appear for the selected Advertiser filter,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-20"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,
+69,Dashboard - Campaign Insight,Verify the kpi for the selected Advertiser and Campaign,"""/api/v1/dashboard/kpi/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&entityIds=36&campaignIds=37""",Open Campaign Insights,GET,200,Kpi should appear for the selected Advertiser and Campaign filter,"""data"": {
+""TODAY"": {
+""data"": [
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0.0,
+0.0
+]
+],
+""label"": ""2024-08-20""
+}",response,
+70,Dashboard - Campaign Insight,Verify the report for the selected Advertiser and Campaign,"""/api/v1/dashboard/report/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&entityIds=36&campaignIds=37&pageNo=0&metricType=REVENUE""",Open Campaign Insights,GET,200,Report should appear for the selected Advertiser and Campaign filter,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+71,Dashboard - Campaign Insight,Verify the graph for the selected Advertiser and Campaign,"""/api/v1/dashboard/graph/CAMPAIGNS_VIEW?dateRangeTypeId=1&timeZoneId=6&entityIds=36&campaignIds=37&metricType=REVENUE""",Open Campaign Insights,GET,200,Graph should appear for the selected Advertiser and Campaign filter,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-20"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,
+72,Dashboard - Campaign Insight,Verify the kpi for custom date (Start date and End date),"""/api/v1/dashboard/kpi/CAMPAIGNS_VIEW?dateRangeTypeId=4&timeZoneId=6&dataStartDate=2024-07-01&dataEndDate=2024-07-31""",Open Campaign Insights,GET,200,Kpi should appear for the selected Advertiser and Campaign filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+7.500000,
+10,
+10,
+0,
+0,
+0,
+0.0,
+0.0
+]
+],
+""label"": ""2024-07-01""
+}
+}",response,
+73,Dashboard - Campaign Insight,Verify the report for custom date (Start date and End date),"""/api/v1/dashboard/report/CAMPAIGNS_VIEW?dateRangeTypeId=4&timeZoneId=6&dataStartDate=2024-07-01&dataEndDate=2024-07-31&pageNo=0&metricType=REVENUE""",Open Campaign Insights,GET,200,Report should appear for the selected Advertiser and Campaign filter,"""coll"": [
+[
+""New campaign1"",
+""Adv1.0"",
+""INACTIVE"",
+""Deccan Air"",
+""Deccan Air Air Asia"",
+""10675"",
+""Economy"",
+""CDS"",
+""qali12"",
+1,
+0,
+0,
+0.750000
+]",response,
+74,Dashboard - Campaign Insight,Verify the graph for custom date (Start date and End date),"""/api/v1/dashboard/graph/CAMPAIGNS_VIEW?dateRangeTypeId=4&timeZoneId=6&dataStartDate=2024-07-01&dataEndDate=2024-07-31&metricType=REVENUE""",Open Campaign Insights,GET,200,Graph should appear for the selected Advertiser and Campaign filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+""2024-07-30"",
+""Programmatic campaign1"",
+0.75
+]",response,
+75,Dashboard - Campaign Insight,Verify the kpi for custome date (Compare Start date and Compare End date),"""/api/v1/dashboard/kpi/CAMPAIGNS_VIEW?dateRangeTypeId=4&timeZoneId=6&dataStartDate=2024-07-01&dataEndDate=2024-07-31&cStartDate=2024-07-10&cEndDate=2024-07-12""",Open Campaign Insights,GET,200,Kpi should appear for the selectedAdvertiser and Campaign for custome date filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+7.500000,
+10,
+10,
+0,
+0,
+0,
+0.0,
+0.0
+]
+],
+""label"": ""2024-07-01""
+}",response,
+76,Dashboard - Campaign Insight,Verify the report for custom date (Compare Start date and Compare End date),"""/api/v1/dashboard/report/CAMPAIGNS_VIEW?dateRangeTypeId=4&timeZoneId=6&dataStartDate=2024-07-01&dataEndDate=2024-07-31&pageNo=0&metricType=REVENUE&cStartDate=2024-07-10&cEndDate=2024-07-12""",Open Campaign Insights,GET,200,Report should appear for the selected Advertiser and Campaign for custom date filter,"""coll"": [
+[
+""New campaign1"",
+""Adv1.0"",
+""INACTIVE"",
+""Deccan Air"",
+""Deccan Air Air Asia"",
+""10675"",
+""Economy"",
+""CDS"",
+""qali12"",
+1,
+0,
+0,
+0.750000
+]",response,
+77,Dashboard - Campaign Insight,Verify the graph for custom date (Compare Start date and Compare End date),"""/api/v1/dashboard/graph/CAMPAIGNS_VIEW?dateRangeTypeId=4&timeZoneId=6&dataStartDate=2024-07-01&dataEndDate=2024-07-31&metricType=REVENUE&cStartDate=2024-07-10&cEndDate=2024-07-12""",Open Campaign Insights,GET,200,Graph should appear for the selected Advertiser and Campaign for custom date filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+""2024-07-30"",
+""Programmatic campaign1"",
+0.75
+]",response,
+78,Dashboard - Campaign Insight,Verify the kpi,"""/api/v1/dashboard/kpi/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7""",Open Hourly Insights,GET,200,Kpi should appear,"""data"": {
+""TODAY"": {
+""data"": [
+[
+0,
+0,
+0,
+0,
+0.0,
+0,
+0.0,
+0.0
+]
+],
+""label"": ""2024-08-19""
+}",response,
+79,Dashboard - Hourly Insight,Verify the Report for the Gross Revenue for the Hourly Insights,"""/api/v1/dashboard/report/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&pageNo=0&metricType=REVENUE""",Open Hourly Insights,GET,200,Report for the Gross Revenue for the Hourly should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+80,Dashboard - Hourly Insight,Verify the Graph for the Gross Revenue for the Hourly Insights,"""/api/v1/dashboard/graph/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&metricType=REVENUE""",Open Hourly Insights,GET,200,Graph for the Gross Revenue for the Hourly should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,
+81,Dashboard - Hourly Insight,Verify the Report for the Ad Request for the Hourly Insights,"""/api/v1/dashboard/report/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&pageNo=0&metricType=ADREQUEST""",Open Hourly Insights,GET,200,Report for the Ad Request for the Hourly should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+82,Dashboard - Hourly Insight,Verify the Graph for the Ad Request for the Hourly Insights,"""/api/v1/dashboard/graph/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&metricType=ADREQUEST""",Open Hourly Insights,GET,200,Graph for the Ad Request for the Hourly should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,
+83,Dashboard - Hourly Insight,Verify the Report for the Impression for the Hourly Insights,"""/api/v1/dashboard/report/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&pageNo=0&metricType=IMPRESSION""",Open Hourly Insights,GET,200,Report for the Impression for the Hourly should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+84,Dashboard - Hourly Insight,Verify the Graph for the Impression for the Hourly Insights,"""/api/v1/dashboard/graph/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&metricType=IMPRESSION""",Open Hourly Insights,GET,200,Graph for the Impression for the Hourly should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,
+85,Dashboard - Hourly Insight,Verify the Report for the Views for the Hourly Insights,"""/api/v1/dashboard/report/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&pageNo=0&metricType=VIEWS""",Open Hourly Insights,GET,200,Report for the Views for the Hourly should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+86,Dashboard - Hourly Insight,Verify the Graph for the Views for the Hourly Insights,"""/api/v1/dashboard/graph/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&metricType=VIEWS""",Open Hourly Insights,GET,200,Graph for the Views for the Hourly should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,
+87,Dashboard - Hourly Insight,Verify the Report for the Clicks for the Hourly Insights,"""/api/v1/dashboard/report/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&pageNo=0&metricType=CLICKS""",Open Hourly Insights,GET,200,Report for the Clicks for the Hourly should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+88,Dashboard - Hourly Insight,Verify the Graph for the Clicks for the Hourly Insights,"""/api/v1/dashboard/graph/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&metricType=CLICKS""",Open Hourly Insights,GET,200,Graph for the Clicks for the Hourly should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,
+89,Dashboard - Hourly Insight,Verify the Report for the CTR for the Hourly Insights,"""/api/v1/dashboard/report/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&pageNo=0&metricType=CTR""",Open Hourly Insights,GET,200,Report for the CTR for the Hourly should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+90,Dashboard - Hourly Insight,Verify the Graph for the CTR for the Hourly Insights,"""/api/v1/dashboard/graph/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&metricType=CTR""",Open Hourly Insights,GET,200,Graph for the CTR for the Hourly should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,
+91,Dashboard - Hourly Insight,Verify the Report for the Ad Delivery Rate for the Hourly Insights,"""/api/v1/dashboard/report/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&pageNo=0&metricType=ADDELIVERYRATE""",Open Hourly Insights,GET,200,Report for the Ad Delivery Rate for the Hourly should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+92,Dashboard - Hourly Insight,Verify the Graph for the Ad Delivery Rate for the Hourly Insights,"""/api/v1/dashboard/graph/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&metricType=ADDELIVERYRATE""",Open Hourly Insights,GET,200,Graph for the Ad Delivery Rate for the Hourly should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response,
+93,Dashboard - Hourly Insight,Verify the Report for the VCR for the Hourly Insights,"""/api/v1/dashboard/report/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&pageNo=0&metricType=VCR""",Open Hourly Insights,GET,200,Report for the VCR for the Hourly should appear,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,
+94,Dashboard - Hourly Insight,Verify the Graph for the VCR for the Hourly Insights,"""/api/v1/dashboard/graph/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&metricType=VCR""",Open Hourly Insights,GET,200,Graph for the VCR for the Hourly should apear,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response.entity,"{
+    ""data"": {
+        ""TODAY"": {
+            ""startDate"": ""2024-09-17"",
+            ""endDate"": ""2024-09-18"",
+            ""days"": 0
+        }
+    }
+}"
+95,Dashboard - Hourly Insight,Verify the selected airline from airline list,"""/api/v1/flight/list-by-airlines?airlineIds=93""",Open Hourly Insights,GET,200,Airline should be selected from the Airline list,"""id"": 113",response.entity,"{
+    ""id"": 113,
+    ""tailSignNo"": ""0123"",
+    ""name"": ""France"",
+    ""httpStatus"": ""OK"",
+    ""total"": 1,
+    ""valid"": true
+}"
+96,Dashboard - Hourly Insight,Verify the kpi for the selected airline,"""/api/v1/dashboard/kpi/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&entityIds=93""",Open Hourly Insights,GET,200,Kpi should appear for the selected airline filter,"""data"": {
+""TODAY"": {
+""data"": [
+[
+0,
+0,
+0,
+0,
+0.0,
+0,
+0.0,
+0.0
+]
+],
+""label"": ""2024-08-19""
+}",response.entity,"{
+    ""data"": {
+        ""TODAY"": {
+            ""data"": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            ""label"": ""2024-09-17""
+        }
+    }
+}"
+97,Dashboard - Hourly Insight,Verify the report for the selected airline,"""/api/v1/dashboard/report/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&entityIds=93&pageNo=0&metricType=REVENUE""",Open Hourly Insights,GET,200,Report should appear for the selected airline filter,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response," {
+  ""httpStatus"": ""OK"",
+  ""total"": 0,
+  ""items"": 0,
+  ""start"": 0,
+  ""valid"": true
+}"
+98,Dashboard - Hourly Insight,Verify the graph for the selected airline,"""/api/v1/dashboard/graph/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&entityIds=93&metricType=REVENUE""",Open Hourly Insights,GET,200,Graph should appear for the selected airline filter,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response.entity,"{
+    ""data"": {
+        ""TODAY"": {
+            ""startDate"": ""2024-09-17"",
+            ""endDate"": ""2024-09-18"",
+            ""days"": 0
+        }
+    }
+}"
+99,Dashboard - Hourly Insight,Verify the kpi for the selected airline and flight,"""/api/v1/dashboard/kpi/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&entityIds=93&flightIds=113""",Open Hourly Insights,GET,200,Kpi should appear for the selected airline and flight filter,"""data"": {
+""TODAY"": {
+""data"": [
+[
+0,
+0,
+0,
+0,
+0.0,
+0,
+0.0,
+0.0
+]
+],
+""label"": ""2024-08-19""
+}",response.entity,"{
+    ""data"": {
+        ""TODAY"": {
+            ""data"": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            ""label"": ""2024-09-17""
+        },
+        ""YESTERDAY"": {
+            ""data"": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            ""label"": ""2024-09-16""
+        }
+    }
+}"
+100,Dashboard - Hourly Insight,Verify the report for the selected airline and flight,"""/api/v1/dashboard/report/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&entityIds=93&flightIds=113&pageNo=0&metricType=REVENUE""",Open Hourly Insights,GET,200,Report should appear for the selected airline and flight filter,"{""httpStatus"":""OK"",""total"":0,""items"":0,""start"":0,""valid"":true}",response,"{
+  ""httpStatus"": ""OK"",
+  ""total"": 0,
+  ""items"": 0,
+  ""start"": 0,
+  ""valid"": true
+}"
+101,Dashboard - Hourly Insight,Verify the graph for the selected airline and flight,"""/api/v1/dashboard/graph/HOURLY_VIEW?dateRangeTypeId=1&timeZoneId=7&entityIds=93&flightIds=113&metricType=REVENUE""",Open Hourly Insights,GET,200,Graph should appear for the selected airline and flight filter,"""data"": {
+""TODAY"": {
+""startDate"": ""2024-08-19"",
+""endDate"": ""2024-08-20"",
+""days"": 0
+}",response.enity,"{
+    ""data"": {
+        ""TODAY"": {
+            ""startDate"": ""2024-09-17"",
+            ""endDate"": ""2024-09-18"",
+            ""days"": 0
+        }
+    }
+}"
+102,Dashboard - Hourly Insight,Verify the kpi for custom date (Start date and End date),"""/api/v1/dashboard/kpi/HOURLY_VIEW?dateRangeTypeId=4&timeZoneId=7&dataStartDate=2024-07-01&dataEndDate=2024-07-31""",Open Hourly Insights,GET,200,Kpi should appear for the selected airline and flight filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+52,
+10,
+0,
+0,
+0.0,
+7.500000,
+19.23,
+0.0
+]
+],
+""label"": ""2024-06-30""
+}
+}",response.entity,"{
+    ""data"": {
+        ""CUSTOM_DATE"": {
+            ""data"": [
+                [
+                    52,
+                    10,
+                    0,
+                    0,
+                    0,
+                    7.5,
+                    19.23,
+                    0
+                ]
+            ],
+            ""label"": ""2024-06-30""
+        }
+    }
+}"
+103,Dashboard - Hourly Insight,Verify the report for custom date (Start date and End date),"""/api/v1/dashboard/report/HOURLY_VIEW?dateRangeTypeId=4&timeZoneId=7&dataStartDate=2024-07-01&dataEndDate=2024-07-31&pageNo=0&metricType=REVENUE""",Open Hourly Insights,GET,200,Report should appear for the selected airline and flight filter,"""coll"": [
+[
+""00"",
+""Lufthansa"",
+""Lufthansa Air Express"",
+6,
+1,
+0,
+0,
+0.00,
+0.750000,
+16.67
+]",response,"{
+    ""httpStatus"": ""OK"",
+    ""total"": 8,
+    ""items"": 8,
+    ""start"": 0,
+    ""coll"": [
+        [
+            ""00"",
+            ""Lufthansa"",
+            ""Lufthansa Air Express"",
+            6,
+            1,
+            0,
+            0,
+            0,
+            0.75,
+            16.67
+        ]
+    ]
+}"
+104,Dashboard - Hourly Insight,Verify the graph for custom date (Start date and End date),"""/api/v1/dashboard/graph/HOURLY_VIEW?dateRangeTypeId=4&timeZoneId=7&dataStartDate=2024-07-01&dataEndDate=2024-07-31&metricType=REVENUE""",Open Hourly Insights,GET,200,Graph should appear for the selected airline and flight filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+""00"",
+""Lufthansa"",
+6.0
+]",response.entity,"{
+    ""data"": {
+        ""CUSTOM_DATE"": {
+            ""data"": [
+                [
+                    ""00"",
+                    ""Lufthansa"",
+                    6
+                ]
+            ]
+        }
+    }
+}"
+105,Dashboard - Hourly Insight,Verify the kpi for custome date (Compare Start date and Compare End date),"""/api/v1/dashboard/kpi/HOURLY_VIEW?dateRangeTypeId=4&timeZoneId=7&dataStartDate=2024-07-01&dataEndDate=2024-07-31&cStartDate=2024-07-10&cEndDate=2024-07-12""",Open Hourly Insights,GET,200,Kpi should appear for the selected airline and flight for custome date filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+52,
+10,
+0,
+0,
+0.0,
+7.500000,
+19.23,
+0.0
+]
+],
+""label"": ""2024-06-30""
+}",response.entity,"{
+    ""data"": {
+        ""CUSTOM_DATE"": {
+            ""data"": [
+                [
+                    52,
+                    10,
+                    0,
+                    0,
+                    0,
+                    7.5,
+                    19.23,
+                    0
+                ]
+            ],
+            ""label"": ""2024-06-30""
+        }
+    }
+}"
+106,Dashboard - Hourly Insight,Verify the report for custom date (Compare Start date and Compare End date),"""/api/v1/dashboard/report/HOURLY_VIEW?dateRangeTypeId=4&timeZoneId=7&dataStartDate=2024-07-01&dataEndDate=2024-07-31&pageNo=0&metricType=REVENUE&cStartDate=2024-07-10&cEndDate=2024-07-12""",Open Hourly Insights,GET,200,Report should appear for the selected airline and flight for custom date filter,"""coll"": [
+[
+""00"",
+""Lufthansa"",
+""Lufthansa Air Express"",
+6,
+1,
+0,
+0,
+0.00,
+0.750000,
+16.67
+]",response,"{
+    ""httpStatus"": ""OK"",
+    ""total"": 8,
+    ""items"": 8,
+    ""start"": 0,
+    ""coll"": [
+        [
+            ""00"",
+            ""Lufthansa"",
+            ""Lufthansa Air Express"",
+            6,
+            1,
+            0,
+            0,
+            0,
+            0.75,
+            16.67
+        ]
+    ]
+}"
+107,Dashboard - Hourly Insight,Verify the graph for custom date (Compare Start date and Compare End date),"""/api/v1/dashboard/graph/HOURLY_VIEW?dateRangeTypeId=4&timeZoneId=7&dataStartDate=2024-07-01&dataEndDate=2024-07-31&metricType=REVENUE&cStartDate=2024-07-10&cEndDate=2024-07-12""",Open Hourly Insights,GET,200,Graph should appear for the selected airline and flight for custom date filter,"""data"": {
+""CUSTOM_DATE"": {
+""data"": [
+[
+""00"",
+""Lufthansa"",
+6.0
+]",response.entity,"{
+    ""data"": {
+        ""CUSTOM_DATE"": {
+            ""data"": [
+                [
+                    ""00"",
+                    ""Lufthansa"",
+                    6
+                ]
+            ]
+        }
+    }
+}"
+108,Dashboard - Hourly Insight,,,,,,,,,
+109,,,,,,,,,,
+110,,,,,,,,,,
+111,,,,,,,,,,
+112,,,,,,,,,,
+113,,,,,,,,,,
+114,,,,,,,,,,
+115,,,,,,,,,,
+116,,,,,,,,,,
+117,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,

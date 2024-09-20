@@ -1,4 +1,4 @@
 S.NO,SCENARIO,URL,DESC,METHOD,POST_DATA,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY,VALUE
-"1,2,3","Verify user can able to Create,Edit and Delete the Flow Control Create","""/api/v1/flowcontrol/""","Create ,Edit and Delete Flow Control",POST,"{""qpd"":15,""qps"":12,""datacenterId"":1,""adSourceId"":45}
+"1,2,3","Verify user can able to Create,Edit and Delete the Flow Control Create","""/api/v1/flowcontrol""","Create ,Edit and Delete Flow Control",POST,"{""qpd"":15,""qps"":12,""datacenterId"":1,""adSourceId"":45}
 ",201,"User should be able to Create,Edit and Delete the Flow Control by filling all the details","""id"": 61,
-adSourceId: 45",response,"{""id"": '#number',""adSourceId"":'#number'}"
+adSourceId: 45",response,"{""qps"":'#number',""qpd"":'#number',""adSourceId"":'#number',""datacenterId"":'#number'}"

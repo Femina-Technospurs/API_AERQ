@@ -26,7 +26,7 @@ return text;
   When method <METHOD>
   Then status <STATUS_CODE>
   And match <KEY> contains <VALUE> 	
- 	Given url baseURL+"/api/v1/target/"+response.id
+ 	Given url baseURL+<URL>+"/"+response.id
  	  * def update =  <POST_DATA>
   * update.name= update.name+randomstring+ " Updated"
   * update.description = "Automation Updated"
@@ -34,7 +34,7 @@ return text;
 	And request update
   When method PUT
   Then status 202
- 	Given url baseURL+"/api/v1/target/"+response.id+"/delete"
+ 	Given url baseURL+<URL>+"/"+response.id+"/delete"
  	And request ""
   When method PUT
   Then status 200

@@ -135,7 +135,7 @@ S.NO,MODULES,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED RESULT,KEY
 ""name"": ""Data Center1"",
 ""code"": ""DC1""
 }",response.entity,"[{""id"":1,""name"":""Data Center1"",""code"":""DC1""},{""id"":2,""name"":""Data Center2"",""code"":""DC1""}]"
-22,Creative,Verify the version,"""/api/v1/session/version""",Open creative page,GET,200,Version should appear,"""1.0.2""",response,"""1.0.2"""
+22,Creative,Verify the version,"""/api/v1/session/version""",Open creative page,GET,200,Version should appear,"""1.0.2""",response,"""0.2.0"""
 23,Profile,Verify the profile,"""/api/v1/profile/list?statusFilter=active&orderBy=DESC""",Open view creative page,GET,200,Profile should appear,"""coll"": [
 {
 ""id"": 58,

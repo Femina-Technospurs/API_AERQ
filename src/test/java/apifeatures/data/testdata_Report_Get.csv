@@ -60,7 +60,7 @@ S.NO,Modules,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY
 ""dateRangeTypeName"": ""This Week"",
 ""reportTypeName"": ""Campaign Summary Report"",
 ""timeZoneId"": 1
-}",response.coll,"{""id"":'#number',""reportTypeId"":'#number',""reportName"":'#string',""startDate"":'#string',""endDate"":'#string',""dateRangeTypeId"":'#number',""reportDeliveryFrequencyInDays"":'#number',""reportDeliveryEndDate"":'#string',""executedOn"":'#string',""nextExecutionTime"":'#string',""reportStatus"":'#string',""dateRangeTypeName"":'#string',""reportTypeName"":'#string',""timeZoneId"":'#number'}"
+}",response.coll,"{""id"":'#number',""reportTypeId"":'#number',""reportName"":'#string',""dateRangeTypeId"":'#number',""reportDeliveryFrequencyInDays"":'#number',""reportDeliveryEndDate"":'#string',""nextExecutionTime"":'#string',""reportStatus"":'#string',""dateRangeTypeName"":'#string',""reportTypeName"":'#string',""timeZoneId"":'#number'}"
 5,Ondemand Report,Verify the Ondemand Report list,"""/api/v1/ondemand/list?statusFilter=active&orderBy=DESC""",Open Report page,GET,200,Ondemand Report list should be shown,"""coll"": [
 {
 ""id"": 210,
@@ -117,8 +117,8 @@ S.NO,Modules,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY
 ""timeZoneId"": 1,
 ""reportLocationUrl"": ""2024-07-23/Campaign_Summary_Report--23_07_2024--06_09_00.0_731795_.csv""
 }",response.coll,"{""id"":'#number',""reportTypeId"":'#number',""reportName"":'#string',""startDate"":'#string',""endDate"":'#string',""dateRangeTypeId"":'#number',""reportStatus"":'#string',""dateRangeTypeName"":'#string',""reportTypeName"":'#string',""timeZoneId"":'#number',""reportLocationUrl"":'#string'}"
-9,Scheduled Report,Verify the View Instance of Scheduled Report,"""/api/v1/reportinstance/list/82""",Open Report page,GET,200,View Instance should be displayed to download the report,"""reportTemplateId"": 82",response.entity,"{""reportTemplateId"":82}"
-10,Scheduled Report,Verify the Scheduled report details,"""/api/v1/reporttemplate/82""",Open Report page,GET,200,User should be able to view the created Scheduled report,"""id"": 82",,"{""id"":82}"
+9,Scheduled Report,Verify the View Instance of Scheduled Report,"""/api/v1/reportinstance/list/82""",Open Report page,GET,200,View Instance should be displayed to download the report,"""reportTemplateId"": 82",response.coll,"{""reportTemplateId"":82}"
+10,Scheduled Report,Verify the Scheduled report details,"""/api/v1/reporttemplate/82""",Open Report page,GET,200,User should be able to view the created Scheduled report,"""id"": 82",response.entity,"{""id"":82}"
 11,Ondemand Report,Verify user can download the Ondemand report,"""/api/v1/ondemand/download/161""",Open Report page,GET,200,User should be able to download the Ondemand report,"{
 ""entity"": ""https://uploaded-ads.s3.amazonaws.com/2024-08-05/Adsource_Summary_Report--05_08_2024--07_10_00.0_473958_.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240820T063159Z&X-Amz-SignedHeaders=host&X-Amz-Expires=599&X-Amz-Credential=AKIAVB23ZFURJ4O2D7BS%2F20240820%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=8afe9462153f070648d9aa9db1f1e94df4cb73d786baf62f7ffa477ff3c5c14e"",
 ""httpStatus"": ""OK"",

@@ -55,7 +55,7 @@ S.NO,MODULE,SCENARIO,URL,DESC,METHOD,POST_DATA,STATUS_CODE,VALIDATION,EXPECTED_R
 ""hasError"": false,
 ""valid"": false
 }
-]",response.entity,"{""processId"":715}"
+]",response.entity,"{""airlineId"":101}"
 9,Flight,Verify the csv values of each row of the imported Flight Schedule at first level,"""/api/v1/import/schedule/101/716/validate""",Import the Flight Schedule,POST,"[""Tail Sign No"",""Route"",""Start Time"",""End Time"",""Sequence"",""Transit"",""Transit Start Time"",""Transit End Time""]",200,CSV values should be checked at first level,"
 ""entity"": {
 ""processId"": 716,
@@ -129,4 +129,4 @@ S.NO,MODULE,SCENARIO,URL,DESC,METHOD,POST_DATA,STATUS_CODE,VALIDATION,EXPECTED_R
 ""hasError"": false,
 ""valid"": false
 }
-]",response.entity,"{""processId"":716}"
+]",response.entity,"{""airlineId"":101}"

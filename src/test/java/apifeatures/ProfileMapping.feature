@@ -22,7 +22,7 @@ return text;
    * def create = <POST_DATA_PROFILE>
   * create.name= create.name+randomstring
   * print create
-  Given url baseURL+'/api/v1/profile/'
+  Given url baseURL+'/api/v1/profile'
   And request create
   When method <METHOD>
   Then status 201
@@ -42,7 +42,7 @@ return text;
 	And request update
   When method POST
   Then status 200
- 	Given url baseURL+<URL>+"139/delete"
+ 	Given url baseURL+<URL>+"/139/delete"
  	And request ""
   When method PUT
   

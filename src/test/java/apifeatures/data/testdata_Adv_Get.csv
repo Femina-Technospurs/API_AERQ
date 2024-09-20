@@ -18,4 +18,4 @@ S.NO,Modules,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY
 "
 10,Advertiser,Verify the Advertiser detail,"""/api/v1/advertiser/125""",Open view Advertiser page,GET,200,Users should be able to view the Advertiser,"""id"":125",entity,"{""id"": 125}"
 11,Advertiser,Verify the updated data of Advertiser,"""/api/v1/advertiser/125""",Open view updated Advertiser page,GET,200,Updated Advertiser should be displayed,"""id"":125",entity,"{""id"": 125}"
-12,Advertiser,Verify whether able to activate and deactivate the advertisers,"""/api/v1/advertiser/128/toggle-activate""",Open Advertiser page,GET,200,Users should be able to active or deactivate the advertiser,"""httpStatus"": ""OK""",httpStatus,"""OK"""
+12,Advertiser,Verify whether able to activate and deactivate the advertisers,"""/api/v1/advertiser/144/toggle-activate""",Open Advertiser page,GET,200,Users should be able to active or deactivate the advertiser,"""httpStatus"": ""OK""",httpStatus,"""OK"""
