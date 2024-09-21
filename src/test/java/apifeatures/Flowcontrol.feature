@@ -23,12 +23,12 @@ return text;
   When method <METHOD>
   Then status <STATUS_CODE>
   And match <KEY> contains <VALUE> 	
- 	Given url baseURL+<URL>+"/"+response.id
+ 	Given url baseURL+<URL>+"/58"
  	  * def update =  <POST_DATA>
 	And request update
   When method PUT
   Then status 202
- 	Given url baseURL+<URL>+"/"+response.id+"/delete"
+ 	Given url baseURL+"/api/v1/adsourceinstance/51/delete"
  	And request ""
   When method PUT
   Then status 200
