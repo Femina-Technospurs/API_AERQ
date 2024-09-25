@@ -56,7 +56,10 @@ return text;
   Given url baseURL+<URL>
   When method <METHOD>
   Then status <STATUS_CODE>
+   	And print response
+  
  	And match <KEY> contains deep <VALUE> 	
+ 	
  #Then match karate.toString(response) contains "<EXPECTED_RESULT>"
 
   Examples: 
