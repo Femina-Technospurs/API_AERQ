@@ -25,7 +25,7 @@ return text;
   And request create
   When method <METHOD>
   Then status <STATUS_CODE>
-  And match <KEY> contains <VALUE> 	
+  And match <KEY> contains deep <VALUE> 	
  	Given url baseURL+"/api/v1/creative/"+response.id
  	  * def update = 
  	  """
@@ -59,7 +59,7 @@ if (keyafter != '') {
 }
 """
 	And print keyafter
- 	And match <KEY> contains <VALUE> 	
+ 	And match <KEY> contains deep <VALUE> 	
  #Then match karate.toString(response) contains "<EXPECTED_RESULT>"
 
   Examples: 

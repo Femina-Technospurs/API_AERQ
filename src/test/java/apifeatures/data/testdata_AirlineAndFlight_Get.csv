@@ -116,7 +116,7 @@ S.NO,Modules,SCENARIO,URL,DESC,METHOD,STATUS_CODE,VALIDATION,EXPECTED_RESULT,KEY
 ""isActive"": false
 }
 ]",response.coll,"{""id"":'#number',""name"":'#string',""inventoryType"":'#string',""isCoppaEnabled"":'#boolean',""blockedCategory"":'#[] #string',""aDomain"":'#[] #string',""isActive"":'#boolean'}"
-10,Airline,Verify user able to activate/deactivate the airline,"""/api/v1/airline/101/toggle-activate""",Open Airline page,GET,200,Airline should be activated/deactivated,"""successMessage"": ""Activated/Deactivated successfully "",
+10,Airline,Verify user able to activate/deactivate the airline,"""/api/v1/airline/197/toggle-activate""",Open Airline page,GET,200,Airline should be activated/deactivated,"""successMessage"": ""Activated/Deactivated successfully "",
 ""valid"": true",response,"{""successMessage"":""Activated/Deactivated successfully ""}"
 11,Airline,Verify the headers of the imported csv file,"""/api/v1/import/flight/headers""",Open Airline page,GET,200,Headers of the csv file should be retrived,"""entity"": [
 ""Flight Name"",
